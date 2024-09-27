@@ -2,3 +2,274 @@
     transform: translateY(-10px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+body {
+    background-color: #003366;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(0, 51, 102, 0.85);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header img {
+    max-height: 50px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: white;
+    color: #003366;
+    border-radius: 5px;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(0, 51, 102, 0.75), rgba(0, 51, 102, 0.75)), url('path/to/background-image.jpg') center/cover no-repeat;
+    padding-top: 80px;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e65c00;
+}
+
+.content {
+    padding: 2rem;
+}
+
+.section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.section p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+
+.service-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.about-text {
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.team-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.card h3 {
+    margin: 1rem 0;
+}
+
+.card p {
+    color: #ffcc00;
+}
+
+.contact-details {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.5;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer .contact-info p,
+footer .social-media a {
+    margin: 5px 0;
+}
+
+footer .social-media a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    display: inline-block;
+}
+
+footer .social-media img {
+    height: 24px;
+    width: 24px;
+}
+
+.logo-container {
+    width: 600px;
+    margin: 2rem auto;
+}
+
+.logo-part {
+    stroke: white;
+    stroke-width: 9;
+    fill: none;
+    stroke-linecap: round;
+    stroke-dasharray: 0 400;
+    stroke-dashoffset: 10;
+}
+
+@keyframes draw {
+    from {
+        stroke-dasharray: 0 400;
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dasharray: 400 0;
+        stroke-dashoffset: 0;
+    }
+}
+
+.logo-part {
+    animation: draw 2s ease-in-out forwards;
+}
+
+.path-1 {
+    animation-delay: 0.5s;
+}
+
+.path-2 {
+    animation-delay: 0.5s;
+}
+
+.path-3 {
+    animation-delay: 0.5s;
+}
+
+.path-4 {
+    animation-delay: 0.5s;
+}
+
+.path-5 {
+    animation-delay: 0.5s;
+}
+
+.path-6 {
+    animation-delay: 0.5s;
+}
+
+.path-7 {
+    animation-delay: 0.5s;
+}
+
+.path-8 {
+    animation-delay: 0.5s;
+}
+
+.path-9 {
+    animation-delay: 0.5s;
+}
+
+.path-10 {
+    animation-delay: 0.5s;
+}
+
+.path-11 {
+    animation-delay: 0.5s;
+}
+
+.circle {
+    animation-delay: 1.75s;
+}
