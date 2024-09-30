@@ -1,62 +1,292 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MI Brand Distillery</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <!-- Your content here -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MI Brand Distillery</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <!-- Navigation Bar -->
+        <header style="display: flex; align-items: center; justify-content: flex-start;">
+            <img src="img/logo_bw.png" style="margin-right: 20px; width: 80px; height: 250px;" id="base64logo"><!-- Used to be a base64 img -->
+            <div class="navbar">
+                <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+                    <li style="margin-right: 20px;">
+                        <a href="#home" id="home-link">Home</a>
+                    </li>
+                    <li style="margin-right: 20px;">
+                        <a href="#services">Services</a>
+                    </li>
+                    <li style="margin-right: 20px;">
+                        <a href="#about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        
+        <!-- Hero Section -->
+        <div class="hero-section" id="home">
+            <div class="logo-container">
+                <svg id="logoto" width="75%" height="auto" viewBox="0 0 800 400" preserveAspectRatio="xMinYMin meet">
+                    <path class="logo-part path-1" d="M10,270 L170,10"></path>
+                    <path class="logo-part path-2" d="M300,220 L430,10"></path>
+                    <path class="logo-part path-3" d="M268,375 L332,270"></path>
+                    <path class="logo-part path-4" d="M530,375 L590,270"></path>
+                    <path class="logo-part path-5" d="M268,375 L108,113"></path>
+                    <path class="logo-part path-6" d="M332,270 L170,10"></path>
+                    <path class="logo-part path-7" d="M530,375 L365,115"></path>
+                    <path class="logo-part path-8" d="M590,270 L430,10"></path>
+                    <path class="logo-part path-9" d="M10,270 L200,270"></path>
+                    <path class="logo-part path-10" d="M332,270 L460,270"></path>
+                    <path class="logo-part path-11" d="M590,270 L725,270"></path>
+                    <circle class="logo-part circle" cx="680" cy="250" r="55"></circle>
+                </svg>
+            </div>
+            <div class="hero-overlay">
+                <h1>Welcome to MI Brand Distillery</h1>
+                <p>We distill brands to their pure essence, ensuring that your message is delivered with clarity and impact.</p>
+                <a href="#services" class="cta-button">Learn More</a>
+            </div>
+        </div>
+        <!-- About Us Section -->
+        <section class="section py-5" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card shadow-sm h-100 text-center" style="transition: transform 0.3s;">
+                            <a href="#about" class="d-block">
+                                <img src="img/ceo-image.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="CEO Image" style="width:100px;height:100px;">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">John Doe</h5>
+                                <p class="card-text">CEO</p>
+                                <p class="text-muted">John brings over 20 years of experience in brand management and storytelling.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card shadow-sm h-100 text-center" style="transition: transform 0.3s;">
+                            <a href="#about" class="d-block">
+                                <img src="img/manager-image.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="Manager Image" style="width:100px;height:100px;">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Jane Smith</h5>
+                                <p class="card-text">Manager</p>
+                                <p class="text-muted">Jane is an expert in media monitoring and brand strategy development.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card shadow-sm h-100 text-center" style="transition: transform 0.3s;">
+                            <a href="#about" class="d-block">
+                                <img src="img/employee-image.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="Employee Image" style="width:100px;height:100px;">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Alice Johnson</h5>
+                                <p class="card-text">Employee</p>
+                                <p class="text-muted">Alice is focused on product development and innovation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card shadow-sm h-100 text-center" style="transition: transform 0.3s;">
+                            <a href="#about" class="d-block">
+                                <img src="img/employee-image.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="Employee Image" style="width:100px;height:100px;">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Alice Johnson</h5>
+                                <p class="card-text">Employee</p>
+                                <p class="text-muted">Alice is focused on product development and innovation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card shadow-sm h-100 text-center" style="transition: transform 0.3s;">
+                            <a href="#about" class="d-block">
+                                <img src="img/employee-image.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="Employee Image" style="width:100px;height:100px;">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Alice Johnson</h5>
+                                <p class="card-text">Employee</p>
+                                <p class="text-muted">Alice is focused on product development and innovation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card shadow-sm h-100 text-center" style="transition: transform 0.3s;">
+                            <a href="#about" class="d-block">
+                                <img src="img/employee-image2.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="Employee Image" style="width:100px;height:100px;">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Alice Johnson</h5>
+                                <p class="card-text">Employee</p>
+                                <p class="text-muted">Alice is focused on product development and innovation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card shadow-sm h-100 text-center" style="transition: transform 0.3s;">
+                            <a href="#about" class="d-block">
+                                <video class="card-img-top rounded-circle mx-auto mt-3" style="width:100px;height:100px;" autoplay loop muted>
+                                    <source src="img/employee-video.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Eminem</h5>
+                                <p class="card-text">Employee</p>
+                                <p class="text-muted">Alice is focused on product development and innovation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card shadow-sm h-100 text-center" style="transition: transform 0.3s;">
+                            <a href="#about" class="d-block">
+                                <video class="card-img-top rounded-circle mx-auto mt-3" style="width:100px;height:100px;" autoplay loop muted>
+                                    <source src="img/employee-video.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Ronnie James Dio</h5>
+                                <p class="card-text">Employee</p>
+                                <p class="text-muted">Alice is focused on product development and innovation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card shadow-sm h-100 text-center" style="transition: transform 0.3s;">
+                            <a href="#about" class="d-block">
+                                <video class="card-img-top rounded-circle mx-auto mt-3" style="width:100px;height:100px;" autoplay loop muted>
+                                    <source src="img/employee-video.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Freddie Mercury</h5>
+                                <p class="card-text">Employee</p>
+                                <p class="text-muted">Alice is focused on product development and innovation.</p>
+                            </div>
+                        </div>
+                    </div>
+                                                            
 
+                    
+                </div>
+            </div>
+        </section>
+
+
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="img/serv1.png" alt="Service Icon 1">
+                <h3>Service One</h3>
+                <p>Description of service one.</p>
+            </div>
+            <div class="service-item">
+                <img src="img/serv2.png" alt="Service Icon 2">
+                <h3>Service Two</h3>
+                <p>Description of service two.</p>
+            </div>
+            <div class="service-item">
+                <img src="img/serv3.png" alt="Service Icon 3">
+                <h3>Service Three</h3>
+                <p>Description of service three.</p>
+            </div>
+            <div class="service-item">
+                <img src="img/serv4.png" alt="Service Icon 4">
+                <h3>Service Four</h3>
+                <p>Description of service four.</p>
+            </div>
+            <div class="service-item">
+                <img src="img/serv5.png" alt="Service Icon 5">
+                <h3>Service Five</h3>
+                <p>Description of service five.</p>
+            </div>
+            <div class="service-item">
+                <img src="img/serv6.png" alt="Service Icon 6">
+                <h3>Service Six</h3>
+                <p>Description of service six.</p>
+            </div>
+            
+        </div>
+    </section>
+
+
+    <!-- Contact Us Section -->
+    <section class="section" id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-details">
+            <p>Email: contact@mibranddistillery.com</p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Address: 123 Brand St, Marketing City, MK 45678</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="contact-info">
+            <p>Email: contact@mibranddistillery.com</p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+        <div class="social-media">
+            <a href="#"><img src="path/to/facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="path/to/twitter-icon.png" alt="Twitter"></a>
+        </div>
+    </footer>
+
+    <script>
+        // Function to reset the SVG drawing
+        function resetSVG() {
+            const logoContainer = document.getElementById('logoto');
+            logoContainer.style.opacity = 0; // Fade out the logo
+
+            setTimeout(() => {
+                logoContainer.innerHTML = ''; // Clear existing SVG
+
+                // Recreate the SVG
+                logoContainer.innerHTML = `
+                    <svg id="logoto" width="100%" height="auto" viewBox="0 0 800 400" preserveAspectRatio="xMinYMin meet">
+                        <path class="logo-part path-1" d="M10,270 L170,10"></path>
+                        <path class="logo-part path-2" d="M300,220 L430,10"></path>
+                        <path class="logo-part path-3" d="M268,375 L332,270"></path>
+                        <path class="logo-part path-4" d="M530,375 L590,270"></path>
+                        <path class="logo-part path-5" d="M268,375 L108,113"></path>
+                        <path class="logo-part path-6" d="M332,270 L170,10"></path>
+                        <path class="logo-part path-7" d="M530,375 L365,115"></path>
+                        <path class="logo-part path-8" d="M590,270 L430,10"></path>
+                        <path class="logo-part path-9" d="M10,270 L200,270"></path>
+                        <path class="logo-part path-10" d="M332,270 L460,270"></path>
+                        <path class="logo-part path-11" d="M590,270 L725,270"></path>
+                        <circle class="logo-part circle" cx="680" cy="250" r="55"></circle>
+                    </svg>
+                `;
+                logoContainer.style.opacity = 1; // Fade back in
+            }, 500); // Match this timeout with the opacity transition duration
+        }
+
+        // Add an event listener to the Home link
+        document.getElementById('home-link').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            resetSVG(); // Call the function to reset the SVG
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
+        });
+        // Make the base64 logo clickable
+        document.getElementById('base64logo').addEventListener('click', function() {
+            document.getElementById('home-link').click(); // Trigger the Home link click
+        });
+
+    </script>
+    
+    
     <script src="js/bootstrap.bundle.min.js"></script>
-	
-<!-- About Us Section -->
-<section class="section py-5" id="about" style="background-color: #f9f9f9;">
-    <div class="container">
-        <h2 class="text-center mb-5">About Us</h2>
-        <div class="row align-items-center mb-5">
-            <div class="col-md-6">
-                <p class="text-muted">
-                    MI Brand Distillery is dedicated to distilling brands to their pure essence.
-                    Our team of experienced professionals works tirelessly to ensure your message 
-                    is delivered with clarity and impact. We specialize in media monitoring, 
-                    brand crafting, and storytelling to help your brand stand out.
-                </p>
-            </div>
-            <div class="col-md-6">
-                <img src="img/about-image.jpg" alt="About Us" class="img-fluid rounded">
-            </div>
-        </div>
-        <h3 class="text-center mb-5">Our Team</h3>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card shadow-sm h-100 text-center" style="transition: transform 0.3s;">
-                    <!-- Wrap the image in an anchor tag for hyperlink -->
-                    <a href="#" class="d-block">
-                        <img src="img/ceo-image.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="CEO Image" style="width: 100px; height: 100px;">
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title">John Doe</h5>
-                        <p class="card-text">CEO</p>
-                        <p class="text-muted">John brings over 20 years of experience in brand management and storytelling.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card shadow-sm h-100 text-center" style="transition: transform 0.3s;">
-                    <img src="img/manager-image.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="Manager Image" style="width: 100px; height: 100px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Jane Smith</h5>
-                        <p class="card-text">Manager</p>
-                        <p class="text-muted">Jane is an expert in media monitoring and brand strategy development.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-</body>
+    </body>
 </html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Animation Reset</title>
+    <style>
+        body {
+            background-color: #282c34;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .logo-container {
+            width: 600px;
+            margin: 2rem auto;
+            transition: opacity 0.5s ease; /* Fade effect */
+        }
+
+        .logo-part {
+            stroke: white;
+            stroke-width: 9;
+            fill: none;
+            stroke-linecap: round;
+            stroke-dasharray: 400;
+            stroke-dashoffset: 0;
+            animation: draw 5s linear forwards;
+        }
+
+        @keyframes draw {
+            from {
+                stroke-dasharray: 0 400;
+                stroke-dashoffset: 0;
+            }
+            to {
+                stroke-dasharray: 400 0;
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .nav {
+            text-align: center;
+            margin: 20px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container" id="logo-container">
+        <svg id="logoto" width="75%" height="auto" viewBox="0 0 800 400" preserveAspectRatio="xMinYMin meet">
+            <path class="logo-part path-1" d="M10,270 L170,10"></path>
+            <path class="logo-part path-2" d="M300,220 L430,10"></path>
+            <path class="logo-part path-3" d="M268,375 L332,270"></path>
+            <path class="logo-part path-4" d="M530,375 L590,270"></path>
+            <path class="logo-part path-5" d="M268,375 L108,113"></path>
+            <path class="logo-part path-6" d="M332,270 L170,10"></path>
+            <path class="logo-part path-7" d="M530,375 L365,115"></path>
+            <path class="logo-part path-8" d="M590,270 L430,10"></path>
+            <path class="logo-part path-9" d="M10,270 L200,270"></path>
+            <path class="logo-part path-10" d="M332,270 L460,270"></path>
+            <path class="logo-part path-11" d="M590,270 L725,270"></path>
+            <circle class="logo-part circle" cx="680" cy="250" r="55"></circle>
+        </svg>
+    </div>
+
+    <ul class="nav">
+        <li class="nav-item">
+            <a href="#home">Home</a>
+        </li>
+    </ul>
+
+    <script>
+        // Function to reset the SVG drawing
+        function resetSVG() {
+            const logoContainer = document.getElementById('logo-container');
+            logoContainer.style.opacity = 0; // Fade out the logo
+
+            setTimeout(() => {
+                logoContainer.innerHTML = ''; // Clear existing SVG
+
+                // Recreate the SVG
+                logoContainer.innerHTML = `
+                    <svg id="logoto" width="75%" height="auto" viewBox="0 0 800 400" preserveAspectRatio="xMinYMin meet">
+                        <path class="logo-part path-1" d="M10,270 L170,10"></path>
+                        <path class="logo-part path-2" d="M300,220 L430,10"></path>
+                        <path class="logo-part path-3" d="M268,375 L332,270"></path>
+                        <path class="logo-part path-4" d="M530,375 L590,270"></path>
+                        <path class="logo-part path-5" d="M268,375 L108,113"></path>
+                        <path class="logo-part path-6" d="M332,270 L170,10"></path>
+                        <path class="logo-part path-7" d="M530,375 L365,115"></path>
+                        <path class="logo-part path-8" d="M590,270 L430,10"></path>
+                        <path class="logo-part path-9" d="M10,270 L200,270"></path>
+                        <path class="logo-part path-10" d="M332,270 L460,270"></path>
+                        <path class="logo-part path-11" d="M590,270 L725,270"></path>
+                        <circle class="logo-part circle" cx="680" cy="250" r="55"></circle>
+                    </svg>
+                `;
+                logoContainer.style.opacity = 1; // Fade back in
+            }, 500); // Match this timeout with the opacity transition duration
+        }
+
+        // Add an event listener to the Home link
+        document.querySelector('.nav-item a').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            resetSVG(); // Call the function to reset the SVG
+            // Optionally, scroll to the target section
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top as an example
+        });
+    </script>
+</body>
+</html>

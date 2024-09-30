@@ -2,6 +2,16 @@
     transform: translateY(-10px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+/* body {
+    background-color: #003366;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+} */
+
 body {
     background-color: #003366;
     color: white;
@@ -112,6 +122,13 @@ header img {
     max-width: 200px;
 }
 
+.service-item img {
+    width: 80%; /* Dynamic width relative to the card */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100px; /* Optional: limit max width */
+    margin-bottom: 10px; /* Space below the image */
+}
+
 .service-item:hover {
     transform: scale(1.05);
 }
@@ -202,28 +219,35 @@ footer .social-media img {
 }
 
 .logo-part {
-    stroke: white;
-    stroke-width: 9;
-    fill: none;
-    stroke-linecap: round;
-    stroke-dasharray: 0 400;
-    stroke-dashoffset: 10;
+    stroke: white; /* Initial stroke color */
+    stroke-width: 8; /* Initial stroke width */
+    fill: none; /* No fill */
+    stroke-linecap: round; /* Rounded ends */
+    stroke-dasharray: 0 400; /* Defines the pattern of dashes and gaps */
+    stroke-dashoffset: 10; /* Defines the starting position of the dash */
+    animation: draw 2s linear forwards, increaseStrokeWidth 6s ease-in-out 4s forwards; /* Animation chaining */
 }
 
+/* Keyframes for the drawing animation */
 @keyframes draw {
     from {
-        stroke-dasharray: 0 400;
-        stroke-dashoffset: 0;
+        stroke-dasharray: 0 400; /* Start with no visible stroke */
+        stroke-dashoffset: 0; /* Start at the beginning of the path */
     }
-
     to {
-        stroke-dasharray: 400 0;
-        stroke-dashoffset: 0;
+        stroke-dasharray: 400 0; /* Complete the drawing */
+        stroke-dashoffset: 0; /* End at the end of the path */
     }
 }
 
-.logo-part {
-    animation: draw 2s ease-in-out forwards;
+/* Keyframes for increasing stroke width */
+@keyframes increaseStrokeWidth {
+    from {
+        stroke-width: 8; /* Initial stroke width */
+    }
+    to {
+        stroke-width: 16; /* Desired final stroke width */
+    }
 }
 
 .path-1 {
@@ -272,4 +296,36 @@ footer .social-media img {
 
 .circle {
     animation-delay: 1.75s;
+}
+
+/*More interactive nav bar*/
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9); /* Light gray-white background */
+    padding: 10px 20px; /* Add padding for a spacious look */
+    border-radius: 5px; /* Slight rounding of corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin-right: 20px; /* Space between items */
+}
+
+.navbar a {
+    color: #333; /* Dark gray text for contrast */
+    text-decoration: none; /* Remove underline */
+    padding: 10px; /* Add padding for a button-like feel */
+    border-radius: 4px; /* Slight rounding of corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.navbar a:hover {
+    background-color: rgba(0, 0, 0, 0.4); /* Light black on hover */
+    color: #000; /* Black text on hover */
 }
