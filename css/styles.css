@@ -1,3 +1,18 @@
+.hover-animate {
+    transition: all 0.3s ease;
+}
+
+.hover-animate:hover {
+    font-weight: bold;
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+.hover-text {
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -225,7 +240,7 @@ footer .social-media img {
     stroke-linecap: round; /* Rounded ends */
     stroke-dasharray: 0 400; /* Defines the pattern of dashes and gaps */
     stroke-dashoffset: 10; /* Defines the starting position of the dash */
-    animation: draw 2s linear forwards, increaseStrokeWidth 6s ease-in-out 4s forwards; /* Animation chaining */
+    animation: draw 2s linear forwards, increaseStrokeWidth 6s ease-in-out 3s forwards; /* Animation chaining */
 }
 
 /* Keyframes for the drawing animation */
@@ -246,7 +261,7 @@ footer .social-media img {
         stroke-width: 8; /* Initial stroke width */
     }
     to {
-        stroke-width: 16; /* Desired final stroke width */
+        stroke-width: 24; /* Desired final stroke width */
     }
 }
 
