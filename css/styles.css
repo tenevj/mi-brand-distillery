@@ -83,7 +83,7 @@ header img {
     justify-content: center;
     min-height: 80vh;
     text-align: center;
-    background: linear-gradient(to bottom, rgba(0, 51, 102, 0.75), rgba(0, 51, 102, 0.75)), url('path/to/background-image.jpg') center/cover no-repeat;
+    background: linear-gradient(to bottom, rgba(0, 51, 102, 0.75), rgba(0, 51, 102, 0.75));/*, url('path/to/background-image.jpg') center/cover no-repeat;*/
     padding-top: 80px;
 }
 
