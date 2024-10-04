@@ -1,22 +1,5 @@
-.hover-animate {
-    transition: all 0.3s ease;
-}
 
-.hover-animate:hover {
-    font-weight: bold;
-    color: #007bff;
-    transform: scale(1.1);
-}
 
-.hover-text {
-    margin-bottom: 10px;
-    line-height: 1.8;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
 /* body {
     background-color: #003366;
     color: white;
@@ -75,7 +58,33 @@ header img {
     color: #003366;
     border-radius: 5px;
 }
+.hover-animate {
+    transition: all 0.3s ease;
+}
 
+.hover-animate:hover {
+    font-weight: bold;
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+.hover-text {
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+h1 {
+    font-size: 4rem; /* Adjust the size as needed */
+    font-family: 'Playfair Display', serif; /* Fancy font from the suggestion */
+    font-weight: bold; /* Make it stand out */
+    text-align: center; /* Center-align the text */
+    margin-bottom: 1rem; /* Add space below the heading */
+    color: hsl(0, 0%, 100%); /* Optional: change the text color */
+}
 .hero-section {
     display: flex;
     flex-direction: column;
@@ -265,7 +274,7 @@ footer .social-media img {
         stroke-width: 8; /* Initial stroke width */
     }
     to {
-        stroke-width: 24; /* Desired final stroke width */
+        stroke-width: 20; /* Desired final stroke width */
     }
 }
 
