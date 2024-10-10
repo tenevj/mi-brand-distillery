@@ -1,20 +1,10 @@
 
-
-/* body {
-    background-color: #003366;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-} */
-
 body {
     background-color: #a1bcd6;
     color: white;
     /*font-family: 'Roboto', sans-serif;*/
-    font-family: 'Lora', serif;
+    font-family: 'Favorit', sans-serif; /* Update here */
+    /*font-family: 'Lora', serif;*/
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -36,6 +26,31 @@ header {
 
 header img {
     max-height: 50px;
+}
+
+@font-face {
+    font-family: 'Favorit';
+    src: url('/favorit/Favorit_Regular.woff2') format('woff2'),
+         url('/favorit/Favorit_Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Favorit';
+    src: url('/favorit/Favorit_Bold.woff2') format('woff2'),
+         url('/favorit/Favorit_Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Add additional @font-face rules for italic, light, etc., as needed */
+
+.hover-list li:hover {
+    background-color: #f0f0f0; /* Example: Change background color */
+    color: #333; /* Example: Change text color */
+    transform: scale(1.1); /* Example: Slightly enlarge */
+    transition: all 0.3s ease; /* Animation for smoother transition */
 }
 
 .div-video-container {
