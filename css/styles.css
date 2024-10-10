@@ -38,6 +38,21 @@ header img {
     max-height: 50px;
 }
 
+.div-video-container {
+    max-height: none; /* Reset any max-height */
+    height: 100%; /* Ensure it stretches to full column height */
+}
+
+.col-md-6 > .embed-responsive {
+    max-height: none; /* Reset any default max-height */
+    height: 100%; /* Ensure it stretches to full column height */
+}
+
+.embed-responsive-item {
+    height: 100%;
+    width: 100%; /* Maintain video aspect ratio */
+}
+
 .navbar ul {
     list-style: none;
     display: flex;
