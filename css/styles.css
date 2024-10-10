@@ -102,12 +102,31 @@ header img {
     font-style: normal;
 }
 
-.hover-list li:hover {
-    background-color: #f0f0f0; /* Example: Change background color */
-    color: #333; /* Example: Change text color */
-    transform: scale(1.1); /* Example: Slightly enlarge */
-    transition: all 0.3s ease; /* Animation for smoother transition */
+
+
+
+/* Hover effect for entire list item */
+.hover-list li {
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
+
+.hover-list li:hover {
+    background-color: rgba(0, 123, 255, 0.1); /* Merged background color */
+    color: #333; /* Ensure text color change */
+    transform: scale(1.1); /* Combined scaling */
+    cursor: pointer; /* Unified cursor style */
+    transition: all 0.3s ease; /* Ensure smooth transition for all properties */
+}
+
+/* Ensure the video scales well */
+.embed-responsive {
+    max-width: 100%; /* Ensures it doesn't overflow */
+    height: auto; /* Maintains aspect ratio */
+}
+
+
+
+
 
 .div-video-container {
     max-height: none; /* Reset any max-height */
