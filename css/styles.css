@@ -3,8 +3,8 @@ body {
     background-color: #a1bcd6;
     color: white;
     /*font-family: 'Roboto', sans-serif;*/
-    font-family: 'Favorit', sans-serif; /* Update here */
-    /*font-family: 'Lora', serif;*/
+    font-family: 'Favorit', sans-serif;
+    font-size: 18px; /* Set a base font size for the whole site */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -26,6 +26,15 @@ header {
 
 header img {
     max-height: 50px;
+}
+
+#flex h2 {
+    font-size: 2.5rem; /* Adjust this value to achieve the desired size */
+    font-weight: bold; /* Optional: Set a suitable weight if needed */
+}
+#flex h1 {
+    font-size: 4rem; /* Adjust this value to achieve the desired size */
+    font-weight: bold; /* Optional: Set a suitable weight if needed */
 }
 
 /*font-face rules*/
