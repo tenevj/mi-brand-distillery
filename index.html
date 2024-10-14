@@ -256,16 +256,16 @@
             var serviceImages = document.querySelectorAll(".service-item img");
         
             // Image paths
-            var service1Img = ["img/query.png"]; // Service 1 only has one image
+            var service1Img = ["img/query.png", "img/query2.png"]; // Service 1 image(s)
             var service2Imgs = ["img/doklad1.png", "img/doklad2.png", "img/doklad3.png"]; // Multiple images for service 2
             var currentIndex = 0;
         
             serviceImages.forEach(function(image, index) {
                 image.addEventListener('click', function() {
                     modal.style.display = "block";
-                    if (index === 0) { // Assuming Service 1 index
+                    /* if (index === 0) { // Assuming Service 1 index - only one image
                         modalImg.src = service1Img[0]; // Directly use service 1 image
-                    } else {
+                    } else  */{
                         modalImg.src = service2Imgs[currentIndex]; // Follow logic for service 2
                     }
                 });
