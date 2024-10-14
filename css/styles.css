@@ -5,8 +5,13 @@
     box-sizing: border-box;
 }
 body {
-    background: #b4b4b4;
+    /*background: #b4b4b4;*/
     /* color: rgb(7, 7, 7); */
+    background-image: url('../img/grey_textured.jpg'); /* Image path */
+    background-repeat: repeat; /* Repeat the image seamlessly */
+    background-size: auto; /* Use original image size for tiling */
+    background-position: top left; /* Align starting point for tiling */
+    
     font-family: "Favorit" !important;
 
     font-size: 18px; 
