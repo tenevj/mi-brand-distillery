@@ -263,10 +263,13 @@
             serviceImages.forEach(function(image, index) {
                 image.addEventListener('click', function() {
                     modal.style.display = "block";
-                    /* if (index === 0) { // Assuming Service 1 index - only one image
-                        modalImg.src = service1Img[0]; // Directly use service 1 image
-                    } else  */{
-                        modalImg.src = service2Imgs[currentIndex]; // Follow logic for service 2
+                    if (index === 0) { // Assuming Service 1 index - only one image
+                        modalImg.src = service1Img[currentIndex]; // Directly use service 1 image
+                    } 
+                    if (index === 1) { 
+                        modalImg.src = service2Imgs[currentIndex];
+                    } else  {
+                        modalImg.src = service2Imgs[currentIndex]; // #DEFAULT Follow logic for service 2
                     }
                 });
             });
