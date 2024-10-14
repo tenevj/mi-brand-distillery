@@ -227,44 +227,6 @@
     </footer>
 
 
-    <script>
-        // Function to reset the SVG drawing
-        function resetSVG() {
-            const logoContainer = document.getElementById('logoto');
-            logoContainer.style.opacity = 0; // Fade out the logo
-
-            setTimeout(() => {
-                logoContainer.innerHTML = ''; // Clear existing SVG
-
-                // Recreate the SVG
-                logoContainer.innerHTML = `
-                    <svg id="logoto" width="100%" height="100%" viewBox="0 0 800 400" preserveAspectRatio="xMinYMin meet">
-                        <path class="logo-part path-1" d="M10,270 L170,10"></path>
-                        <path class="logo-part path-2" d="M300,220 L430,10"></path>
-                        <path class="logo-part path-3" d="M268,375 L332,270"></path>
-                        <path class="logo-part path-4" d="M530,375 L590,270"></path>
-                        <path class="logo-part path-5" d="M268,375 L108,113"></path>
-                        <path class="logo-part path-6" d="M332,270 L170,10"></path>
-                        <path class="logo-part path-7" d="M530,375 L365,115"></path>
-                        <path class="logo-part path-8" d="M590,270 L430,10"></path>
-                        <path class="logo-part path-9" d="M10,270 L200,270"></path>
-                        <path class="logo-part path-10" d="M332,270 L460,270"></path>
-                        <path class="logo-part path-11" d="M590,270 L725,270"></path>
-                        <circle class="logo-part circle" cx="680" cy="250" r="55"></circle>
-                    </svg>
-                `;
-                logoContainer.style.opacity = 1; // Fade back in
-            }, 500); // Match this timeout with the opacity transition duration
-        }
-        // Add an event listener to the Home link
-        document.getElementById('home-link').addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent the default anchor behavior
-            resetSVG(); // Call the function to reset the SVG
-            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
-        });
-
-
-    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -288,15 +250,24 @@
     
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            var modal = document.getElementById("imageModal");
-            var modalImg = document.getElementById("fullImage");
+            var modal = document.getElementById("imageCarousel");
+            var modalImg = document.getElementById("carouselImage");
             var closeSpan = document.getElementsByClassName("close")[0];
-            var serviceImages = document.querySelectorAll(".service-item img.service-image");
+            var serviceImages = document.querySelectorAll(".service-item img");
         
-            serviceImages.forEach(function(image) {
+            // Image paths
+            var service1Img = ["img/query.png"]; // Service 1 only has one image
+            var service2Imgs = ["img/doklad1.png", "img/doklad2.png", "img/doklad3.png"]; // Multiple images for service 2
+            var currentIndex = 0;
+        
+            serviceImages.forEach(function(image, index) {
                 image.addEventListener('click', function() {
                     modal.style.display = "block";
-                    modalImg.src = this.src;
+                    if (index === 0) { // Assuming Service 1 index
+                        modalImg.src = service1Img[0]; // Directly use service 1 image
+                    } else {
+                        modalImg.src = service2Imgs[currentIndex]; // Follow logic for service 2
+                    }
                 });
             });
         
@@ -310,38 +281,18 @@
                     modal.style.display = "none";
                 }
             };
-        });
-        </script>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var modal = document.getElementById("imageCarousel");
-            var imgs = ["img/doklad1.png", "img/doklad2.png", "img/doklad3.png"];
-            var modalImg = document.getElementById("carouselImage");
-            var currentIndex = 0;
-        
-            document.getElementById('serviceImage2').onclick = function() {
-                modal.style.display = "block";
-                modalImg.src = imgs[currentIndex];
-            };
-        
-            document.querySelector('.close').onclick = function() {
-                modal.style.display = "none";
-            };
         
             document.querySelector('.next').onclick = function() {
-                currentIndex = (currentIndex + 1) % imgs.length;
-                modalImg.src = imgs[currentIndex];
+                if (modalImg.src.includes('doklad')) { // Ensures cycling only applies to service 2
+                    currentIndex = (currentIndex + 1) % service2Imgs.length;
+                    modalImg.src = service2Imgs[currentIndex];
+                }
             };
         
             document.querySelector('.prev').onclick = function() {
-                currentIndex = (currentIndex - 1 + imgs.length) % imgs.length;
-                modalImg.src = imgs[currentIndex];
-            };
-        
-            window.onclick = function(event) {
-                if (event.target === modal) {
-                    modal.style.display = "none";
+                if (modalImg.src.includes('doklad')) {
+                    currentIndex = (currentIndex - 1 + service2Imgs.length) % service2Imgs.length;
+                    modalImg.src = service2Imgs[currentIndex];
                 }
             };
         });
