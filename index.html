@@ -103,7 +103,7 @@
 
 
 
-<!-- Services Section -->
+<!-- Services Section 
 <section class="section" id="services">
     <br>
     <br>
@@ -130,7 +130,38 @@
         </div> 
     </div>
 </section>
-<!-- Modal Structure for Services section alone -->
+
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="fullImage">
+</div>-->
+
+<!-- Services Section -->
+<section class="section" id="services">
+    <br>
+    <br>
+    <h2 style="color: black; font-weight: bold;">Our Services</h2>
+    <div class="services-grid">
+        <div class="service-item col-lg-4 col-md-6">
+            <img src="img/query.png" alt="Service Icon 1" class="service-image">
+            <p style="color: black;">Query building</p>
+        </div>
+        <div class="service-item col-lg-4 col-md-6">
+            <img src="img/s2.png" alt="Service Icon 2" class="service-image">
+            <p>Description of service two.</p>
+        </div>
+        <div class="service-item col-lg-4 col-md-6">
+            <img src="img/s1.png" alt="Service Icon 3" class="service-image">
+            <p>Description of service three.</p>
+        </div>
+        <div class="service-item col-lg-4 col-md-6">
+            <img src="img/s2.png" alt="Service Icon 4" class="service-image">
+            <p>Description of service four.</p>
+        </div> 
+    </div>
+</section>
+
+<!-- Modal Structure -->
 <div id="imageModal" class="modal">
     <span class="close">&times;</span>
     <img class="modal-content" id="fullImage">
@@ -285,6 +316,33 @@
         });
         </script>
     
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("fullImage");
+            var closeSpan = document.getElementsByClassName("close")[0];
+            var serviceImages = document.querySelectorAll(".service-item img.service-image");
+        
+            serviceImages.forEach(function(image) {
+                image.addEventListener('click', function() {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                });
+            });
+        
+            // Close the modal
+            closeSpan.onclick = function() {
+                modal.style.display = "none";
+            };
+        
+            window.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            };
+        });
+        </script>
+
     <script src="js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
