@@ -185,11 +185,11 @@ p {
     height: auto;
     max-width: 300px; 
     margin-bottom: 10px;
-    margin-top: 100px;
+    margin-top: 10px;
 }
 
 .service-item:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 /* The Modal (background) */
@@ -209,6 +209,7 @@ p {
 /* Modal Content (image) */
 .modal-content {
     margin: auto;
+    margin-top: 100px;
     display: block;
     width: 80%;
     max-width: 700px;
