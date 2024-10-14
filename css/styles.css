@@ -159,8 +159,6 @@ p {
 
 
 
-
-
 .services-grid {
     display: flex;
     flex-wrap: wrap;
@@ -180,25 +178,19 @@ p {
     max-height: 300px;
 }
 
-/* .service-item img {
-    width: 100%;
-    height: auto;
-    max-width: 300px; 
-    margin-bottom: 10px;
-    margin-top: 10px;
-} */
 .service-item img {
-    display: block;  /* Ensures images are block elements and aligns correctly */
-    width: 100%;  /* Set full width respecting container size */
-    max-width: 300px; /* Maximum width constraint for all images */
-    height: 200px; /* Sets a uniform height for all images */
-    object-fit: cover; /* Ensures aspect ratio is maintained and image covers the specified dimensions */
+    display: block;  
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover;
     margin-bottom: 10px;
     margin-top: 10px;
-    border-radius: 8px; /* Optional: Add rounded corners for style */
+    border-radius: 8px;
 }
+
 .service-item p {
-    color: black; 
+    color: black;
     font-size: 2.5rem;
 }
 
@@ -216,7 +208,7 @@ p {
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.9); 
-    padding-top: 100px; /* Creates space to the top of the modal */
+    padding-top: 100px;
 }
 
 .modal-content {
@@ -224,6 +216,7 @@ p {
     display: block;
     width: 90%;
     max-width: 800px;
+    transition: transform 0.3s ease; /* Smooth animation for better UX */
 }
 
 /* The Modal Close Button */
@@ -248,27 +241,32 @@ p {
 .prev, .next {
     position: absolute;
     top: 50%;
+    transform: translateY(-50%); /* Center vertically */
     width: auto;
+    height: 50px; /* Larger button size for visibility */
     padding: 16px;
-    margin-top: -22px;
     color: white;
     font-weight: bold;
-    font-size: 20px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
+    font-size: 24px; /* Larger text */
+    transition: background-color 0.6s ease;
+    background-color: rgba(0,0,0,0.5);  /* Transparent background for visibility */
+    border-radius: 5px;
     cursor: pointer;
 }
 
 .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+    right: 10px; /* Adjust for closer positioning to the image */
+    border-radius: 5px 0 0 5px; /* Rounded corners */
+}
+
+.prev {
+    left: 10px; /* Adjust for closer positioning to the image */
+    border-radius: 0 5px 5px 0; /* Rounded corners */
 }
 
 .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
 }
-
 
 
 .about-content {
