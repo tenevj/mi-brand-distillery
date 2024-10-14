@@ -12,7 +12,7 @@ body {
     background-size: auto; /* Use original image size for tiling */
     background-position: top left; /* Align starting point for tiling */
     
-    font-family: "Favorit" !important;
+    font-family: "Favorit" ;
 
     font-size: 18px; 
     margin: 0;
@@ -23,7 +23,7 @@ body {
 }
 
 .hero-overlay {
-    font-family: "Favorit" !important;
+    font-family: "Favorit" ;
     
 }
 
@@ -45,17 +45,17 @@ header img {
 
 
 h1 {
-    font-family: "Favorit" !important;
+    font-family: "Favorit" ;
     font-size: 2.5rem; /* Adjust this value to achieve the desired size */
     font-weight: bold; /* Optional: Set a suitable weight if needed */
 }
 h2 {
-    font-family: 'Favorit', sans-serif !important; /* Ensure font consistency */
+    font-family: 'Favorit', sans-serif ; /* Ensure font consistency */
     color: #333; /* Darker color for the heading */
 }
 
 p {
-    font-family: "Favorit" !important;
+    font-family: "Favorit" ;
     font-size: 16px;
     color: #555; /* Slightly lighter color for paragraph text */
 }
@@ -118,14 +118,7 @@ p {
 }
 
 
-h1 {
-    font-size: 4rem; /* Adjust the size as needed */
-    font-family: 'Playfair Display', serif; /* Fancy font from the suggestion */
-    font-weight: bold; /* Make it stand out */
-    text-align: center; /* Center-align the text */
-    margin-bottom: 1rem; /* Add space below the heading */
-    color: hsl(0, 0%, 100%); /* Optional: change the text color */
-}
+
 .hero-section {
     display: flex;
     font-size: 1.5rem;
@@ -161,19 +154,10 @@ h1 {
     text-align: center;
     
 }
-h2, p {
-    font-family: 'Playfair Display', serif;
-}
-.section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
 
-.section p {
-    font-size: 1.25rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
+
+
+
 
 .services-grid {
     display: flex;
