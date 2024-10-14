@@ -1,12 +1,11 @@
-
+/*CSS reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
-    background: linear-gradient(to bottom, 
-    rgb(241, 241, 241) 0%,  /* Starting color */
-    #cccccc 25%,           /* Second color stop */
-    #888888 50%,           /* Middle color */
-    #444444 75%,           /* Fourth color stop */
-    #7a7a7a 100%           /* Ending color */
-);
+    background: #cccccc;
     /* color: rgb(7, 7, 7); */
     font-family: "Favorit" !important;
 
@@ -41,12 +40,12 @@ header img {
 
 h2 {
     font-family: "Favorit" !important;
-    font-size: 2.5rem; /* Adjust this value to achieve the desired size */
+    font-size: 1.5rem; /* Adjust this value to achieve the desired size */
     font-weight: bold; /* Optional: Set a suitable weight if needed */
 }
 h1 {
     font-family: "Favorit" !important;
-    font-size: 4rem; /* Adjust this value to achieve the desired size */
+    font-size: 2.5rem; /* Adjust this value to achieve the desired size */
     font-weight: bold; /* Optional: Set a suitable weight if needed */
 }
 p {
@@ -56,8 +55,7 @@ p {
 /*font-face rules*/
 @font-face {
     font-family: 'Favorit';
-    src: 
-         url('Favorit_Medium.woff2') format('woff2');
+    src: url('../fonts/Favorit_Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
 }
@@ -274,7 +272,10 @@ footer .social-media img {
     width: 24px;
 }
 
+
 .logo-container {
+    display: flex;
+    justify-content: center;
     width: 600px;
     margin: 2rem auto;
 }
@@ -314,54 +315,43 @@ footer .social-media img {
 .path-1 {
     animation-delay: 0.5s;
 }
-
 .path-2 {
     animation-delay: 0.5s;
 }
-
 .path-3 {
     animation-delay: 0.5s;
 }
-
 .path-4 {
     animation-delay: 0.5s;
 }
-
 .path-5 {
     animation-delay: 0.5s;
 }
-
 .path-6 {
     animation-delay: 0.5s;
 }
-
 .path-7 {
     animation-delay: 0.5s;
 }
-
 .path-8 {
     animation-delay: 0.5s;
 }
-
 .path-9 {
     animation-delay: 0.5s;
 }
-
 .path-10 {
     animation-delay: 0.5s;
 }
-
 .path-11 {
     animation-delay: 0.5s;
 }
-
 .circle {
     animation-delay: 1.75s;
 }
 
 /*More interactive nav bar*/
 .navbar {
-    background-color: rgba(255, 255, 255, 0) !important; 
+    background-color: rgb(214, 212, 212, 1) !important; 
     padding: 10px 20px; /* Add padding for a spacious look */
     border-radius: 5px; /* Slight rounding of corners */
     /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
@@ -384,12 +374,17 @@ footer .social-media img {
     padding: 10px; /* Add padding for a button-like feel */
     border-radius: 4px; /* Slight rounding of corners */
     transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    border: none; /* Ensure no border */
+    outline: none; /* Remove default outline */
+    box-shadow: none; /* Remove any shadow */
 }
 
 .navbar a:hover {
     background-color: rgba(0, 0, 0, 0.4); /* Light black on hover */
     color: #000; /* Black text on hover */
+    border: none; /* Ensure no border */
+    outline: none; /* Remove default outline */
+    box-shadow: none; /* Remove any shadow */
 }
-
 
 

@@ -10,19 +10,20 @@
     </head>
     <body>
         <!-- Navigation Bar -->
-        <header style="display: flex; justify-content: space-between; align-items: center; width: 100vw; position: fixed;">
-            <img src="img/MIBD logo transparent email.png" style="margin-left: 20px; width: 80px; height: auto;" id="base64logo">
-    
-            <div class="navbar" style="position: fixed; left: 50%; transform: translateX(-50%);">
+        <header style="display: flex; justify-content: space-between; align-items: center; width: 100vw; position: fixed; background-color: #083A81;">
+            <img src="img/logo_blue_notxt.png" style="margin-left: 20px; width: 80px; height: auto;" id="base64logo">
+            
+            <!-- <div class="navbar" style="position: fixed; left: 50%; transform: translateX(-50%);"> -->
+            <div class="navbar" style="position: fixed; right: 0;">
                 <ul style="list-style: none; padding: 0; margin: 0; display: flex;">
                     <li style="margin-right: 30px;">
-                        <a href="#about">About Us</a>
+                        <a href="#about">About</a>
                     </li>
                     <li style="margin-right: 30px;">
-                        <a href="#services">Our Services</a>
+                        <a href="#services">Services</a>
                     </li>
                     <li style="margin-right: 30px;">
-                        <a href="#team">Our Team</a>
+                        <a href="#team">Team</a>
                     </li>
                     <li>
                         <a href="#contact">Contact</a>
@@ -51,7 +52,7 @@
                 </svg>
             </div>
             <div class="hero-overlay">
-                <h1 style="color: black; font-family: 'Favorit'">MI Brand Distillery</h1>
+                <h1 style="color: black; text-align: center; font-family: 'Favorit'">MI BRAND DISTILLERY</h1>
                 <!-- <p>We distill brands to their pure essence, ensuring that your message is delivered with clarity and impact.</p> -->
                 <h2>Welcome to our MIBDimension!</h2>
                 <br>
@@ -289,6 +290,7 @@
         </div>
     </footer>
 
+
     <script>
         // Function to reset the SVG drawing
         function resetSVG() {
@@ -325,14 +327,31 @@
             resetSVG(); // Call the function to reset the SVG
             window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
         });
-        // Make the base64 logo clickable
-        document.getElementById('base64logo').addEventListener('click', function() {
-            document.getElementById('home-link').click(); // Trigger the Home link click
-        });
+
 
     </script>
-    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const logo = document.getElementById('base64logo');
+            const heroSection = document.querySelector('.hero-section');
+        
+            // Hide the logo initially
+            logo.style.display = "none";
+        
+            window.addEventListener('scroll', function() {
+                // Check if hero-section is not visible
+                const heroBottom = heroSection.getBoundingClientRect().bottom;
+                if (heroBottom < 0) {
+                    logo.style.display = "block";
+                } else {
+                    logo.style.display = "none";
+                }
+            });
+        });
+        </script>
     
     <script src="js/bootstrap.bundle.min.js"></script>
+
     </body>
 </html>
