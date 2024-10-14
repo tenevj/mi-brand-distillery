@@ -186,13 +186,13 @@ h2, p {
     text-align: center;
     transition: transform 0.3s ease;
     width: 100%;
-    max-width: 200px;
+    max-width: 250px;
 }
 
 .service-item img {
     width: 80%; /* Dynamic width relative to the card */
     height: auto; /* Maintain aspect ratio */
-    max-width: 100px; /* Optional: limit max width */
+    max-width: 200px; /* Optional: limit max width */
     margin-bottom: 10px; /* Space below the image */
 }
 
