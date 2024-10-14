@@ -26,7 +26,7 @@
                         <a href="#team">Team</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <a href="#footer">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -99,43 +99,6 @@
 
 
 
-
-
-
-
-<!-- Services Section 
-<section class="section" id="services">
-    <br>
-    <br>
-    <h2 style="color: black; font-weight: bold;">Our Services</h2>
-    <div class="services-grid">
-        <div class="service-item col-lg-4 col-md-6">
-            <img src="img/query.png" alt="Service Icon 1">
-            <p style="color: black;">Query building</p>
-        </div>
-        <div class="service-item col-lg-4 col-md-6">
-            <img src="img/s2.png" alt="Service Icon 2">
-
-            <p>Description of service two.</p>
-        </div>
-        <div class="service-item col-lg-4 col-md-6">
-            <img src="img/s1.png" alt="Service Icon 3">
-
-            <p>Description of service three.</p>
-        </div>
-        <div class="service-item col-lg-4 col-md-6">
-            <img src="img/s2.png" alt="Service Icon 4">
-
-            <p>Description of service four.</p>
-        </div> 
-    </div>
-</section>
-
-<div id="imageModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="fullImage">
-</div>-->
-
 <!-- Services Section -->
 <section class="section" id="services">
     <br>
@@ -144,11 +107,11 @@
     <div class="services-grid">
         <div class="service-item col-lg-4 col-md-6">
             <img src="img/query.png" alt="Service Icon 1" class="service-image">
-            <p style="color: black;">Query building</p>
+            <p>Query building</p>
         </div>
         <div class="service-item col-lg-4 col-md-6">
-            <img src="img/s2.png" alt="Service Icon 2" class="service-image">
-            <p>Description of service two.</p>
+            <img src="img/doklad1.png" alt="Service Image" id="serviceImage2">
+            <p>Report writing</p>
         </div>
         <div class="service-item col-lg-4 col-md-6">
             <img src="img/s1.png" alt="Service Icon 3" class="service-image">
@@ -165,6 +128,13 @@
 <div id="imageModal" class="modal">
     <span class="close">&times;</span>
     <img class="modal-content" id="fullImage">
+</div>
+<!-- Modal for Image Carousel -->
+<div id="imageCarousel" class="modal">
+    <span class="close">&times;</span>
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
+    <img class="modal-content" id="carouselImage">
 </div>
 
 
@@ -235,7 +205,7 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
+        <div class="footer-container" id="footer">
             <!-- Left Section: Logo -->
             <div class="footer-logo">
                 <img src="img/logo-wb.png" alt="Company Logo" style="width: 100px; height: auto;">
@@ -333,6 +303,40 @@
             // Close the modal
             closeSpan.onclick = function() {
                 modal.style.display = "none";
+            };
+        
+            window.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            };
+        });
+        </script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var modal = document.getElementById("imageCarousel");
+            var imgs = ["img/doklad1.png", "img/doklad2.png", "img/doklad3.png"];
+            var modalImg = document.getElementById("carouselImage");
+            var currentIndex = 0;
+        
+            document.getElementById('serviceImage2').onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = imgs[currentIndex];
+            };
+        
+            document.querySelector('.close').onclick = function() {
+                modal.style.display = "none";
+            };
+        
+            document.querySelector('.next').onclick = function() {
+                currentIndex = (currentIndex + 1) % imgs.length;
+                modalImg.src = imgs[currentIndex];
+            };
+        
+            document.querySelector('.prev').onclick = function() {
+                currentIndex = (currentIndex - 1 + imgs.length) % imgs.length;
+                modalImg.src = imgs[currentIndex];
             };
         
             window.onclick = function(event) {
