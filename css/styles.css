@@ -29,7 +29,7 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
     padding: 1rem 2rem;
     background: rgba(0, 51, 102, 0);
@@ -257,38 +257,6 @@ p {
 
 
 
-.contact-details {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    line-height: 1.5;
-}
-
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-footer .contact-info p,
-footer .social-media a {
-    margin: 5px 0;
-}
-
-footer .social-media a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem;
-    display: inline-block;
-}
-
-footer .social-media img {
-    height: 24px;
-    width: 24px;
-}
-
-
 .logo-container {
     display: flex;
     justify-content: center;
@@ -419,3 +387,31 @@ footer .social-media img {
 }
 
 
+
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Space between logo and content */
+    align-items: center; /* Center items vertically */
+    padding: 20px;
+    background-color: #333333; /* Your chosen background color */
+}
+
+.footer-logo img {
+    min-width: 250px;
+    max-width: 400px; /* Adjust logo size */
+}
+
+.footer-content {
+    text-align: right;
+    color: white; /* Text color for contrast */
+}
+
+.contact p {
+    margin: 0; /* Remove default margin for p elements */
+}
+
+.social-media img {
+    margin-left: 10px; /* Space between icons if there are multiple */
+}
