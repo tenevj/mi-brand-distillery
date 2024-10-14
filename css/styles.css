@@ -97,10 +97,7 @@ p {
     height: auto; /* Maintains aspect ratio */
 }
 
-.col-md-6 > .embed-responsive {
-    max-height: none; /* Reset any default max-height */
-    height: 100%; /* Ensure it stretches to full column height */
-}
+
 
 .embed-responsive-item {
     height: 100%;
@@ -114,11 +111,7 @@ p {
     line-height: 1.8;
 }
 
-.card:hover {
-    transform: translateY(-15px) translateX(5px);
-    box-shadow: -5px 15px 30px rgba(0, 0, 0, 1) !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+
 h1 {
     font-size: 4rem; /* Adjust the size as needed */
     font-family: 'Playfair Display', serif; /* Fancy font from the suggestion */
@@ -225,14 +218,10 @@ h2, p {
     border-radius: 8px;
 }
 
-.team-cards {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
 
-.card {
+
+
+/* .card {
     background: rgba(255, 255, 255, 0.1);
     width: 100%;
     max-width: 300px;
@@ -241,7 +230,11 @@ h2, p {
     text-align: center;
     transition: transform 0.3s ease;
 }
-
+.card:hover {
+    transform: translateY(-15px) translateX(5px);
+    box-shadow: -5px 15px 30px rgba(0, 0, 0, 1) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 .card img {
     border-radius: 50%;
     width: 150px;
@@ -254,7 +247,55 @@ h2, p {
 
 .card p {
     color: #ffcc00;
+} */
+
+
+
+
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 400px;/*calc(33.33% - 1rem); /* Responsive, maintains 3 cards per row */
+    margin: 0.5rem; /* To align with spacing */
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, height 0.3s ease;
+    overflow: hidden; /* Hide extra content until hover */
+    min-height: 250px; /* Set initial uniform height */
 }
+
+.card:hover {
+    transform: translateY(-15px) translateX(5px);
+    box-shadow: -5px 15px 30px rgba(0, 0, 0, 1) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
+    min-height: 320px; /* Increase height to reveal hidden text */
+}
+
+.card img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    transition: transform 0.3s ease;
+}
+
+.card h3 {
+    margin: 1rem 0;
+}
+
+.card p {
+    color: #ffcc00;
+    display: none; /* Initially hide additional text */
+}
+
+.card:hover p.text-muted {
+    display: block; /* Show text on hover */
+}
+
+
+
+
 
 .contact-details {
     max-width: 800px;
