@@ -38,18 +38,21 @@ header img {
     max-height: 50px;
 }
 
-h2 {
-    font-family: "Favorit" !important;
-    font-size: 1.5rem; /* Adjust this value to achieve the desired size */
-    font-weight: bold; /* Optional: Set a suitable weight if needed */
-}
+
 h1 {
     font-family: "Favorit" !important;
     font-size: 2.5rem; /* Adjust this value to achieve the desired size */
     font-weight: bold; /* Optional: Set a suitable weight if needed */
 }
+h2 {
+    font-family: 'Favorit', sans-serif !important; /* Ensure font consistency */
+    color: #333; /* Darker color for the heading */
+}
+
 p {
     font-family: "Favorit" !important;
+    font-size: 16px;
+    color: #555; /* Slightly lighter color for paragraph text */
 }
 
 /*font-face rules*/
@@ -64,17 +67,29 @@ p {
 
 
 /* Hover effect for entire list item */
+.container {
+    padding: 40px 0; /* Add vertical padding for spacing */
+    text-align: center; /* Center the text container-wide */
+}
+
+.hover-list {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0;
+}
+
 .hover-list li {
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin: 12px 0; /* Add margin between list items */
+    padding: 8px; /* Add some padding for visual aesthetics */
+    background-color: rgba(240,240,240,0.8); /* Light background for list items */
+    border-radius: 5px; /* Add rounded corners */
+    transition: background-color 0.3s; /* Smooth hover transition */
 }
 
 .hover-list li:hover {
-    background-color: rgba(0, 123, 255, 0.1); /* Merged background color */
-    color: #333; /* Ensure text color change */
-    transform: scale(1.1); /* Combined scaling */
-    cursor: pointer; /* Unified cursor style */
-    transition: all 0.3s ease; /* Ensure smooth transition for all properties */
+    background-color: rgba(220,220,220,1); /* Slightly darker on hover */
 }
+
+
 
 /* Ensure the video scales well */
 .embed-responsive {
@@ -356,10 +371,21 @@ footer .social-media img {
     position: fixed;
     height: 80px;
     display: flex;
-    padding: 10px 20px; /* Add padding for a spacious look */
-    border-radius: 5px; /* Slight rounding of corners */
-    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    padding: 10px 20px; 
+    border-radius: 5px; 
 }
+/* .navbar {
+    position: fixed;
+    right: 0;
+    height: 70px;
+    background-color: white; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    padding: 0 20px;
+    width: 100%; 
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1); 
+} */
 
 .navbar ul {
     list-style: none;
