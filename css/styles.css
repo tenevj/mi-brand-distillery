@@ -350,8 +350,12 @@ footer .social-media img {
 }
 
 /*More interactive nav bar*/
+
 .navbar {
     background-color: rgb(214, 212, 212, 1) !important; 
+    position: fixed;
+    height: 80px;
+    display: flex;
     padding: 10px 20px; /* Add padding for a spacious look */
     border-radius: 5px; /* Slight rounding of corners */
     /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
