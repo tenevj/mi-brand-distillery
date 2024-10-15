@@ -50,22 +50,75 @@ body {
 
 
 
-
+/* 
 header {
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0 0;
     background: rgba(0, 51, 102, 0);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+} */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 60px;
+    position: fixed;
+    background-color: #000000;
+    padding: 0px; /* Remove any implicit padding */
+    margin: 10px -20px; /* Remove any implicit margin */
+    z-index: 1000;
 }
-
 header img {
     max-height: 50px;
 }
+
+/*More interactive nav bar*/
+.navbar {
+    background-color: rgb(214, 212, 212, 0) !important; 
+    position: fixed;
+    height: 80px;
+    display: flex;
+    padding: 0px 0px; 
+    border-radius: 5px; 
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-size: larger;
+    font-weight: bold;
+    color: #ffffff;
+}
+.navbar li {
+    margin-right: 30px; /* Space between items */
+}
+.navbar a {
+    color: #ffffff; /* Dark gray text for contrast */
+    text-decoration: none; /* Remove underline */
+    padding: 10px; /* Add padding for a button-like feel */
+    border-radius: 4px; /* Slight rounding of corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    border: none; /* Ensure no border */
+    outline: none; /* Remove default outline */
+    box-shadow: none; /* Remove any shadow */
+}
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 1); /* Light black on hover */
+    color: #050505; /* Black text on hover */
+    border: none; /* Ensure no border */
+    outline: none; /* Remove default outline */
+    box-shadow: none; /* Remove any shadow */
+}
+
+
+
 
 
 h1 {
@@ -404,50 +457,6 @@ p {
 
 
 
-
-/*More interactive nav bar*/
-
-.navbar {
-    background-color: rgb(214, 212, 212, 0) !important; 
-    position: fixed;
-    height: 80px;
-    display: flex;
-    padding: 0px 0px; 
-    border-radius: 5px; 
-}
-
-.navbar ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    font-size: larger;
-    font-weight: bold;
-    color: #ffffff;
-}
-
-.navbar li {
-    margin-right: 30px; /* Space between items */
-}
-
-.navbar a {
-    color: #ffffff; /* Dark gray text for contrast */
-    text-decoration: none; /* Remove underline */
-    padding: 10px; /* Add padding for a button-like feel */
-    border-radius: 4px; /* Slight rounding of corners */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
-    border: none; /* Ensure no border */
-    outline: none; /* Remove default outline */
-    box-shadow: none; /* Remove any shadow */
-}
-
-.navbar a:hover {
-    background-color: rgba(255, 255, 255, 1); /* Light black on hover */
-    color: #050505; /* Black text on hover */
-    border: none; /* Ensure no border */
-    outline: none; /* Remove default outline */
-    box-shadow: none; /* Remove any shadow */
-}
 
 
 
