@@ -22,18 +22,23 @@ body {
     margin: 0;
     height: 100%;
     
-    background-image: url('data:image/svg+xml,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2C270%20L170%2C10%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M300%2C220%20L430%2C10%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M268%2C375%20L332%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M530%2C375%20L590%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M268%2C375%20L108%2C113%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M332%2C270%20L170%2C10%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M530%2C375%20L365%2C115%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M590%2C270%20L430%2C10%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2C270%20L200%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M332%2C270%20L460%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M590%2C270%20L725%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%22680%22%20cy%3D%22250%22%20r%3D%2255%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22/%3E%0A%20%20%20%20%3C/svg%3E%0A%20%20%20%20');
-    background-image: url('../img/bg5.jpg'); 
-
-    
+    /* background-image: url('data:image/svg+xml,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2C270%20L170%2C10%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M300%2C220%20L430%2C10%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M268%2C375%20L332%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M530%2C375%20L590%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M268%2C375%20L108%2C113%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M332%2C270%20L170%2C10%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M530%2C375%20L365%2C115%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M590%2C270%20L430%2C10%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2C270%20L200%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M332%2C270%20L460%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M590%2C270%20L725%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%22680%22%20cy%3D%22250%22%20r%3D%2255%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22/%3E%0A%20%20%20%20%3C/svg%3E%0A%20%20%20%20');
+    background-image: url('../img/bg8.jpg');    
     background-repeat: no-repeat;
     background-position-y: 5rem;
     background-position-x: 5rem;
     background-position: calc(50% + 18px) center;
     background-size: contain;
     background-attachment: fixed;
-    background-color: white;
+    background-color: white; */
 
+
+    background-image: url('../img/bg11_400x.jpg');
+    background-repeat: repeat; /* Ensures the image repeats seamlessly */
+    background-position: 0 0; /* Begins the image tiling from the top left */
+    background-size: auto; /* Maintains the original size without scaling */
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+    background-color: transparent; /* Removes white background fields */
 }
 
 
@@ -414,6 +419,9 @@ p {
     display: flex;
     margin: 0;
     padding: 0;
+    font-size: larger;
+    font-weight: bold;
+    color: #000;
 }
 
 .navbar li {
@@ -448,7 +456,7 @@ p {
     justify-content: space-between; /* Space between logo and content */
     align-items: center; /* Center items vertically */
     padding: 20px;
-    background-color: #083A81; /* Your chosen background color */
+    background-color: #161616; /* Your chosen background color */
 }
 
 .footer-logo img {
@@ -463,6 +471,7 @@ p {
 
 .contact p {
     margin: 0; /* Remove default margin for p elements */
+    padding-bottom: 1rem;
 }
 
 .social-media img {
