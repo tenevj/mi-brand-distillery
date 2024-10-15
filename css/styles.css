@@ -1,16 +1,12 @@
-/*CSS reset*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    /*background: #b4b4b4;*/
-    /* color: rgb(7, 7, 7); */
-    background-image: url('../img/grey_textured.jpg'); /* Image path */
-    background-repeat: repeat; /* Repeat the image seamlessly */
-    background-size: auto; /* Use original image size for tiling */
-    background-position: top left; /* Align starting point for tiling */
+
+/* body {
+
+    background-image: url('../img/bm4.jpeg'); 
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: top left;    
+
+
     
     font-family: "Favorit" ;
 
@@ -20,7 +16,33 @@ body {
     box-sizing: border-box;
     scroll-behavior: smooth;
     
+} */
+
+body {
+    margin: 0;
+    height: 100%;
+    
+    background-image: url('data:image/svg+xml,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2C270%20L170%2C10%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M300%2C220%20L430%2C10%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M268%2C375%20L332%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M530%2C375%20L590%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M268%2C375%20L108%2C113%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M332%2C270%20L170%2C10%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M530%2C375%20L365%2C115%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M590%2C270%20L430%2C10%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2C270%20L200%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M332%2C270%20L460%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M590%2C270%20L725%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%22680%22%20cy%3D%22250%22%20r%3D%2255%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22/%3E%0A%20%20%20%20%3C/svg%3E%0A%20%20%20%20');
+    background-image: url('../img/bg5.jpg'); 
+
+    
+    background-repeat: no-repeat;
+    background-position-y: 5rem;
+    background-position-x: 5rem;
+    background-position: calc(50% + 18px) center;
+    background-size: contain;
+    background-attachment: fixed;
+    background-color: white;
+
 }
+
+
+
+
+
+
+
+
 
 .hero-overlay {
     font-family: "Favorit" ;
@@ -80,20 +102,21 @@ p {
 }
 
 .hover-list {
-    list-style-type: none; /* Remove default bullets */
+    list-style-type: none;
     padding-left: 0;
 }
 
 .hover-list li {
     margin: 12px 0; /* Add margin between list items */
     padding: 8px; /* Add some padding for visual aesthetics */
-    background-color: rgba(240,240,240,0.8); /* Light background for list items */
+    background-color: #c8c8c896; /* Light background for list items */
     border-radius: 5px; /* Add rounded corners */
     transition: background-color 0.3s; /* Smooth hover transition */
+
 }
 
 .hover-list li:hover {
-    background-color: rgba(220,220,220,1); /* Slightly darker on hover */
+    background-color: rgba(200,200,200,1); /* Slightly darker on hover */
 }
 
 
@@ -374,104 +397,17 @@ p {
 
 
 
-.logo-container {
-    display: flex;
-    justify-content: center;
-    width: 600px;
-    margin: 2rem auto;
-}
-
-.logo-part {
-    stroke: black; /* Initial stroke color */
-    stroke-width: 8; /* Initial stroke width */
-    fill: none; /* No fill */
-    stroke-linecap: round; /* Rounded ends */
-    stroke-dasharray: 0 400; /* Defines the pattern of dashes and gaps */
-    stroke-dashoffset: 10; /* Defines the starting position of the dash */
-    animation: draw 2s linear forwards, increaseStrokeWidth 6s ease-in-out 3s forwards; /* Animation chaining */
-}
-
-/* Keyframes for the drawing animation */
-@keyframes draw {
-    from {
-        stroke-dasharray: 0 400; /* Start with no visible stroke */
-        stroke-dashoffset: 0; /* Start at the beginning of the path */
-    }
-    to {
-        stroke-dasharray: 400 0; /* Complete the drawing */
-        stroke-dashoffset: 0; /* End at the end of the path */
-    }
-}
-
-/* Keyframes for increasing stroke width */
-@keyframes increaseStrokeWidth {
-    from {
-        stroke-width: 8; /* Initial stroke width */
-    }
-    to {
-        stroke-width: 20; /* Desired final stroke width */
-    }
-}
-
-.path-1 {
-    animation-delay: 0.5s;
-}
-.path-2 {
-    animation-delay: 0.5s;
-}
-.path-3 {
-    animation-delay: 0.5s;
-}
-.path-4 {
-    animation-delay: 0.5s;
-}
-.path-5 {
-    animation-delay: 0.5s;
-}
-.path-6 {
-    animation-delay: 0.5s;
-}
-.path-7 {
-    animation-delay: 0.5s;
-}
-.path-8 {
-    animation-delay: 0.5s;
-}
-.path-9 {
-    animation-delay: 0.5s;
-}
-.path-10 {
-    animation-delay: 0.5s;
-}
-.path-11 {
-    animation-delay: 0.5s;
-}
-.circle {
-    animation-delay: 1.75s;
-}
 
 /*More interactive nav bar*/
 
 .navbar {
-    background-color: rgb(214, 212, 212, 1) !important; 
+    background-color: rgb(214, 212, 212, 0.7) !important; 
     position: fixed;
     height: 80px;
     display: flex;
-    padding: 10px 20px; 
+    padding: 0px 0px; 
     border-radius: 5px; 
 }
-/* .navbar {
-    position: fixed;
-    right: 0;
-    height: 70px;
-    background-color: white; 
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; 
-    padding: 0 20px;
-    width: 100%; 
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.1); 
-} */
 
 .navbar ul {
     list-style: none;
@@ -481,7 +417,7 @@ p {
 }
 
 .navbar li {
-    margin-right: 10px; /* Space between items */
+    margin-right: 30px; /* Space between items */
 }
 
 .navbar a {
@@ -512,7 +448,7 @@ p {
     justify-content: space-between; /* Space between logo and content */
     align-items: center; /* Center items vertically */
     padding: 20px;
-    background-color: #333333; /* Your chosen background color */
+    background-color: #083A81; /* Your chosen background color */
 }
 
 .footer-logo img {
@@ -532,3 +468,52 @@ p {
 .social-media img {
     margin-left: 10px; /* Space between icons if there are multiple */
 }
+
+
+
+
+.logo-background {
+    width: 100%;
+    opacity: 0.1; 
+} 
+#logoto {
+    display: block;
+    width: 100%;
+    height: auto; 
+}
+.logo-part {
+    stroke: black;
+    stroke-width: 8;
+    fill: none;
+    stroke-linecap: round;
+    stroke-dasharray: 0 400;
+    stroke-dashoffset: 10;
+    animation: draw 2s linear forwards, increaseStrokeWidth 6s ease-in-out 3s forwards;
+}
+@keyframes draw {
+    from {
+        stroke-dasharray: 0 400;
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dasharray: 400 0;
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes increaseStrokeWidth {
+    from {
+        stroke-width: 8;
+    }
+    to {
+        stroke-width: 20;
+    }
+}
+.path-1, .path-2, .path-3, .path-4, .path-5,
+.path-6, .path-7, .path-8, .path-9, .path-10, .path-11 {
+    animation-delay: 0.5s;
+}
+.circle {
+    animation-delay: 1.75s;
+} 
+
+
