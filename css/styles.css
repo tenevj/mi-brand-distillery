@@ -408,7 +408,7 @@ p {
 /*More interactive nav bar*/
 
 .navbar {
-    background-color: rgb(214, 212, 212, 0.7) !important; 
+    background-color: rgb(214, 212, 212, 0) !important; 
     position: fixed;
     height: 80px;
     display: flex;
@@ -423,7 +423,7 @@ p {
     padding: 0;
     font-size: larger;
     font-weight: bold;
-    color: #000;
+    color: #ffffff;
 }
 
 .navbar li {
@@ -431,7 +431,7 @@ p {
 }
 
 .navbar a {
-    color: #333; /* Dark gray text for contrast */
+    color: #ffffff; /* Dark gray text for contrast */
     text-decoration: none; /* Remove underline */
     padding: 10px; /* Add padding for a button-like feel */
     border-radius: 4px; /* Slight rounding of corners */
@@ -442,8 +442,8 @@ p {
 }
 
 .navbar a:hover {
-    background-color: rgba(0, 0, 0, 0.4); /* Light black on hover */
-    color: #000; /* Black text on hover */
+    background-color: rgba(255, 255, 255, 1); /* Light black on hover */
+    color: #050505; /* Black text on hover */
     border: none; /* Ensure no border */
     outline: none; /* Remove default outline */
     box-shadow: none; /* Remove any shadow */
