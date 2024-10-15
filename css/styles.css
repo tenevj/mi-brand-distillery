@@ -49,10 +49,6 @@ body {
 
 
 
-.hero-overlay {
-    font-family: "Favorit" ;
-    transition: background-color 0.3s ease;
-}
 
 
 header {
@@ -117,7 +113,8 @@ p {
     background-color: #c8c8c896; /* Light background for list items */
     border-radius: 5px; /* Add rounded corners */
     transition: background-color 0.3s; /* Smooth hover transition */
-
+    font-variant-caps: all-small-caps;
+    font-weight: bolder;
 }
 
 .hover-list li:hover {
@@ -147,18 +144,23 @@ p {
 }
 
 
-
 .hero-section {
     display: flex;
-    font-size: 1.5rem;
+    font-size: 2vw; /* Use viewport width units for responsiveness */
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 60vh;
     text-align: center;
     background: transparent;
-    padding-top: 80px;
+    padding: 5vh 2vw; /* Adjust padding to be responsive */
+ }
+ .hero-overlay {
+    font-family: "Favorit" ;
+    font-size: 2vw;
+    transition: background-color 0.3s ease;
 }
+
 
 .cta-button {
     padding: 1rem 2rem;
