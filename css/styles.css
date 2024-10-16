@@ -181,11 +181,12 @@ p {
     min-height: 60vh;
     text-align: center;
     background: transparent;
-    padding: 5vh 2vw; /* Adjust padding to be responsive */
+    padding: 2vh 2vw; /* Adjust padding to be responsive */
  }
  .hero-overlay {
     font-family: "Favorit" ;
     transition: background-color 0.3s ease;
+
 }
 
 
@@ -211,68 +212,68 @@ p {
 .section {
     padding: 4rem 0;
     text-align: center;
-    
+    width: 100%;
 }
-
-
 
 .services-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 2rem;
-    gap: 0;
+    gap: 20px;
 }
 
-/* .service-item {
-    position: relative;
-    flex: 1;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 2rem;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    width: 100%;
-    max-width: none;
-    max-height: auto;
-    overflow: hidden;
-}
-
-.service-item img {
-    display: block;  
-    width: 100%;
-    height: 60%;
-    object-fit: cover;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    border-radius: 8px;
-}
-.service-item p {
-    position: absolute;
-    color: black;
-    font-size: 1.5rem;
-} */
 
 /* Service Item Adjustments */
+/* .service-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 2rem;
+}
+.service-item img {
+    width: 20rem;
+    height: 15rem;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    margin: 0;
+} */
 .service-item {
     position: relative;
     overflow: hidden;
-    border-radius: 8px; /* optional, for rounded corners */
-    box-sizing: border-box; /* Ensure padding and borders are included in the total width and height */
-    height: auto; /* Fixed height ensures uniformity */
-    max-width: 300px; /* Width adjusts with container */
+    border-radius: 8px;
+    box-sizing: border-box;
+    flex: 0 0 100%; /* Default to full-width */
+    max-width: 100%; /* Ensures no overflow */
+    height: auto; /* Adaptable height */
     padding: 2rem;
+}
 
+/* Responsive settings to fit three cards per row based on Bootstrap breakpoints */
+@media (min-width: 992px) { /* Large screens */
+    .service-item {
+        flex: 0 0 30%; /* Approximately 1/3 of the row */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) { /* Medium screen */
+    .service-item {
+        flex: 0 0 45%; /* About half of the row for medium screen */
+    }
 }
 
 .service-item img {
-    width: 250px;
-    height: 150px; /* Maintain aspect ratio with auto, not defined container height */
+    width: 100%; /* Use full width of the item for responsiveness */
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover;
     display: block;
     border-radius: 8px;
     margin: 0;
 }
+
+
 
 .service-item p {
     position: absolute;
@@ -402,17 +403,24 @@ p {
 
 .card:hover {
     transform: translateY(-15px) translateX(5px);
-    box-shadow: -5px 15px 30px rgba(0, 0, 0, 1) !important;
+    box-shadow: -5px 15px 30px rgba(0, 0, 0, 1) ;
     transition: transform 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
     min-height: 320px; /* Increase height to reveal hidden text */
 }
 
 .card img {
     border-radius: 90%;
-    width: 400px; /* Increase width for larger display */
-    height: 400px; /* Increase height proportionally */
+    width: 150px ;
+    height: 150px ;
     transition: transform 0.3s ease;
 }
+
+.video-container video:hover {
+    /* Transform can be applied if you want hover effects to play on video overlay */
+    transform: scale(1.1);
+}
+
+
 
 .card h3 {
     margin: 1rem 0;
