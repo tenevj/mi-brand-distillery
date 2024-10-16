@@ -19,9 +19,9 @@
             <img src="img/logo_bw_notxt_transparent.png" style="margin-left: 50px; width: auto; height: auto;" id="base64logo">
             
             <!-- <div class="navbar" style="position: fixed; left: 50%; transform: translateX(-50%);"> -->
-            <div class="navbar" style="right: 0;">
+            <div class="navbar" >
                 <ul>
-                    <li style="margin-right: 30px;">
+                    <li>
                         <a href="#about">About</a>
                     </li>
                     <li>
@@ -115,17 +115,10 @@
             <p>Report writing</p>
         </div>
         <div class="service-item col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
-            <img src="img/query.png" alt="Service Icon 1" class="service-image">
+            <img src="img/data1.jpg" alt="Service Icon 1" class="service-image">
             <p>Data processing</p>
         </div>
-        <div class="service-item col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
-            <img src="img/doklad1.png" alt="Service Image" id="serviceImage2">
-            <p>Platform set-up</p>
-        </div>
-        <div class="service-item col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
-            <img src="img/query.png" alt="Service Icon 1" class="service-image">
-            <p>Media Monitoring & Analysis​</p>
-        </div>
+
 
     </div>
 </section>
@@ -228,6 +221,21 @@
                         </a>
                         <div class="card-body">
                             <p class="card-title">Kostadin Kostov</p>
+                            <p class="card-text" >Project Lead, MI&A Services​</p>
+                            <p class="text-muted">20+ years in MMA and Data Processing​​</p>
+                                <p class="text-muted">Led projects for various clients​</p>
+                                    <p class="text-muted">Produced Newsletters for various companies and government agencies, ranging from mining to genomics, to space exploration</p>
+                                        <p class="text-muted">Managing, training people, project workflow mapping</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
+                    <div class="card h-100 text-center">
+                        <a href="#" class="d-block">
+                            <img src="img/kocho1.png" class="card-img-top rounded-circle mx-auto mt-3" alt="Employee Image" >
+                        </a>
+                        <div class="card-body">
+                            <p class="card-title">Alexandra Karadzhilova</p>
                             <p class="card-text" >Project Lead, MI&A Services​</p>
                             <p class="text-muted">20+ years in MMA and Data Processing​​</p>
                                 <p class="text-muted">Led projects for various clients​</p>
@@ -438,9 +446,9 @@ document.addEventListener("DOMContentLoaded", function() {
             var serviceImages = document.querySelectorAll(".service-item img");
         
             // Image arrays for different services
-            var service1Imgs = ["img/query.png", "img/query1.png"];
+            var service1Imgs = ["img/query.png", "img/query1.png", "img/query3.jpg"];
             var service2Imgs = ["img/doklad1.png", "img/doklad2.png", "img/doklad3.png"];
-            var service3Imgs = ["img/service3img1.png", "img/service3img2.png"]; // Add images for Service 3
+            var service3Imgs = ["img/data1.jpg", "img/data1.jpg"]; // Add images for Service 3
         
             var currentIndex = 0;
             var currentServiceImgs = []; // Flexible array for current service images
