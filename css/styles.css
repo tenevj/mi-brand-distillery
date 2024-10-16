@@ -4,11 +4,11 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-image: url('../img/wcp6.png');
+    background-image: url('../img/wcp7.png');
     /* background-color: #fffff0 !important;  */
     background-repeat:no-repeat; /* Ensures the image repeats seamlessly */
-    background-position: 0 0; /* Begins the image tiling from the top left */
-    background-size: cover; /*auto;*/
+    background-position: center;/*0 0; /* Begins the image tiling from the top left */
+    background-size: cover; /* contain / auto;*/
     background-attachment: fixed; /* Keeps the background fixed during scrolling */
     background-color: transparent; /* Removes white background fields */
  
