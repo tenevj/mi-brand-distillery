@@ -67,29 +67,35 @@
                     <br>
                 </div>
             </div>
-        </section>
-
-<!-- Flex Section -->
-<section class="section" id="flex">
+    </section>
 
 
+    <section id="platforms-section">
+        <div class="scrolling-image-container">
+            <img src="img/pf1.png" class="scrolling-image" alt="Scrolling Belt Image">
+            <img src="img/pf1.png" class="scrolling-image duplicate" alt="Scrolling Belt Image Duplicate">
+        </div>
+    </section>
 
-<div class="container d-flex justify-content-center align-items-center" id="about">
-    <div class="row">
-        <!-- Left Column: Text Section -->
-        <div class="col-md-10 mx-auto">
-            <div class="p-4">
-                <h2 style="color: black; font-weight: bold; font-size: 3rem;">Who We Are</h2>
-                <ul class="hover-list">
-                    <li>MI Brand Distillery is a valued partner of PR and Communication professionals.</li>
-                    <li>With a cumulative experience that spans decades, our team offers a suite of tailored services including media monitoring, sentiment analysis, crisis monitoring, industry landscape analysis, and competitor analysis.</li>
-                    <li>At MI Brand Distillery, our core value is the happiness of our people, and our mission is the happiness of our clients.</li>
-                </ul>
+    
+    <!-- Flex Section -->
+    <section class="section" id="flex">
+    <div class="container d-flex justify-content-center align-items-center" id="about">
+        <div class="row">
+            <!-- Left Column: Text Section -->
+            <div class="col-md-10 mx-auto">
+                <div class="p-4">
+                    <h2 style="color: black; font-weight: bold; font-size: 3rem;">Who We Are</h2>
+                    <ul class="hover-list">
+                        <li>MI Brand Distillery is a valued partner of PR and Communication professionals.</li>
+                        <li>With a cumulative experience that spans decades, our team offers a suite of tailored services including media monitoring, sentiment analysis, crisis monitoring, industry landscape analysis, and competitor analysis.</li>
+                        <li>At MI Brand Distillery, our core value is the happiness of our people, and our mission is the happiness of our clients.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
-</section>
+    </section>
 
 
 
@@ -191,7 +197,7 @@
                 <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
                     <div class="card h-100 text-center">
                         <a href="#" class="d-block">
-                            <img src="img/dh1.png" class="card-img-top rounded-circle mx-auto mt-3" alt="Employee Image" >
+                            <img src="img/dh1.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="Employee Image" >
                         </a>
                         <div class="card-body">
                             <p class="card-title">Deyan Haustov​</p>
@@ -321,6 +327,21 @@
 
 
 <!-- Scripts -->
+
+<script> /* Belt orbit */
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const container = document.querySelector('.scrolling-image-container');
+    
+        // Optional: Pause on hover and restart on mouse leave
+        container.addEventListener('mouseover', () => {
+            container.style.animationPlayState = 'paused';
+        });
+    
+        container.addEventListener('mouseout', () => {
+            container.style.animationPlayState = 'running';
+        });
+    });
+    </script>
 
 <script>//<!-- Counter animation -->
 document.addEventListener("DOMContentLoaded", function() {

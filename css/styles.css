@@ -11,8 +11,9 @@ body {
     background-size: cover; /* contain / auto;*/
     background-attachment: fixed; /* Keeps the background fixed during scrolling */
     background-color: transparent; /* Removes white background fields */
-    -webkit-text-size-adjust: 100%; /*better readability on mobile devices within WebKit browsers*/
- 
+    -webkit-text-size-adjust: auto; /*better readability on mobile devices within WebKit browsers*/
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: auto;
 }
 h1 {
     font-family: "Favorit", sans-serif ;
@@ -174,6 +175,32 @@ header img {
     text-align: center;
 }
 
+
+
+#platforms-section {
+    overflow: hidden; /* Hide overflow to avoid showing images outside the container */
+    position: relative;
+    width: 100%; /* Make the section take full width */
+    height: 134px; /* Set height to match the image height */
+}
+.scrolling-image-container {
+    display: flex; 
+    position: absolute;
+    width: calc(2356px * 2); /* Width for two images side by side */
+    animation: scroll-belt 10s linear infinite; /* Animation for scrolling */
+}
+.scrolling-image {
+    width: 2356px; /* Each image width */
+    height: 134px; /* Match the image's height */
+}
+@keyframes scroll-belt {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-2356px); /* Move left by the width of one image */
+    }
+}
 
 
 
@@ -353,7 +380,7 @@ header img {
     min-height: 250px; /* Set initial uniform height */
 }
 .card-text{
-    color: #d84315; font-size: 3vh;
+    color: #d84315; font-size: 2.5vh;
 }
 .card-title{
     font-size: 3vh;
