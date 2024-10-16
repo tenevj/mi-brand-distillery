@@ -1,19 +1,8 @@
 body {
     margin: 0;
+    padding: 0;
     height: 100%;
-    
-    /* background-image: url('data:image/svg+xml,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22800%22%20height%3D%22400%22%20viewBox%3D%220%200%20800%20400%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2C270%20L170%2C10%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M300%2C220%20L430%2C10%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M268%2C375%20L332%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M530%2C375%20L590%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M268%2C375%20L108%2C113%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M332%2C270%20L170%2C10%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M530%2C375%20L365%2C115%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M590%2C270%20L430%2C10%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2C270%20L200%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M332%2C270%20L460%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M590%2C270%20L725%2C270%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%22680%22%20cy%3D%22250%22%20r%3D%2255%22%20stroke%3D%22%238f8f8f%22%20stroke-width%3D%2216%22%20fill%3D%22none%22/%3E%0A%20%20%20%20%3C/svg%3E%0A%20%20%20%20');
-    background-image: url('../img/bg8.jpg');    
-    background-repeat: no-repeat;
-    background-position-y: 5rem;
-    background-position-x: 5rem;
-    background-position: calc(50% + 18px) center;
-    background-size: contain;
-    background-attachment: fixed;
-    background-color: white; */
-
-
-    background-image: url('../img/bg11_400x.jpg');
+    background-image: url('../img/bg13.jpg');
     background-repeat: repeat; /* Ensures the image repeats seamlessly */
     background-position: 0 0; /* Begins the image tiling from the top left */
     background-size: auto; /* Maintains the original size without scaling */
@@ -21,19 +10,6 @@ body {
     background-color: transparent; /* Removes white background fields */
 }
 
-
-/* 
-header {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    padding: 0 0;
-    background: rgba(0, 51, 102, 0);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-} */
 header {
     display: flex;
     justify-content: space-between;
@@ -89,10 +65,6 @@ header img {
     box-shadow: none; /* Remove any shadow */
 }
 
-
-
-
-
 h1 {
     font-family: "Favorit", sans-serif ;
     font-size: 2.5rem;
@@ -106,13 +78,11 @@ h2 {
     font-weight: bold;
     color: #000000;
 }
-
 p {
     font-family: "Favorit" ;
     font-size: 16px;
     color: #272727; /* Slightly lighter color for paragraph text */
 }
-
 /*font-face rules*/
 @font-face {
     font-family: 'Favorit';
@@ -127,14 +97,13 @@ p {
 /* Hover effect for entire list item */
 .container {
     padding: 0 0; 
+    margin: auto;
     text-align: center;    
 }
-
 .hover-list {
     list-style-type: none;
     padding-left: 0;
 }
-
 .hover-list li {
     margin: 12px 0; /* Add margin between list items */
     padding: 8px; /* Add some padding for visual aesthetics */
@@ -144,31 +113,8 @@ p {
     font-variant-caps: all-small-caps;
     font-weight: bolder;
 }
-
 .hover-list li:hover {
     background-color: rgba(200,200,200,1); /* Slightly darker on hover */
-}
-
-
-
-/* Ensure the video scales well */
-.embed-responsive {
-    max-width: 100%; /* Ensures it doesn't overflow */
-    height: auto; /* Maintains aspect ratio */
-}
-
-
-
-.embed-responsive-item {
-    height: 100%;
-    width: 100%; /* Maintain video aspect ratio */
-}
-
-
-
-.hover-text {
-    margin-bottom: 10px;
-    line-height: 1.8;
 }
 
 
@@ -181,13 +127,21 @@ p {
     min-height: 60vh;
     text-align: center;
     background: transparent;
-    padding: 2vh 2vw; /* Adjust padding to be responsive */
+    margin-top: 2rem;
+    
  }
- .hero-overlay {
+
+.logo-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 1rem auto; /* Centering within the hero section*/
+}
+
+.hero-overlay {
     font-family: "Favorit" ;
     transition: background-color 0.3s ease;
-
 }
+
 
 
 .cta-button {
@@ -206,14 +160,16 @@ p {
 }
 
 .content {
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .section {
-    padding: 4rem 0;
+    padding: 1rem 0;
     text-align: center;
-    width: 100%;
 }
+
+
+
 
 .services-grid {
     display: flex;
@@ -222,55 +178,45 @@ p {
     margin-top: 2rem;
     gap: 20px;
 }
-
-
-/* Service Item Adjustments */
-/* .service-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    box-sizing: border-box;
-    padding: 2rem;
-}
-.service-item img {
-    width: 20rem;
-    height: 15rem;
-    object-fit: cover;
-    display: block;
-    border-radius: 8px;
-    margin: 0;
-} */
 .service-item {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
     box-sizing: border-box;
-    flex: 0 0 100%; /* Default to full-width */
-    max-width: 100%; /* Ensures no overflow */
-    height: auto; /* Adaptable height */
-    padding: 2rem;
+    /*flex: 0 0 100%; /* Default full width */
+    max-width: 25rem; /* Set max width to control overall size */
+    padding: 0; /* Consider reducing padding or adjust */
+    margin: 0.5rem; /* Equal margins for spacing comfortably */
 }
-
-/* Responsive settings to fit three cards per row based on Bootstrap breakpoints */
-@media (min-width: 992px) { /* Large screens */
-    .service-item {
-        flex: 0 0 30%; /* Approximately 1/3 of the row */
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) { /* Medium screen */
-    .service-item {
-        flex: 0 0 45%; /* About half of the row for medium screen */
-    }
+.service-item::before {
+    content: "";
+    display: block;
+    padding-top: 75%; /* Maintain 4:3 Aspect Ratio */
 }
 
 .service-item img {
-    width: 100%; /* Use full width of the item for responsiveness */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover;
-    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 85%;
+    height: 85%;
+    object-fit: cover; /* Ensures filling container without distortion */
     border-radius: 8px;
     margin: 0;
+    max-width: 90%; /* Prevents image overflow beyond container */
+}
+
+/* Responsive breakpoints */
+@media (min-width: 992px) { /* Large screens */
+    .service-item {
+        flex: 0 0 30%; /* Each will take approximately 1/3 of row */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) { /* Medium screens */
+    .service-item {
+        flex: 0 0 45%; /* Adjust to about half per row */
+    }
 }
 
 
