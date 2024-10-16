@@ -383,8 +383,43 @@ p {
 
 
 
+/* In numbers section */
+#in-numbers {
+    padding: 3rem 0; /* Section padding */
+    text-align: center;
+}
 
+.numbers-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers cards */
+    gap: 20px; /* Adds space between cards */
+}
 
+.number-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f0f0f0;
+    padding: 1rem;
+    width: 100%;
+    max-width: 250px;
+    flex: 0 0 22%; /* Around 4 per row */
+    text-align: center; /* Center text and images within card */
+}
+
+.number-card .card-img {
+    width: 100%;
+    height: auto; /* Keep image responsive */
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.counter {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
 
 
 

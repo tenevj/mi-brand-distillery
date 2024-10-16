@@ -228,10 +228,25 @@
     </section>
 
     <!-- In Numbers Section -->
-    <section class="section" id="numbers">
-        <br>
+    <section class="section" id="in-numbers">
         <h2 style="color: black; font-weight: bold;">In Numbers</h2>
-        <br>
+        <div class="container numbers-grid">
+            <div class="number-card col-lg-3 col-md-6">
+                <img src="img/sample1.png" alt="Sample Image" class="card-img">
+                <div class="counter">
+                    <span class="count" data-count="25">0</span> years
+                </div>
+                <p>comulative experience</p>
+            </div>
+            <div class="number-card col-lg-3 col-md-6">
+                <img src="img/sample2.png" alt="Sample Image" class="card-img">
+                <div class="counter">
+                    <span class="count" data-count="15">0</span> 
+                </div>
+                <p>Unique clients</p>
+            </div>
+            <!-- Additional number cards -->
+        </div>
     </section>
 
     <!-- Footer -->
@@ -263,8 +278,48 @@
 
 
 <!-- Scripts -->
-<script>//handle video playback
 
+<script>//<!-- Counter animation -->
+document.addEventListener("DOMContentLoaded", function() {
+    const counters = document.querySelectorAll('.count');
+
+    const isVisible = (element) => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    updateCount(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        observer.observe(element);
+    };
+
+    const updateCount = (counter) => {
+        const target = +counter.getAttribute('data-count');
+        const speed = 200; // Slow down the counting speed
+        const increment = target / speed;
+
+        const countIt = () => {
+            const displayedCount = +counter.innerText;
+
+            if (displayedCount < target) {
+                counter.innerText = Math.ceil(displayedCount + increment);
+                setTimeout(countIt, 40);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        countIt();
+    };
+
+    counters.forEach(counter => isVisible(counter));
+});
+</script>
+
+<script>//handle video playback
     document.querySelectorAll('.video-container video').forEach(video => {
         video.addEventListener('mouseover', function() {
             this.play();
