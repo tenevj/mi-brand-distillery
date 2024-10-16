@@ -1,3 +1,5 @@
+/* MIBD blue #083A81 */
+
 body {
     margin: 0;
     padding: 0;
@@ -127,7 +129,7 @@ header img {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 60vh;
+    min-height: 40vh;
     text-align: center;
     background: transparent;
     margin-top: 5rem;
@@ -136,7 +138,7 @@ header img {
 
 .logo-container {
     width: 80%;
-    max-width: 600px;
+    max-width: 800px;
     margin: 1rem auto;
 }
 
@@ -167,7 +169,7 @@ header img {
 }
 
 .section {
-    padding: 1rem 0;
+    padding: 2rem 2rem;
     text-align: center;
 }
 
@@ -349,7 +351,12 @@ header img {
     overflow: hidden; /* Hide extra content until hover */
     min-height: 250px; /* Set initial uniform height */
 }
-
+.card-text{
+    color: #d84315; font-size: 3vh;
+}
+.card-title{
+    font-size: 3vh;
+}
 .card:hover {
     transform: translateY(-15px) translateX(5px);
     box-shadow: -5px 15px 30px rgba(0, 0, 0, 1) ;
@@ -439,7 +446,7 @@ header img {
     justify-content: space-between; /* Space between logo and content */
     align-items: center; /* Center items vertically */
     padding: 20px;
-    background-color: #161616; /* Your chosen background color */
+    background-color: #083A81; 
 }
 
 .footer-logo img {
