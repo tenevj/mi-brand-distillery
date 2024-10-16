@@ -2,16 +2,18 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-image: url('../img/bg13.jpg');
-    background-repeat: repeat; /* Ensures the image repeats seamlessly */
+    background-image: url('../img/wcp6.png');
+    /* background-color: #fffff0 !important;  */
+    background-repeat:no-repeat; /* Ensures the image repeats seamlessly */
     background-position: 0 0; /* Begins the image tiling from the top left */
-    background-size: auto; /* Maintains the original size without scaling */
+    background-size: cover; /*auto;*/
     background-attachment: fixed; /* Keeps the background fixed during scrolling */
     background-color: transparent; /* Removes white background fields */
+ 
 }
 h1 {
     font-family: "Favorit", sans-serif ;
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: bold;
     color: #000000;
 }
@@ -41,9 +43,11 @@ header {
     width: 100vw;
     height: 60px;
     position: fixed;
-    background-color: #000000;
-    padding: 0px;
-    margin: 10px -20px; 
+    background-color: #ffffff00; /* Semi-transparent for blur effect */
+    backdrop-filter: blur(8px); /* Adds a blur effect */
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
+    padding: 0;
+    margin: 0 -20px;
     z-index: 1000;
 }
 header img {
@@ -52,7 +56,7 @@ header img {
 
 /*More interactive nav bar*/
 .navbar {
-    background-color: rgb(214, 212, 212, 0) !important; 
+    /*background-color: rgba(214, 212, 212, 0.5) !important; */
     position: fixed;
     height: 80px;
     display: flex;
@@ -66,13 +70,11 @@ header img {
     padding: 0;
     font-size: larger;
     font-weight: bold;
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.5);
 }
-.navbar li {
-    margin-right: 30px; /* Space between items */
-}
+
 .navbar a {
-    color: #ffffff; /* Dark gray text for contrast */
+    color: #000000; /* Dark gray text for contrast */
     text-decoration: none; /* Remove underline */
     padding: 10px; /* Add padding for a button-like feel */
     border-radius: 4px; /* Slight rounding of corners */
@@ -82,8 +84,8 @@ header img {
     box-shadow: none; /* Remove any shadow */
 }
 .navbar a:hover {
-    background-color: rgba(255, 255, 255, 1); /* Light black on hover */
-    color: #050505; /* Black text on hover */
+    background-color: rgba(0, 0, 0, 1); /* Light black on hover */
+    color: #ffffff; /* Black text on hover */
     border: none; /* Ensure no border */
     outline: none; /* Remove default outline */
     box-shadow: none; /* Remove any shadow */
@@ -103,6 +105,7 @@ header img {
 .hover-list {
     list-style-type: none;
     padding-left: 0;
+
 }
 .hover-list li {
     margin: 12px 0; /* Add margin between list items */
@@ -134,7 +137,7 @@ header img {
 .logo-container {
     width: 80%;
     max-width: 600px;
-    margin: 1rem auto; /* Centering within the hero section*/
+    margin: 1rem auto;
 }
 
 .hero-overlay {
