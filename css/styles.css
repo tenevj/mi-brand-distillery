@@ -390,7 +390,7 @@ header img {
     max-width: 25vw;/*calc(33.33% - 1rem); /* Responsive, maintains 3 cards per row */
     margin: 0.5rem; /* To align with spacing */
     border-radius: 18px;
-    border: 5px ridge #797979;
+    border: 1px inset #797979;
     padding: 1rem;
     text-align: center;
     transition: transform 0.3s ease, height 0.3s ease;
