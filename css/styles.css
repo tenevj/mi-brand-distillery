@@ -23,7 +23,7 @@ h1 {
 }
 h2 {
     font-family: 'Favorit', sans-serif ; 
-    font-variant-caps: all-small-caps;
+    font-variant-caps:all-small-caps;
     font-size: 2rem;
     font-weight: bold;
     color: #000000;
@@ -79,9 +79,6 @@ header img {
     font-weight: bold;
     color: rgba(255, 255, 255, 0.5);
 }
-.navbar li {
-    margin: 0 10px; /* Uniform spacing between buttons */
-}
 .navbar a {
     color: #000000; /* Dark gray text for contrast */
     text-decoration: none; /* Remove underline */
@@ -94,7 +91,7 @@ header img {
     display: inline-block; /* Allows block-level styling (consistent height/width) */
 }
 .navbar a:hover {
-    background-color: rgba(0, 0, 0, 1); /* Light black on hover */
+    background-color: rgb(8, 58, 129); /* Light black on hover */
     color: #ffffff; /* Black text on hover */
     border: none; /* Ensure no border */
 
@@ -114,19 +111,7 @@ header img {
 .hover-list {
     list-style-type: none;
     padding-left: 0;
-
-}
-.hover-list li {
-    margin: 12px 0; /* Add margin between list items */
-    padding: 8px; /* Add some padding for visual aesthetics */
-    /*background-color: rgba(200, 200, 200, 0.3); /* Light background for list items */
-    border-radius: 5px; /* Add rounded corners */
-    transition: background-color 0.3s; /* Smooth hover transition */
-    font-variant: normal;
-    font-weight: bolder;
-}
-.hover-list li:hover {
-    background-color: rgba(200,200,200,1); /* Slightly darker on hover */
+    font-size: 3vh; justify-content: left ;
 }
 
 
@@ -447,11 +432,13 @@ header img {
     flex-wrap: wrap;
     justify-content: center; /* Centers cards */
     gap: 20px; /* Adds space between cards */
+
 }
 
 .number-card {
     position: relative;
     overflow: hidden;
+    border: 1px inset #797979;
     border-radius: 8px;
     background: #f0f0f0;
     padding: 1rem;
@@ -471,7 +458,7 @@ header img {
     max-width: 250px;
     flex: 0 0 22%; /* Around 4 per row */
     text-align: center;
-    border: 2px solid black; /* Black border around the card */
+    /*border: 2px solid black; /* Black border around the card */
 }
 
 .counter {
