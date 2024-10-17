@@ -372,11 +372,13 @@ header img {
 
 
 
-
+.d-flex {
+    align-items: flex-start; /* Ensure cards don't stretch vertically */
+}
 .card {
     background-color: rgba(240,240,240,0.8);
     width: 100%;
-    max-width: 400px;/*calc(33.33% - 1rem); /* Responsive, maintains 3 cards per row */
+    max-width: 25vw;/*calc(33.33% - 1rem); /* Responsive, maintains 3 cards per row */
     margin: 0.5rem; /* To align with spacing */
     border-radius: 8px;
     padding: 1rem;
@@ -384,9 +386,11 @@ header img {
     transition: transform 0.3s ease, height 0.3s ease;
     overflow: hidden; /* Hide extra content until hover */
     min-height: 250px; /* Set initial uniform height */
+    display: flex; /* To allow child elements to adjust properly */
+    flex-direction: column; /* Align contents vertically */
 }
 .card-text{
-    color: #d84315; font-size: 2vh;
+    color: #4169E1; font-size: 2vh;
 }
 .card-title{
     font-size: 3vh;
@@ -397,30 +401,23 @@ header img {
     transition: transform 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
     min-height: 320px; /* Increase height to reveal hidden text */
 }
-
 .card img {
     border-radius: 90%;
     width: 150px ;
     height: 150px ;
     transition: transform 0.3s ease;
 }
-
 .video-container video:hover {
     /* Transform can be applied if you want hover effects to play on video overlay */
     transform: scale(1.1);
 }
-
-
-
 .card h3 {
     margin: 1rem 0;
 }
-
 .card p.text-muted {
     color: #ffcc00;
     display: none; /* Initially hide additional text */
 }
-
 .card:hover p.text-muted {
     display: block; /* Show text on hover */
 }
