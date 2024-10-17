@@ -47,7 +47,7 @@ header {
     width: 100vw;
     height: 60px;
     position: fixed;
-    background-color: #ffffff00; /* Semi-transparent for blur effect */
+    background-color: rgba(242, 240, 239, 0.5) ;
     backdrop-filter: blur(8px); /* Adds a blur effect */
     -webkit-backdrop-filter: blur(8px); /* Safari support */
     padding: 0;
@@ -60,7 +60,6 @@ header img {
 
 /*More interactive nav bar*/
 .navbar {
-    /*background-color: rgba(214, 212, 212, 0.5) !important; */
     position: fixed;
     height: 60px;
     display: flex;
