@@ -391,6 +391,8 @@ header img {
 }
 .card-text{
     color: #4169E1; font-size: 2vh;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 .card-title{
     font-size: 3vh;
