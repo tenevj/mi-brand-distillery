@@ -47,12 +47,13 @@ header {
     width: 100vw;
     height: 60px;
     position: fixed;
-    background-color: rgba(242, 240, 239, 0.5) ;
+    background-color: rgba(242, 240, 239, 1) ;
     backdrop-filter: blur(8px); /* Adds a blur effect */
     -webkit-backdrop-filter: blur(8px); /* Safari support */
     padding: 0;
     margin: 0 -20px;
     z-index: 1000;
+    border: 2px solid;
 }
 header img {
     max-height: 50px;
@@ -179,8 +180,8 @@ header img {
 .scrolling-image-container {
     display: flex; 
     position: absolute;
-    width: calc(2356px * 2); /* Width for two images side by side */
-    animation: scroll-belt 10s linear infinite; /* Animation for scrolling */
+    width: calc(5200px * 2); /* Width for two images side by side */
+    animation: scroll-belt 20s linear infinite; /* Animation for scrolling */
 }
 .scrolling-image {
     width: 2356px; /* Each image width */
