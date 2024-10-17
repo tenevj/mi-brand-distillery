@@ -119,7 +119,7 @@ header img {
 .hover-list li {
     margin: 12px 0; /* Add margin between list items */
     padding: 8px; /* Add some padding for visual aesthetics */
-    background-color: rgba(200, 200, 200, 0.3); /* Light background for list items */
+    /*background-color: rgba(200, 200, 200, 0.3); /* Light background for list items */
     border-radius: 5px; /* Add rounded corners */
     transition: background-color 0.3s; /* Smooth hover transition */
     font-variant: normal;
