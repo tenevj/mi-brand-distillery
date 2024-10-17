@@ -204,6 +204,8 @@ header img {
     justify-content: center;
     margin-top: 2rem;
     gap: 20px;
+    
+    
 
 }
 .service-item {
@@ -211,16 +213,20 @@ header img {
     overflow: hidden;
     border-radius: 8px;
     box-sizing: border-box;
-    width: 100%;
-    max-width: 25rem;
+    /* width: 30vw; */
+    max-width: 25vw;
     padding: 0;
     margin: 0.5rem;
+    display: flex; /* Apply flex to distribute height of child elements */
+    flex-direction: column;
+    flex: 1; /* Ensures flexible adjustment */
+
 }
 .service-item:hover {
     transform: translateY(-15px) translateX(5px);
     box-shadow: -5px 15px 30px rgba(0, 0, 0, 1) ;
     transition: transform 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
-    height: auto; /* Increase height to reveal hidden text */
+    
 }
 
 .service-item::before {
@@ -256,12 +262,9 @@ header img {
         flex: 0 0 45%; /* Adjust to about half per row */
     }
 }
-
-
-
 .service-item p {
     position: absolute;
-    bottom: 60px; /* adjust as needed */
+    bottom: 10px; /* adjust as needed */
     left: 10px; /* adjust as needed */
     color: rgb(255, 255, 255);
     background-color: rgba(8, 58, 129, 1); /* semi-transparent background for better readability */
