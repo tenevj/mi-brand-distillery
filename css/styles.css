@@ -164,7 +164,6 @@ header img {
 }
 
 .section {
-
     padding: 2rem 2rem;
     text-align: center;
 }
@@ -398,7 +397,7 @@ header img {
     flex-direction: column; /* Align contents vertically */
 }
 .card-text{
-    color: #4169E1; font-size: 2vh;
+    color: #083A81; font-size: 2vh;
     margin-bottom: 0px;
     margin-top: 0px;
 }

@@ -1,0 +1,31 @@
+Query building & platform setup
+---------------------------------
+
+With our deep understanding of Boolean syntax and extensive experience with various media monitoring platforms, we offer a wide range of customized services to meet your needs. Our well-crafted and refined Boolean queries makes them ideal for media monitoring, newsletters, daily scans, brand and product reputation analysis, landscape analysis, reactive moments monitoring, event reporting, and key message tracking and measurement. As part of the process, we fine-tune our queries to filter out spam, passing mentions, and other unwanted content, such as press releases, stock news, and job offers, ensuring you receive only the most relevant information. 
+
+Media analysis & insights
+---------------------------
+
+We create comprehensive traditional and social media reports utilizing both qualitative and quantitative research methods. Our analysis and deliverables are tailored to meet your specific needs, preferences, and budget. Based on our research findings, we provide actionable recommendations to help you enhance your media presence and strengthen your brand image. Our services include, but are not limited to, brand reputation analysis, product/service analysis, peer analysis, industry landscape analysis, crisis monitoring, influencer identification and scoring, adverse events reporting, and SWOT analysis.
+
+Data processing & content indexing
+------------------------------------
+
+We provide expert content curation services, removing duplicates, spam, and irrelevant mentions, and offer detailed article tagging based on your project's specific taxonomy. Our process includes complex tagging, covering categories and sub-categories, and extends to reviewing and refining automatically tagged content. We handle tag removal and retagging, conduct manual sentiment analysis, and train AI engines, including ongoing retraining. Additionally, we set up Boolean code rules for seamless automatic tagging.
+
+
+Newsletters
+-----------
+
+Our advanced newsletter service encompasses every stage of the process. From crafting and configuring search queries in the media monitoring environment to designing and formatting the final deliverable, we ensure seamless delivery to the end client. Our lead analysts bring years of experience working with top global companies across diverse sectors, including energy and mining, genomics, semiconductors, high-tech, healthcare, aerospace, and defense.
+
+
+Data pulls & gap coverage imports
+---------------------------------
+
+Every media monitoring platform has its limitations, such as missing coverage from commonly crawled websites or the inability to access specific sites within a custom source panel. We specialize in bridging these gaps, particularly from social platforms like LinkedIn, which often pose challenges for most monitoring tools.
+
+AI implementations
+------------------
+
+We harness the full potential of ChatGPT and other AI-powered tools using prompts meticulously developed and tested in-house. Our expertise allows us to effectively sense-check and enhance outputs for optimal results. Our implementations include Boolean code development, localization, text editing and summarization, website scraping, and datasheet population.
