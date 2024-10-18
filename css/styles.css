@@ -168,41 +168,43 @@ header img {
 }
 
 
-
 .quote-container {
     position: relative;
     width: 80%;
-    max-width: 800px; /* Cap the width for readability */
-    margin: 50px auto; /* Center on the page */
+    max-width: 800px;
+    margin: 50px auto;
     text-align: center;
-    padding: 2em; /* Use em for flexible padding */
-    background-color: #f2f0ef; 
+    padding: 1em 2em;
+    background-color: #f2f0ef;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-height: 100px;
     overflow: hidden;
 }
 
 .quote {
-    font-size: 1.5rem; /* Large, readable font size */
+    font-size: 1.5em; /* Use em instead of vw for consistent size */
     font-weight: bold;
-    color: #000000; /* Ensure high contrast */
-    opacity: 0; /* Start hidden */
-    transition: opacity 1s ease-in-out; /* Smooth fade-in and fade-out */
+    color: #000000;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    white-space: nowrap;
+    white-space: nowrap; /* Prevent wrapping if suitable, else use 'normal' */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Handle overflow gracefully with ellipsis */
 }
 
 @media (max-width: 600px) {
     .quote-container {
-        width: 90%; /* Adapted for smaller screens */
-        padding: 1.5em; /* Adjust padding for smaller screens */
+        width: 90%; /* Adjust the container width for smaller screens */
+        padding: 1em; /* Adjust padding for smaller screens */
     }
 
     .quote {
-        font-size: 1.2rem; /* Scale font size down */
+        font-size: 1.2em; /* Smaller font size for smaller screens */
     }
 }
 
