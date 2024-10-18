@@ -367,7 +367,13 @@
                                 <img src="img/li_icon.png" style="width: 24px; height: 24px;" alt="Jivko's LinkedIn">
                             </a>                            
                             <p class="text-muted">
-                                Zhivko’s focus is on tech and data: web scraping, data migration, Python, and API integration with GenAI. He explores new tools and automates processes to keep workflows efficient, with radiochemistry as a lesser-known skill in his background.</p>
+                                Zhivko’s focus? All things tech: web scraping, 
+                                platform-to-platform data migration, Python, 
+                                APIs, and GenAI integrations. Efficiency is his game, 
+                                automating workflows and continuously 
+                                refining processes to keep operations running smoothly.
+                            
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -434,7 +440,40 @@
 
 
 
+
+<button id="scrollToTopButton" style="display: none;">
+    ▲
+</button>
+
 <!-- Scripts -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const scrollToTopButton = document.getElementById('scrollToTopButton');
+        
+        // Show/hide button on scroll
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) { // Show button after scrolling 300px
+                scrollToTopButton.style.display = 'block';
+                scrollToTopButton.style.opacity = '1';
+            } else {
+                scrollToTopButton.style.opacity = '0';
+                setTimeout(() => {
+                    scrollToTopButton.style.display = 'none';
+                }, 300); // Delay to coincide with opacity transition
+            }
+        });
+    
+        // Scroll to top functionality
+        scrollToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
+    </script>
+
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const quotes = document.querySelectorAll('.quote');
@@ -615,6 +654,9 @@ document.addEventListener("DOMContentLoaded", function() {
         </script>
 
     <script defer src="js/bootstrap.bundle.min.js"></script>
+    
+
+
     </body>
     <!-- MIBD® 2024, Thanks to anyone that contributed, especially those who were always pointing out the cons! And the GenAI, of course :) -->
 </html>
