@@ -637,22 +637,17 @@ document.addEventListener("DOMContentLoaded", function() {
             var serviceImages = document.querySelectorAll(".service-item");
         
             // Image arrays for different services
-            var service1Imgs = ["img/query_building.jpg"];
+            var service1Imgs = ["img/txt_query.jpg"];
             var service2Imgs = ["img/txt_media_analysis.jpg"];
             /* var service2Imgs = ["img/doklad1.png", "img/doklad2.png", "img/doklad3.png"]; */
             var service3Imgs = ["img/data_processing.jpg"]; // Add images for Service 3
-        
+            var service4Imgs = ["img/txt_newsletters.jpg"];
+            var service5Imgs = ["img/txt_gap.jpg"];
+            var service6Imgs = ["img/txt_ai.jpg"];
+
             var currentIndex = 0;
             var currentServiceImgs = []; // Flexible array for current service images
         
-/* test */
-
-
-
-
-/* test */
-
-
             serviceImages.forEach(function(image, index) {
                 image.addEventListener('click', function() {
                     modal.style.display = "block";
@@ -663,6 +658,12 @@ document.addEventListener("DOMContentLoaded", function() {
                         currentServiceImgs = service2Imgs; // Assign service 2 images
                     } else if (index === 2) { // Use correct index for Service 3
                         currentServiceImgs = service3Imgs; // Assign service 3 images
+                    } else if (index === 3) { // Use correct index for Service 3
+                        currentServiceImgs = service4Imgs; // Assign service 3 images
+                    } else if (index === 4) { // Use correct index for Service 3
+                        currentServiceImgs = service5Imgs; // Assign service 3 images
+                    } else if (index === 5) { // Use correct index for Service 3
+                        currentServiceImgs = service6Imgs; // Assign service 3 images
                     }
         
                     currentIndex = 0; // Reset to the first image when opening modal

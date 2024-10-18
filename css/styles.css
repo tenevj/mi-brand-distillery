@@ -265,7 +265,7 @@ header img {
     transform: translateY(-15px) translateX(5px);
     box-shadow: -5px 15px 30px rgba(0, 0, 0, 1) ;
     transition: transform 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
-    
+    transform: scale(1.2);
 }
 
 .service-item::before {
@@ -303,9 +303,7 @@ header img {
     font-size: 1.5rem;
     max-width: calc(100% - 20px); /* to ensure text doesn't overflow */
 }
-.service-item:hover {
-    transform: scale(1.2);
-}
+
 
 .modal {
     display: none;
@@ -348,6 +346,8 @@ header img {
 
 /* Modal Navigation buttons */
 .prev {
+    visibility: hidden; /* until we have more images to show */
+
     position: absolute;
     top: 50%;
     transform: translateY(-50%); /* Center vertically */
@@ -365,6 +365,8 @@ header img {
 }
 
 .next {
+    visibility: hidden; /* until we have more images to show */
+
     position: absolute;
     top: 50%;
     transform: translateY(-50%); /* Center vertically */
