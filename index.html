@@ -61,7 +61,7 @@
                     </svg>
                 </div>
                 <div class="hero-overlay">
-                    <h1 style="color: black; text-align: center; font-family: 'Favorit'">MI BRAND DISTILLERY</h1>
+                    <p style="color: black; text-align: center; font-family: 'Favorit'; font-size: 3rem; font-weight: bold;">MI BRAND DISTILLERY</p>
                     <!-- <p>We distill brands to their pure essence, ensuring that your message is delivered with clarity and impact.</p> -->
                     <!-- <h2>Welcome to our MIBDimension!</h2> -->
                     <br>
@@ -69,13 +69,23 @@
             </div>
     </section>
 
+    <section class="section">
+        <section id="quotes-section" class="quote-container">
+            <div class="quote" style="opacity: 1;">Stories die to be told, and we live to tell them.</div>
+            <div class="quote">Before you celebrate your success, measure it.</div>
+            <div class="quote">Success comes from clients' awareness, as crisis does from brands' oblivion.</div>
+            <div class="quote">Take your time now to not lose it later.</div>
+            <div class="quote">We give advantage; we don't take it away.</div>
+        </section>
+    </section>
 
-    <section id="platforms-section">
+
+    <!-- <section id="platforms-section">
         <div class="scrolling-image-container">
             <img src="img/text3.png" class="scrolling-image" alt="Scrolling Belt Image">
             <img src="img/text3.png" class="scrolling-image duplicate" alt="Scrolling Belt Image Duplicate">
         </div>
-    </section>
+    </section> -->
 
 
     <!-- About Section -->
@@ -161,7 +171,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
                     <div class="card h-100 text-center">
-                        <a href="#" class="d-block">
+                        <a href="" class="d-block">
                             <img src="img/mit1.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="CEO Image" >
                         </a>
                         <div class="card-body">
@@ -177,7 +187,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
                     <div class="card h-100 text-center">
-                        <a href="#" class="d-block">
+                        <a href="" class="d-block">
                             <img src="img/gal1.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="Manager Image" >
                         </a>
                         <div class="card-body">
@@ -194,7 +204,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
                     <div class="card h-100 text-center">
-                        <a href="#" class="d-block">
+                        <a href="" class="d-block">
                             <img src="img/Anton_3.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="Employee Image" >
                         </a>
                         <div class="card-body">
@@ -211,7 +221,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
                     <div class="card h-100 text-center">
-                        <a href="#" class="d-block">
+                        <a href="" class="d-block">
                             <img src="img/dh1.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="Employee Image" >
                         </a>
                         <div class="card-body">
@@ -228,7 +238,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
                     <div class="card h-100 text-center">
-                        <a href="#" class="d-block">
+                        <a href="" class="d-block">
                             <img src="img/np2.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="Employee Image" >
                         </a>
                         <div class="card-body">
@@ -245,8 +255,8 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
                     <div class="card h-100 text-center">
-                        <a href="#" class="d-block">
-                            <img src="img/kocho1.png" class="card-img-top rounded-circle mx-auto mt-3" alt="Employee Image" >
+                        <a href="" class="d-block">
+                            <img src="img/k1.png" class="card-img-top rounded-circle mx-auto mt-3" alt="Employee Image" >
                         </a>
                         <div class="card-body">
                             <p class="card-title">Kostadin (Kocho) KOSTOV</p>
@@ -262,7 +272,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
                     <div class="card h-100 text-center">
-                        <a href="#" class="d-block">
+                        <a href="" class="d-block">
                             <img src="img/alex1.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="Aleksandra" >
                         </a>
                         <div class="card-body">
@@ -276,7 +286,22 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
+                    <div class="card h-100 text-center">
+                        <a href="" class="d-block">
+                            <img src="img/d1.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="Aleksandra" >
+                        </a>
+                        <div class="card-body">
+                            <p class="card-title">Deyan MILEV</p>
+                            <p class="card-text" >Project Lead</p>
+                            <a href="https://www.linkedin.com/in/deyan-milev-552443b3/" target="_blank" >
+                                <img src="img/li_icon.png" style="width: 24px; height: 24px;" alt="Aleksandra's LinkedIn">
+                            </a>
+                            <p class="text-muted">Deyan, the media detective, distills data into insights with precision. With years in journalism and analysis, he expertly navigates trends and media crises.</p>
+                            
+                        </div>
+                    </div>
+                </div>
 
 
 
@@ -364,8 +389,28 @@
 
 
 <!-- Scripts -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const quotes = document.querySelectorAll('.quote');
+        let currentIndex = 0;
+    
+        function showQuote(index) {
+            quotes.forEach((quote, i) => {
+                quote.style.opacity = (i === index) ? '1' : '0'; // Show the current quote
+            });
+        }
+    
+        function cycleQuotes() {
+            showQuote(currentIndex);
+            currentIndex = (currentIndex + 1) % quotes.length; // Move to next quote
+        }
+    
+        showQuote(currentIndex); // Initial display of the first quote
+        setInterval(cycleQuotes, 10000); // Change quote every 10 seconds
+    });
+    </script>
 
-<script> /* Belt orbit */
+<!-- <script> /* Belt orbit */
     document.addEventListener('DOMContentLoaded', (event) => {
         const container = document.querySelector('.scrolling-image-container');
     
@@ -378,7 +423,7 @@
             container.style.animationPlayState = 'running';
         });
     });
-    </script>
+    </script> -->
 
 <script>//<!-- Counter animation -->
 document.addEventListener("DOMContentLoaded", function() {

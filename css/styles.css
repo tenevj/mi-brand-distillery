@@ -143,7 +143,10 @@ header img {
     transition: background-color 0.3s ease;
 }
 
-
+.section {
+    padding: 2rem 2rem;
+    text-align: center;
+}
 
 .cta-button {
     padding: 1rem 2rem;
@@ -164,37 +167,66 @@ header img {
     padding: 1rem;
 }
 
-.section {
-    padding: 2rem 2rem;
+
+
+.quote-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px; /* Cap the width for readability */
+    margin: 50px auto; /* Center on the page */
     text-align: center;
+    padding: 2em; /* Use em for flexible padding */
+    background-color: #f2f0ef; 
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.quote {
+    font-size: 1.5rem; /* Large, readable font size */
+    font-weight: bold;
+    color: #000000; /* Ensure high contrast */
+    opacity: 0; /* Start hidden */
+    transition: opacity 1s ease-in-out; /* Smooth fade-in and fade-out */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .quote-container {
+        width: 90%; /* Adapted for smaller screens */
+        padding: 1.5em; /* Adjust padding for smaller screens */
+    }
+
+    .quote {
+        font-size: 1.2rem; /* Scale font size down */
+    }
 }
 
 
-
-#platforms-section {
-    overflow: hidden; /* Hide overflow to avoid showing images outside the container */
+/* #platforms-section {
+    overflow: hidden; 
     position: relative;
-    width: 100%; /* Make the section take full width */
-    height: 134px; /* Set height to match the image height */
+    width: 100%; 
+    height: 134px; 
 }
 .scrolling-image-container {
     display: flex; 
     position: absolute;
-    width: calc(5200px * 2); /* Width for two images side by side */
-    animation: scroll-belt 20s linear infinite; /* Animation for scrolling */
+    width: calc(5200px * 2);
+    animation: scroll-belt 20s linear infinite; 
 }
 .scrolling-image {
-    width: 2356px; /* Each image width */
-    height: 134px; /* Match the image's height */
+    width: 2356px; 
+    height: 134px; 
 }
 @keyframes scroll-belt {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-2356px); /* Move left by the width of one image */
-    }
-}
+    from {        transform: translateX(0);    }
+    to {        transform: translateX(-2356px);     }
+} */
 
 
 
