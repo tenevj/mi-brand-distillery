@@ -130,15 +130,18 @@
     <h2>Our Services</h2>
 </div>
     <div class="services-grid" >
-        <div class="service-item col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
+        <div class="service-item col-lg-4 col-md-6 mb-4 d-flex justify-content-center" onclick="openModal()">
+        <!-- <div class="service-item col-lg-4 col-md-6 mb-4 d-flex justify-content-center"> -->
             <img src="img/query.png" alt="Service Icon 1" class="service-image">
             <p>Query building</p>
         </div>
-        <div class="service-item col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
+        <div class="service-item col-lg-4 col-md-6 mb-4 d-flex justify-content-center" onclick="openModal()">
+        <!-- <div class="service-item col-lg-4 col-md-6 mb-4 d-flex justify-content-center"> -->
             <img src="img/Media analysis _ 3.jpg" alt="Service Image" id="serviceImage2">
             <p>Media analysis</p>
         </div>
-        <div class="service-item col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
+        <div class="service-item col-lg-4 col-md-6 mb-4 d-flex justify-content-center" onclick="openModal()">
+        <!-- <div class="service-item col-lg-4 col-md-6 mb-4 d-flex justify-content-center"> -->
             <img src="img/Data processing.jpg" alt="Service Icon 1" class="service-image">
             <p>Data processing</p>
         </div>
@@ -631,6 +634,14 @@ document.addEventListener("DOMContentLoaded", function() {
             var currentIndex = 0;
             var currentServiceImgs = []; // Flexible array for current service images
         
+/* test */
+
+
+
+
+/* test */
+
+
             serviceImages.forEach(function(image, index) {
                 image.addEventListener('click', function() {
                     modal.style.display = "block";
