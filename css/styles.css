@@ -167,6 +167,7 @@ header img {
 
 
 .quote-container {
+        
     position: relative;
     width: 80%; /* Flexible width for different screens */
     max-width: 50vw; /* Limits the container's max width */
@@ -181,8 +182,9 @@ header img {
 }
 
 .quote {
-    font-size: 1.3rem; /* Sets a more controlled font size */
+    font-size: 2vw;
     font-weight: bold;
+    font-style: italic;
     color: #000000;
     opacity: 0; 
     transition: opacity 1s ease-in-out;
@@ -234,9 +236,6 @@ header img {
     justify-content: center;
     margin-top: 2rem;
     gap: 20px;
-    
-    
-
 }
 .service-item {
     position: relative;
@@ -244,13 +243,12 @@ header img {
     border-radius: 8px;
     box-sizing: border-box;
     width: 100%;
-    max-width: 25vw;
+    max-width: 20vw;
     padding: 0;
-    margin: 0.5rem;
+    margin: 3vw;
     display: flex; /* Apply flex to distribute height of child elements */
     flex-direction: column;
     flex: 1; /* Ensures flexible adjustment */
-
 }
 
 
@@ -448,6 +446,7 @@ header img {
     margin: 1rem 0;
 }
 .card p.text-muted {
+    
     color: #ffcc00;
     display: none; /* Initially hide additional text */
 }

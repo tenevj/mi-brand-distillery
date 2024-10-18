@@ -71,8 +71,8 @@
 
     <section class="section">
         <section id="quotes-section" class="quote-container">
-            <div class="quote" style="opacity: 1;">Success comes from clients' awareness, as crisis does from brands' oblivion.</div>
-            <div class="quote">Stories die to be told, and we live to tell them.</div>
+            <!-- <div class="quote" style="opacity: 1;">Success comes from clients' awareness, as crisis does from brands' oblivion.</div> -->
+            <div class="quote" style="opacity: 1;">Stories die to be told, and we live to tell them.</div>
             <div class="quote">Before you celebrate your success, measure it.</div>
             <div class="quote">Success comes from clients' awareness, as crisis does from brands' oblivion.</div>
             <div class="quote">Take your time now to not lose it later.</div>
@@ -103,7 +103,7 @@
                         MI Brand Distillery
                     </span> is a trusted partner for PR 
                     and communication professionals, specializing in media 
-                    intelligence services. With an average of over 15 years 
+                    intelligence services. With an average of over 11 years 
                     of experience, our team delivers tailored solutions, 
                     including media monitoring, sentiment analysis, crisis 
                     monitoring, and competitor analysis. We empower agencies 
@@ -133,7 +133,7 @@
         <div class="service-item col-lg-4 col-md-6 mb-4 d-flex justify-content-center" onclick="openModal()">
         <!-- <div class="service-item col-lg-4 col-md-6 mb-4 d-flex justify-content-center"> -->
             <img src="img/query.png" alt="Service Icon 1" class="service-image">
-            <p>Query building</p>
+            <p style="font-size: 1.3vw;">Query building</p>
         </div>
         <div class="service-item col-lg-4 col-md-6 mb-4 d-flex justify-content-center" onclick="openModal()">
         <!-- <div class="service-item col-lg-4 col-md-6 mb-4 d-flex justify-content-center"> -->
@@ -198,14 +198,21 @@
 
                         <div class="card-body">
                             <p class="card-title" >Dimitar MITREV</p>
+                            <!-- <p class="card-title" >Mitrev</p> -->
                             <p class="card-text">Chief Executive Officer</p>
                             <a href="https://www.linkedin.com/in/dimitar-mitrev-009/" target="_blank" >
                                 <img src="img/li_icon.png" style="width: 24px; height: 24px;" alt="Jivko's LinkedIn">
                             </a>
-                            <p class="text-muted">Dimitar is a seasoned team management professional 
-                                with a robust background in media intelligence and brand reputation analysis. 
-                                As the CEO of MIBD, he is dedicated to streamlining operations, 
-                                reducing costs, and maximizing organizational efficiency.</p>
+                            <p class="text-muted">Dimitar is an experienced organizational 
+                                leader with a solid background in media intelligence and brand 
+                                reputation analysis. Committed to fostering a supportive and 
+                                trustworthy company culture that promotes open communication
+                                 and dependable partnerships, Dimitar ensures that both 
+                                 employees and customers feel valued and confident in their 
+                                 evolving collaboration and continued success.
+
+
+                            </p>
                             
                         </div>
                     </div>
@@ -217,6 +224,7 @@
                         
                         <div class="card-body">
                             <h5 class="card-title">Galina TSANKOVA</h5>
+                            <!-- <h5 class="card-title">Tsankova</h5> -->
                             <p class="card-text" >Head of Insights and Analytics</p>
                             <!-- <p class="card-text" >MI&A Services​</p> -->
                             <a href="https://www.linkedin.com/in/galina-tsankova-55b43b20/" target="_blank" >
@@ -240,6 +248,7 @@
                         
                         <div class="card-body">
                             <p class="card-title" >Anton CHIKAKCHIEV</p>
+                            <!-- <p class="card-title" >Chikakchiev</p> -->
                             <p class="card-text" >Service Delivery Manager</p>
                             <!-- <p class="card-text" >MI&A Services​</p> -->
                             <a href="https://www.linkedin.com/in/anton-chikakchiev-493271123/" target="_blank" >
@@ -311,7 +320,7 @@
                             <img src="img/k1.png" class="card-img-top rounded-circle mx-auto mt-3" alt="Employee Image" >
                         
                         <div class="card-body">
-                            <p class="card-title">Kostadin (Kocho) KOSTOV</p>
+                            <p class="card-title">Kostadin KOSTOV</p>
                             <p class="card-text" >Project Lead</p>
                             <p class="card-text" >MI&A Services​</p>
                             <a href="https://www.linkedin.com/in/kostadinkostov/" target="_blank" >
@@ -384,10 +393,11 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Zhivko TENEV</h5>
+                            <!-- <h5 class="card-title">Tenev</h5> -->
                             <p class="card-text">R&D Manager</p>
                             <a href="https://www.linkedin.com/in/jivko-tenev-932569a9/" target="_blank" >
                                 <img src="img/li_icon.png" style="width: 24px; height: 24px;" alt="Jivko's LinkedIn">
-                            </a>                            
+                            </a>
                             <p class="text-muted">
                                 Zhivko’s focus? All things tech: web scraping, 
                                 platform-to-platform data migration, Python, 
@@ -513,7 +523,7 @@
         }
     
         showQuote(currentIndex); // Initial display of the first quote
-        setInterval(cycleQuotes, 10000); // Change quote every 10 seconds
+        setInterval(cycleQuotes, 7000); // Change quote every X seconds
     });
     </script>
 
@@ -624,7 +634,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var modal = document.getElementById("imageCarousel");
             var modalImg = document.getElementById("carouselImage");
             var closeSpan = document.getElementsByClassName("close")[0];
-            var serviceImages = document.querySelectorAll(".service-item img");
+            var serviceImages = document.querySelectorAll(".service-item");
         
             // Image arrays for different services
             var service1Imgs = ["img/query.png", "img/query1.png", "img/query3.jpg"];
