@@ -51,12 +51,13 @@ header {
     backdrop-filter: blur(8px); /* Adds a blur effect */
     -webkit-backdrop-filter: blur(8px); /* Safari support */
     padding: 0;
-    margin: 0 -20px;
+    margin: 0 0px;
     z-index: 1000;
     border-bottom: 1px solid;
 }
 header img {
     max-height: 50px;
+    
 }
 
 /*More interactive nav bar*/
@@ -64,17 +65,13 @@ header img {
     position: fixed;
     height: 60px;
     display: flex;
-    /* padding: 0px 0px; */ 
-    /* border-radius: 5px;  */
     right: 1rem;
-
-    align-items: center; /* Centers list items vertically within the navbar */
-
+    align-items: center;
 }
 .navbar ul {
     list-style: none;
     display: flex;
-    margin: 0;
+    margin: 0 20px;
     padding: 0;
     font-size: large;
     font-weight: bold;
@@ -125,7 +122,8 @@ header img {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 40vh;
+    min-height: 10vh;
+    max-height: 45vh;
     text-align: center;
     background: transparent;
     margin-top: 5rem;
@@ -170,41 +168,39 @@ header img {
 
 .quote-container {
     position: relative;
-    width: 80%;
-    max-width: 800px;
-    margin: 50px auto;
-    text-align: center;
-    padding: 1em 2em;
-    background-color: #f2f0ef;
+    width: 80%; /* Flexible width for different screens */
+    max-width: 800px; /* Limits the container's max width */
+    margin: 50px auto; /* Center it horizontally on the page */
+    text-align: center; 
+    padding: 1em; /* Provides consistent inner spacing */
+    background-color: #f2f0ef; 
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    min-height: 100px;
+    min-height: 150px; /* Minimum height for adequate content space */
     overflow: hidden;
 }
 
 .quote {
-    font-size: 1.5em; /* Use em instead of vw for consistent size */
+    font-size: 1.3rem; /* Sets a more controlled font size */
     font-weight: bold;
     color: #000000;
-    opacity: 0;
+    opacity: 0; 
     transition: opacity 1s ease-in-out;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    white-space: nowrap; /* Prevent wrapping if suitable, else use 'normal' */
-    overflow: hidden;
-    text-overflow: ellipsis; /* Handle overflow gracefully with ellipsis */
+    white-space: normal; /* Allows text wrapping if it's long */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .quote-container {
-        width: 90%; /* Adjust the container width for smaller screens */
-        padding: 1em; /* Adjust padding for smaller screens */
+        width: 90%; /* Slightly wider for smaller screens */
+        padding: 1.2em; /* Adjusts padding appropriately */
     }
 
     .quote {
-        font-size: 1.2em; /* Smaller font size for smaller screens */
+        font-size: 1rem; /* Scales font size for smaller screens */
     }
 }
 
