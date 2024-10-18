@@ -169,8 +169,8 @@ header img {
 .quote-container {
     position: relative;
     width: 80%; /* Flexible width for different screens */
-    max-width: 800px; /* Limits the container's max width */
-    margin: 50px auto; /* Center it horizontally on the page */
+    max-width: 50vw; /* Limits the container's max width */
+    margin: 2vh auto; /* Center it horizontally on the page */
     text-align: center; 
     padding: 1em; /* Provides consistent inner spacing */
     background-color: #f2f0ef; 
@@ -385,23 +385,14 @@ header img {
 }
 
 
-.about-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
 
 .about-text {
-    max-width: 800px;
-    text-align: center;
-    margin-bottom: 2rem;
+    font-size: 3vh;
+    max-width: 75vw;
+    justify-content: center;
+    margin: 0 10vw;
 }
 
-.about-image img {
-    max-width: 100%;
-    border-radius: 8px;
-}
 
 
 
@@ -511,13 +502,15 @@ header img {
 }
 
 
+
+
 #scrollToTopButton {
     position: fixed;
     bottom: 25vh; /* Spacing from the bottom of the page */
-    left: 20px; /* Spacing from the right side */
+    left: 2vw; /* Spacing from the right side */
     width: 50px;
     height: 50px;
-    background-color: #f2f0ef; /* Matches your site's accent color */
+    background-color: rgba(190, 190, 190, 0.5); /* Matches your site's accent color */
     color: #000000;
     border: none;
     border-radius: 50%; /* Rounded button shape */
