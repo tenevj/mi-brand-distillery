@@ -474,28 +474,12 @@ header img {
     padding: 3rem 0; /* Section padding */
     text-align: center;
 }
-
 .numbers-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Centers cards */
     gap: 20px; /* Adds space between cards */
-
 }
-
-/* .number-card {
-    position: relative;
-    overflow: hidden;
-    border: 1px inset #797979;
-    border-radius: 8px;
-    background: #f0f0f0;
-    padding: 1rem;
-    width: 100%;
-    max-width: 250px;
-    flex: 0 0 22%; 
-    text-align: center;
-} */
-
 .number-card {
     position: relative;
     overflow: hidden;
@@ -508,11 +492,14 @@ header img {
     text-align: center;
     /*border: 2px solid black; /* Black border around the card */
 }
-
 .counter {
     font-size: 2rem;
     font-weight: bold;
     margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    
 }
 
 
