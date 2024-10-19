@@ -165,14 +165,14 @@ header img {
 .quote-container {
         
     position: relative;
-    width: 80%; /* Flexible width for different screens */
+    width: 85%; /* Flexible width for different screens */
     max-width: 50vw; /* Limits the container's max width */
     margin: 2vh auto; /* Center it horizontally on the page */
     text-align: center; 
     padding: 1em; /* Provides consistent inner spacing */
     background-color: #f2f0ef; 
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2);
     min-height: 150px; /* Minimum height for adequate content space */
     overflow: hidden;
 }
@@ -183,7 +183,7 @@ header img {
     font-style: italic;
     color: #000000;
     opacity: 0; 
-    transition: opacity 1s ease-in-out;
+    transition: opacity 2s ease-in-out;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -193,8 +193,8 @@ header img {
 
 @media (max-width: 768px) {
     .quote-container {
-        width: 90%; /* Slightly wider for smaller screens */
-        padding: 1.2em; /* Adjusts padding appropriately */
+        width: 95%; /* Slightly wider for smaller screens */
+        padding: 1em; /* Adjusts padding appropriately */
     }
 
     .quote {
@@ -386,9 +386,10 @@ header img {
 
 
 .about-text {
-    font-size: 3vh;
+    font-size: 1.5rem;
     max-width: 75vw;
     justify-content: center;
+    text-align: justify; 
     margin: 0 10vw;
 }
 
@@ -437,6 +438,10 @@ header img {
     width: 150px ;
     height: 150px ;
     transition: transform 0.3s ease;
+}
+.card-img-top{
+    width: 150px;
+    height: 150px;
 }
 .video-container video:hover {
     /* Transform can be applied if you want hover effects to play on video overlay */
