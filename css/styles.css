@@ -533,7 +533,6 @@ header img {
     z-index: 1000; /* Ensure it appears above other elements */
     transition: opacity 0.3s ease-in-out;
 }
-
 #scrollToTopButton:hover {
     background-color: #083A81;
     color: white;
@@ -551,10 +550,11 @@ header img {
 
 .footer-logo img {
     width: 8vw; /* Responsive width; shrinks on smaller screens */
-    min-width: 80px; /* Ensures it doesn't become tiny */
-    max-width: 100px; /* Cap the logo size */
+    min-width: 180px; /* Ensures it doesn't become tiny */
+    max-width: 300px; /* Cap the logo size */
     height: auto;
     margin-left: 10px;
+
 }
 
 .footer-content {
@@ -566,8 +566,8 @@ header img {
 
 .contact p {
     margin: 0;
-    padding-bottom: 0.5rem;
-    font-size: 0.9rem;
+    padding-bottom: 0.4rem;
+    font-size: 1.2rem;
 }
 
 .social-media img {
