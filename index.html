@@ -632,11 +632,10 @@ document.addEventListener("DOMContentLoaded", function() {
             var closeSpan = document.getElementsByClassName("close")[0];
             var serviceImages = document.querySelectorAll(".service-item");
         
-            // Image arrays for different services
+            // Image arrays for different services /* var serviceXImgs = ["img/doklad1.png", "img/doklad2.png", "img/doklad3.png"]; */
             var service1Imgs = ["img/txt_query.jpg"];
             var service2Imgs = ["img/txt_media_analysis.jpg"];
-            /* var service2Imgs = ["img/doklad1.png", "img/doklad2.png", "img/doklad3.png"]; */
-            var service3Imgs = ["img/data_processing.jpg"]; // Add images for Service 3
+            var service3Imgs = ["img/data_processing.jpg"];
             var service4Imgs = ["img/txt_newsletters.jpg"];
             var service5Imgs = ["img/txt_gap.jpg"];
             var service6Imgs = ["img/txt_ai.jpg"];
@@ -649,24 +648,23 @@ document.addEventListener("DOMContentLoaded", function() {
                     modal.style.display = "block";
                     
                     if (index === 0 ) {
-                        currentServiceImgs = service1Imgs; // Assign service 1 images
+                        currentServiceImgs = service1Imgs;
                     } else if (index === 1) {
-                        currentServiceImgs = service2Imgs; // Assign service 2 images
-                    } else if (index === 2) { // Use correct index for Service 3
-                        currentServiceImgs = service3Imgs; // Assign service 3 images
-                    } else if (index === 3) { // Use correct index for Service 3
-                        currentServiceImgs = service4Imgs; // Assign service 3 images
-                    } else if (index === 4) { // Use correct index for Service 3
-                        currentServiceImgs = service5Imgs; // Assign service 3 images
-                    } else if (index === 5) { // Use correct index for Service 3
-                        currentServiceImgs = service6Imgs; // Assign service 3 images
+                        currentServiceImgs = service2Imgs;
+                    } else if (index === 2) {
+                        currentServiceImgs = service3Imgs;
+                    } else if (index === 3) { 
+                        currentServiceImgs = service4Imgs;
+                    } else if (index === 4) { 
+                        currentServiceImgs = service5Imgs; 
+                    } else if (index === 5) { 
+                        currentServiceImgs = service6Imgs; 
                     }
         
                     currentIndex = 0; // Reset to the first image when opening modal
                     modalImg.src = currentServiceImgs[currentIndex];
                 });
             });
-        
             // Close the modal
             closeSpan.onclick = function() {
                 modal.style.display = "none";
