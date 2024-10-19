@@ -540,38 +540,58 @@ header img {
 }
 
 
-
 .footer-container {
     display: flex;
-    justify-content: space-between; /* Space between logo and content */
-    align-items: center; /* Center items vertically */
-    padding: 0;
-    background-color: #083A81; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #083A81;
+    flex-wrap: nowrap; /* Prevents wrapping on larger screens */
 }
 
 .footer-logo img {
-    min-width: 250px;
-    max-width: 400px; /* Adjust logo size */
-    margin-left: 2vh;
+    width: 8vw; /* Responsive width; shrinks on smaller screens */
+    min-width: 80px; /* Ensures it doesn't become tiny */
+    max-width: 100px; /* Cap the logo size */
+    height: auto;
+    margin-left: 10px;
 }
 
 .footer-content {
+    flex-grow: 1; /* Allows it to take up the remaining space */
     text-align: right;
-    color: white; /* Text color for contrast */
-    margin-right: 2vh;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    color: white;
+    margin-right: 10px;
 }
 
 .contact p {
-    margin: 0; /* Remove default margin for p elements */
-    padding-bottom: 1rem;
+    margin: 0;
+    padding-bottom: 0.5rem;
+    font-size: 0.9rem;
 }
 
 .social-media img {
-    margin-left: 10px; /* Space between icons if there are multiple */
+    margin-left: 5px; /* To space icons from the text */
 }
 
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-logo img {
+        margin: auto; /* Center in the new column layout */
+        margin-bottom: 10px;
+    }
+    .footer-content {
+        text-align: center;
+        margin-right: 0;
+    }
+    .contact p, .social-media p {
+        font-size: 3vw; /* Scales with viewport width */
+    }
+}
 
 
 
