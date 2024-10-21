@@ -326,11 +326,14 @@ header img {
     background-color: rgba(0, 0, 0, 0.8); /* Dim background */
     padding: 5vw;
     box-sizing: border-box;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
+    
     overflow-y: auto; /* Allow scrolling for taller content */}
 .background-wrapper {
+    border-radius: 15px;
     position: relative;
     width: 100%;
-    max-width: 90vw;
+    max-width: 80vw;
     min-height: 90vh;
     margin: auto; /* Center in modal */
     display: flex;
@@ -345,7 +348,7 @@ header img {
 .query-building-page {
     display: flex;
     flex-direction: column;
-
+    border-radius: 8px; /* Internal rounding, consistent */
     align-items: center;
     padding: 2vw;
     color: #083A81;
