@@ -328,7 +328,7 @@ header img {
 }
 
 .learn-more {
-    position: absolute; /* Position it absolutely within the modal */
+    position: sticky; /* Position it absolutely within the modal */
     bottom: 2em;/*20px; /* Distance from the bottom */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust positioning to exact center */
