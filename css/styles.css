@@ -151,7 +151,7 @@ header img {
 }
 
 .section {
-    padding: 2rem 2rem;
+    padding: 4.5rem 2rem;
     text-align: center;
 }
 
@@ -260,7 +260,6 @@ header img {
     flex: 1; /* Ensures flexible adjustment */
 }
 
-
 .service-item img {
     position: absolute;
     top: 0;
@@ -276,6 +275,7 @@ header img {
     transition: transform 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
     transform: scale(1.2);
 }
+
 
 .service-item::before {
     content: "";
@@ -314,11 +314,10 @@ header img {
 
 }
 
-
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
+    display: none; /* Ensure modal starts hidden */
+    position: fixed; /* Takes up full viewport space */
+    z-index: 500;
     left: 0;
     top: 0;
     width: 100%;
@@ -328,11 +327,32 @@ header img {
     padding-top: 100px;
 }
 
+.learn-more {
+    position: absolute; /* Position it absolutely within the modal */
+    bottom: 2em;/*20px; /* Distance from the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust positioning to exact center */
+    padding: 10px 20px;
+    background-color: #083A81;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;  /* Ensure it's above other modal children */
+    transition: background-color 0.3s ease;
+}
+
+.learn-more:hover {
+    background-color: #052A61;
+}
+
 .modal-content {
+    position: relative;
+
     margin: auto;
     display: block;
-    width: 90%;
-    max-width: 800px;
+    width: 80%;
+    max-width: 80vw;
     transition: transform 0.3s ease; /* Smooth animation for better UX */
 }
 

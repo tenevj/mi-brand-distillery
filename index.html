@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="description" content="MI Brand Distillery offers specialized media intelligence services. Discover our tailored solutions for PR and communication professionals.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>MI Brand Distillery</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -130,33 +131,30 @@
     <h2>Our Services</h2>
 </div>
     <div class="services-grid" >
-        <div class="service-item col-sm-12 col-lg-4 col-md-6 mb-4 d-flex justify-content-center" onclick="openModal()">
-        <!-- <div class="service-item col-lg-4 col-md-6 mb-4 d-flex justify-content-center"> -->
-            <img src="img/query.png" alt="Service Icon 1" class="service-image">
+        <div class="service-item col-sm-12 col-lg-4 col-md-6 mb-4 d-flex justify-content-center" >
+            <img src="img/query.png" alt="Query Building" class="service-image">
             <p>Query building</p>
         </div>
-        <div class="service-item col-sm-12 col-lg-4 col-md-6 mb-4 d-flex justify-content-center" onclick="openModal()">
-        <!-- <div class="service-item col-lg-4 col-md-6 mb-4 d-flex justify-content-center"> -->
-            <img src="img/Media analysis _ 3.jpg" alt="Service Image" id="serviceImage2">
+        <div class="service-item col-sm-12 col-lg-4 col-md-6 mb-4 d-flex justify-content-center" >
+            <img src="img/Media analysis _ 3.jpg" alt="Media analysis" class="service-image">
             <p>Media analysis</p>
         </div>
-        <div class="service-item col-sm-12 col-lg-4 col-md-6 mb-4 d-flex justify-content-center" onclick="openModal()">
-        <!-- <div class="service-item col-lg-4 col-md-6 mb-4 d-flex justify-content-center"> -->
-            <img src="img/Data processing.jpg" alt="Service Icon 1" class="service-image">
+        <div class="service-item col-sm-12 col-lg-4 col-md-6 mb-4 d-flex justify-content-center" >
+            <img src="img/Data processing.jpg" alt="Data processing" class="service-image">
             <p>Data processing</p>
         </div>
 
 
         <div class="service-item col-sm-12 col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
-            <img src="img/Newsletters.jpg" alt="Service Icon 1" class="service-image">
+            <img src="img/Newsletters.jpg" alt="Newsletters" class="service-image">
             <p>Newsletters</p>
         </div>
         <div class="service-item col-sm-12 col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
-            <img src="img/gap-coverage.jpg" alt="Service Image" id="serviceImage2">
+            <img src="img/gap-coverage.jpg" alt="Gap Coverage" class="service-image">
             <p>Gap coverage</p>
         </div>
         <div class="service-item col-sm-12 col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
-            <img src="img/AI implementations _ 2.jpg" alt="Service Icon 1" class="service-image">
+            <img src="img/AI implementations _ 2.jpg" alt="AI implementations" class="service-image">
             <p>AI implementations</p>
         </div>
 
@@ -165,7 +163,8 @@
 <!-- Modal Structure -->
 <div id="imageModal" class="modal">
     <span class="close">&times;</span>
-    <img class="modal-content" id="fullImage">
+    <img class="modal-content" id="fullImage" alt="Service Image">
+    <button id="learnMoreButton" class="learn-more">View More</button>
 </div>
 <!-- Modal for Image Carousel -->
 <div id="imageCarousel" class="modal">
@@ -173,6 +172,7 @@
     <a class="prev">&#10094;</a>
     <a class="next">&#10095;</a>
     <img class="modal-content" id="carouselImage">
+    
 </div>
 
 
@@ -493,53 +493,53 @@
 
 <!-- Scripts -->
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const scrollToTopButton = document.getElementById('scrollToTopButton');
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollToTopButton = document.getElementById('scrollToTopButton');
+            
+            // Show/hide button on scroll
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) { // Show button after scrolling 300px
+                    scrollToTopButton.style.display = 'block';
+                    scrollToTopButton.style.opacity = '1';
+                } else {
+                    scrollToTopButton.style.opacity = '0';
+                    setTimeout(() => {
+                        scrollToTopButton.style.display = 'none';
+                    }, 300); // Delay to coincide with opacity transition
+                }
+            });
         
-        // Show/hide button on scroll
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) { // Show button after scrolling 300px
-                scrollToTopButton.style.display = 'block';
-                scrollToTopButton.style.opacity = '1';
-            } else {
-                scrollToTopButton.style.opacity = '0';
-                setTimeout(() => {
-                    scrollToTopButton.style.display = 'none';
-                }, 300); // Delay to coincide with opacity transition
-            }
-        });
-    
-        // Scroll to top functionality
-        scrollToTopButton.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+            // Scroll to top functionality
+            scrollToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             });
         });
-    });
-    </script>
+        </script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const quotes = document.querySelectorAll('.quote');
-        let currentIndex = 0;
-    
-        function showQuote(index) {
-            quotes.forEach((quote, i) => {
-                quote.style.opacity = (i === index) ? '1' : '0'; // Show the current quote
-            });
-        }
-    
-        function cycleQuotes() {
-            showQuote(currentIndex);
-            currentIndex = (currentIndex + 1) % quotes.length; // Move to next quote
-        }
-    
-        showQuote(currentIndex); // Initial display of the first quote
-        setInterval(cycleQuotes, 7000); // Change quote every X seconds
-    });
-    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const quotes = document.querySelectorAll('.quote');
+            let currentIndex = 0;
+        
+            function showQuote(index) {
+                quotes.forEach((quote, i) => {
+                    quote.style.opacity = (i === index) ? '1' : '0'; // Show the current quote
+                });
+            }
+        
+            function cycleQuotes() {
+                showQuote(currentIndex);
+                currentIndex = (currentIndex + 1) % quotes.length; // Move to next quote
+            }
+        
+            showQuote(currentIndex); // Initial display of the first quote
+            setInterval(cycleQuotes, 7000); // Change quote every X seconds
+        });
+        </script>
 
 <!-- <script> /* Belt orbit */
     document.addEventListener('DOMContentLoaded', (event) => {
@@ -556,72 +556,72 @@
     });
     </script> -->
 
-<script>//<!-- Counter animation -->
-document.addEventListener("DOMContentLoaded", function() {
-    const counters = document.querySelectorAll('.count');
+    <script>//<!-- Counter animation -->
+    document.addEventListener("DOMContentLoaded", function() {
+        const counters = document.querySelectorAll('.count');
 
-    const isVisible = (element) => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    updateCount(entry.target);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
+        const isVisible = (element) => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        updateCount(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
 
-        observer.observe(element);
-    };
-
-    const updateCount = (counter) => {
-        const target = +counter.getAttribute('data-count');
-        const speed = 200; // Slow down the counting speed
-        const increment = target / speed;
-
-        const countIt = () => {
-            const displayedCount = +counter.innerText;
-
-            if (displayedCount < target) {
-                counter.innerText = Math.ceil(displayedCount + increment);
-                setTimeout(countIt, 40);
-            } else {
-                counter.innerText = target;
-            }
+            observer.observe(element);
         };
 
-        countIt();
-    };
+        const updateCount = (counter) => {
+            const target = +counter.getAttribute('data-count');
+            const speed = 200; // Slow down the counting speed
+            const increment = target / speed;
 
-    counters.forEach(counter => isVisible(counter));
-});
-</script>
+            const countIt = () => {
+                const displayedCount = +counter.innerText;
 
-<script>//handle video playback
-    document.querySelectorAll('.video-container video').forEach(video => {
-        video.addEventListener('mouseover', function() {
-            this.play();
-        });
+                if (displayedCount < target) {
+                    counter.innerText = Math.ceil(displayedCount + increment);
+                    setTimeout(countIt, 40);
+                } else {
+                    counter.innerText = target;
+                }
+            };
 
-        video.addEventListener('mouseout', function() {
-            this.pause();
-            this.currentTime = 0; // Rewind to the start
-            this.load(); // Ensure the poster is displayed
-        });
+            countIt();
+        };
 
-        video.addEventListener('ended', function() {
-            // Manually trigger mouse out behavior to reset the animation and poster
-            this.pause();
-            this.currentTime = 0;
-            this.load();
-        });
-
-        video.addEventListener('pause', function() {
-            if (this.currentTime === 0) {
-                this.load(); // Reload video to re-display the poster
-            }
-        });
+        counters.forEach(counter => isVisible(counter));
     });
-</script>
+    </script>
+
+    <script>//handle video playback
+        document.querySelectorAll('.video-container video').forEach(video => {
+            video.addEventListener('mouseover', function() {
+                this.play();
+            });
+
+            video.addEventListener('mouseout', function() {
+                this.pause();
+                this.currentTime = 0; // Rewind to the start
+                this.load(); // Ensure the poster is displayed
+            });
+
+            video.addEventListener('ended', function() {
+                // Manually trigger mouse out behavior to reset the animation and poster
+                this.pause();
+                this.currentTime = 0;
+                this.load();
+            });
+
+            video.addEventListener('pause', function() {
+                if (this.currentTime === 0) {
+                    this.load(); // Reload video to re-display the poster
+                }
+            });
+        });
+    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -643,15 +643,15 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         </script>
     
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function() {
             var modal = document.getElementById("imageCarousel");
             var modalImg = document.getElementById("carouselImage");
             var closeSpan = document.getElementsByClassName("close")[0];
-            var serviceImages = document.querySelectorAll(".service-item");
+            var serviceItems = document.querySelectorAll(".service-item");
         
             // Image arrays for different services /* var serviceXImgs = ["img/doklad1.png", "img/doklad2.png", "img/doklad3.png"]; */
-            var service1Imgs = ["img/txt_query.jpg"];
+            var service1Imgs = ["img/txt_query.jpg", "alex1.jpg"];
             var service2Imgs = ["img/txt_media_analysis.jpg"];
             var service3Imgs = ["img/data_processing.jpg"];
             var service4Imgs = ["img/txt_newsletters.jpg"];
@@ -661,8 +661,8 @@ document.addEventListener("DOMContentLoaded", function() {
             var currentIndex = 0;
             var currentServiceImgs = []; // Flexible array for current service images
         
-            serviceImages.forEach(function(image, index) {
-                image.addEventListener('click', function() {
+            serviceItems.forEach(function(item, index) {
+                item.addEventListener('click', function() {
                     modal.style.display = "block";
                     
                     if (index === 0 ) {
@@ -705,7 +705,66 @@ document.addEventListener("DOMContentLoaded", function() {
                 modalImg.src = currentServiceImgs[currentIndex];
             };
         });
-        </script>
+        </script> -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("fullImage");
+        var learnMoreButton = document.getElementById("learnMoreButton");
+        var serviceItems = document.querySelectorAll(".service-item");
+
+        // Image arrays for different services
+        var service1Imgs = ["img/q2.jpg", "img/txt_query.jpg"];
+        var service2Imgs = ["img/txt_media_analysis.jpg", "img/txt_query.jpg"];
+        var service3Imgs = ["img/data_processing.jpg", "img/txt_query.jpg"];
+        var service4Imgs = ["img/txt_newsletters.jpg", "img/txt_query.jpg"];
+        var service5Imgs = ["img/txt_gap.jpg", "img/txt_query.jpg"];
+        var service6Imgs = ["img/txt_ai.jpg", "img/txt_query.jpg"];
+
+        var currentIndex = 0;
+        var currentServiceImgs = [];
+
+        serviceItems.forEach(function(item, index) {
+            item.addEventListener('click', function() {
+                modal.style.display = "block";
+                
+                if (index === 0 ) {
+                        currentServiceImgs = service1Imgs;
+                    } else if (index === 1) {
+                        currentServiceImgs = service2Imgs;
+                    } else if (index === 2) {
+                        currentServiceImgs = service3Imgs;
+                    } else if (index === 3) { 
+                        currentServiceImgs = service4Imgs;
+                    } else if (index === 4) { 
+                        currentServiceImgs = service5Imgs; 
+                    } else if (index === 5) { 
+                        currentServiceImgs = service6Imgs; 
+                    }
+
+                currentIndex = 0;
+                modalImg.src = currentServiceImgs[currentIndex];
+            });
+        });
+
+        learnMoreButton.onclick = function() {
+            if (currentServiceImgs.length > 1) {
+                currentIndex = (currentIndex + 1) % currentServiceImgs.length;
+                modalImg.src = currentServiceImgs[currentIndex];
+            }
+        };
+
+        document.querySelector('.close').onclick = function() {
+            modal.style.display = "none";
+        };
+
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    });
+    </script>
 
     <script defer src="js/bootstrap.bundle.min.js"></script>
     
