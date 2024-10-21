@@ -351,9 +351,16 @@ header img {
 
     margin: auto;
     display: block;
-    width: 80%;
-    max-width: 80vw;
+    width: 70vw;
+    max-width: 768px;
     transition: transform 0.3s ease; /* Smooth animation for better UX */
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 100%;
+        max-width: 90vw;
+    }
 }
 
 /* The Modal Close Button */
