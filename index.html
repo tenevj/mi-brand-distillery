@@ -42,7 +42,6 @@
 
 
 
-
     <section class="section">
             <!-- Hero Section -->
             <div class="hero-section" id="home">
@@ -163,7 +162,28 @@
 <!-- Modal Structure -->
 <div id="imageModal" class="modal">
     <span class="close">&times;</span>
-    <img class="modal-content" id="fullImage" alt="Service Image">
+    <!-- <img class="modal-content" id="fullImage" alt="Service Image"> -->
+
+    
+    <div class="background-wrapper">
+        <div class="query-building-page">
+            <div class="query-building-section">
+                <h1 class="title" id="modalTitle">Query Building</h1>
+                <div class="content-wrapper">
+                    <div class="description">
+                        <p class="intro" id="modalIntro"> <span class="highlight">tight budget</span></p>
+                        <div class="arrow">&#10132;</div>
+                        <p class="details" id="modalDetails">
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <button id="learnMoreButton" class="learn-more">View More</button>
 </div>
 <!-- Modal for Image Carousel -->
@@ -449,6 +469,8 @@
         </div>
     </section>
 
+
+
     <!-- Footer -->
     <footer>
         <div class="footer-container" id="footer">
@@ -477,8 +499,17 @@
                             style="width:24px; height:24px;"
                             > LinkedIn</a></p>
                 </div>
+                
             </div>
+
+            <div class="bottom-footer">
+                <p>&copy; MI Brand Distillery, 2024</p>
+            </div>
+            
         </div>
+
+            
+
     </footer>
 
 <!-- main-content END-->
@@ -488,8 +519,12 @@
 
 
 <button id="scrollToTopButton" style="display: none;">
-    ▲
+▲
 </button>
+
+
+
+
 
 <!-- Scripts -->
 
@@ -645,69 +680,6 @@
     
     <!-- <script>
         document.addEventListener("DOMContentLoaded", function() {
-            var modal = document.getElementById("imageCarousel");
-            var modalImg = document.getElementById("carouselImage");
-            var closeSpan = document.getElementsByClassName("close")[0];
-            var serviceItems = document.querySelectorAll(".service-item");
-        
-            // Image arrays for different services /* var serviceXImgs = ["img/doklad1.png", "img/doklad2.png", "img/doklad3.png"]; */
-            var service1Imgs = ["img/txt_query.jpg", "alex1.jpg"];
-            var service2Imgs = ["img/txt_media_analysis.jpg"];
-            var service3Imgs = ["img/data_processing.jpg"];
-            var service4Imgs = ["img/txt_newsletters.jpg"];
-            var service5Imgs = ["img/txt_gap.jpg"];
-            var service6Imgs = ["img/txt_ai.jpg"];
-
-            var currentIndex = 0;
-            var currentServiceImgs = []; // Flexible array for current service images
-        
-            serviceItems.forEach(function(item, index) {
-                item.addEventListener('click', function() {
-                    modal.style.display = "block";
-                    
-                    if (index === 0 ) {
-                        currentServiceImgs = service1Imgs;
-                    } else if (index === 1) {
-                        currentServiceImgs = service2Imgs;
-                    } else if (index === 2) {
-                        currentServiceImgs = service3Imgs;
-                    } else if (index === 3) { 
-                        currentServiceImgs = service4Imgs;
-                    } else if (index === 4) { 
-                        currentServiceImgs = service5Imgs; 
-                    } else if (index === 5) { 
-                        currentServiceImgs = service6Imgs; 
-                    }
-        
-                    currentIndex = 0; // Reset to the first image when opening modal
-                    modalImg.src = currentServiceImgs[currentIndex];
-                });
-            });
-            // Close the modal
-            closeSpan.onclick = function() {
-                modal.style.display = "none";
-            };
-        
-            window.onclick = function(event) {
-                if (event.target === modal) {
-                    modal.style.display = "none";
-                }
-            };
-        
-            // Navigation for current service index logic
-            document.querySelector('.next').onclick = function() {
-                currentIndex = (currentIndex + 1) % currentServiceImgs.length;
-                modalImg.src = currentServiceImgs[currentIndex];
-            };
-        
-            document.querySelector('.prev').onclick = function() {
-                currentIndex = (currentIndex - 1 + currentServiceImgs.length) % currentServiceImgs.length;
-                modalImg.src = currentServiceImgs[currentIndex];
-            };
-        });
-        </script> -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
         var modal = document.getElementById("imageModal");
         var modalImg = document.getElementById("fullImage");
         var learnMoreButton = document.getElementById("learnMoreButton");
@@ -764,12 +736,65 @@
             }
         };
     });
-    </script>
+    </script> -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var modal = document.getElementById("imageModal");
+    var closeSpan = document.getElementsByClassName("close")[0];
+    var serviceItems = document.querySelectorAll(".service-item");
+
+    // Initially set to the background desired
+    var service1Imgs = ["img/txt_no_logo.jpg", "txt_no_logo.jpg"];
+    var titles = ["Query Building", "Advanced Query Techniques"]; // Text changes
+    var intros = [
+        "The most relevant and valuable content - tight budget",
+        "Expand your horizons with advanced query-building strategies"
+    ];
+    var details = [
+        "Get the most relevant content at minimum cost across all targeted markets, regardless of the platform of choice.",
+        "Learn how to leverage cutting-edge techniques to optimize queries across platforms."
+    ];
+
+    var currentIndex = 0;
+
+    serviceItems.forEach(function(item, index) {
+        item.addEventListener('click', function() {
+            modal.style.display = "block";
+            changeContent(index, currentIndex);
+        });
+    });
+
+    function changeContent(index, imgIndex) {
+        var backgroundWrapper = document.querySelector('.background-wrapper');
+        backgroundWrapper.style.backgroundImage = `url(${service1Imgs[imgIndex]})`;
+
+        
+        document.getElementById("modalTitle").textContent = titles[imgIndex];
+        document.getElementById("modalIntro").textContent = intros[imgIndex];
+        document.getElementById("modalDetails").textContent = details[imgIndex];
+    }
+
+    document.getElementById("learnMoreButton").onclick = function() {
+        currentIndex = (currentIndex + 1) % service1Imgs.length;
+        changeContent(0, currentIndex);
+    };
+
+    closeSpan.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+});
+</script>
+
+
 
     <script defer src="js/bootstrap.bundle.min.js"></script>
-    
-
-
     </body>
-    <!-- MIBD® 2024, Thanks to anyone that contributed, especially those who were always pointing out the cons! And the GenAI, of course :) САМО БЕРОЕ!-->
+    <!-- MIBD® 2024. Само Берое! ...може и Левски!-->
 </html>

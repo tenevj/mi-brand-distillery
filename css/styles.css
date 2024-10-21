@@ -317,13 +317,13 @@ header img {
 .modal {
     display: none; /* Ensure modal starts hidden */
     position: fixed; /* Takes up full viewport space */
-    z-index: 500;
+    z-index: 2;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.9); 
+    background-color: rgba(0,0,0,0.8); 
     padding-top: 100px;
 }
 
@@ -348,6 +348,7 @@ header img {
     background-color: #083A81;
     color: white;
     font-weight: bolder;
+    font-size: larger;
 }
 
 .modal-content {
@@ -563,36 +564,46 @@ header img {
 .footer-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;  /* center; */
     padding: 10px;
     background-color: #083A81;
-    flex-wrap: nowrap; /* Prevents wrapping on larger screens */
+    flex-wrap: wrap; /* Allow wrapping to accommodate bottom footer */
+    position: relative;
 }
 
 .footer-logo img {
-    width: 8vw; /* Responsive width; shrinks on smaller screens */
-    min-width: 180px; /* Ensures it doesn't become tiny */
-    max-width: 300px; /* Cap the logo size */
+    width: 8vw;
+    min-width: 180px;
+    max-width: 300px;
     height: auto;
     margin-left: 10px;
-
 }
 
 .footer-content {
-    flex-grow: 1; /* Allows it to take up the remaining space */
+    flex-grow: 1;
     text-align: right;
     color: white;
     margin-right: 10px;
+    display: flex;
+    flex-direction: column;
 }
-
 .contact p {
     margin: 0;
     padding-bottom: 0.4rem;
     font-size: 1.2rem;
 }
-
 .social-media img {
     margin-left: 5px; /* To space icons from the text */
+}
+
+
+.bottom-footer {
+    width: 100%; /* Full width to ensure bottom position */
+    margin-top: 5px;
+    text-align: center; /* Center align text within the bottom footer */
+}
+.bottom-footer p{
+    color: white;
 }
 
 @media (max-width: 768px) {
@@ -612,9 +623,12 @@ header img {
     .contact p, .social-media p {
         font-size: 3vw; /* Scales with viewport width */
     }
+    .bottom-footer p{
+        position:static;
+        color: white;
+        font-size: 3vw;
+    }
 }
-
-
 
 .logo-background {
     width: 100%;
@@ -660,4 +674,43 @@ header img {
     animation-delay: 1.75s;
 } 
 
+
+
+
+
+
+.background-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ensure full coverage */
+    background-size: cover;
+    background-position: center;
+}
+
+.query-building-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Full viewport height */
+    color: #083A81; /* Text color */
+    z-index: 3; /* Ensure text over background */
+}
+
+.query-building-section {
+    padding: 40px;
+    text-align: center;
+    max-width: 768px;
+    z-index: 4;
+    background: none;
+}
+
+.title, .intro, .details {
+    margin: 20px 0;
+}
+
+.arrow {
+    font-size: 3rem;
+    color: #083A81;
+    margin: 20px 0;
+}
 
