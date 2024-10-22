@@ -1,4 +1,4 @@
-/* MIBD blue #083A81 */
+/* MIBD blue #083A81 дюс:#f2f0ef */
 
 body {
     /* background-color: #f2f0ef !important; */ 
@@ -412,24 +412,20 @@ header img {
     left: 50%; /* Position from the left */
     transform: translateX(-50%); /* Adjust to center horizontally */
     padding: 10px 20px;
-    background-color: #f2f0ef;
+    background-color: #083A81;
+    color: #ffffff;
     font-weight: bold;
     font-size: larger;
-    color: #000000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     z-index: 10; /* Ensure it's above modal content */
-    transition: background-color 0.3s ease;
-
-}
-
+    transition: background-color 0.3s ease;}
 .learn-more:hover {
-    background-color: #083A81;
-    color: white;
+    background-color: #f2f0ef;
+    color: rgb(0, 0, 0);
     font-weight: bolder;
-    font-size: larger;
-}
+    font-size: larger;}
 
 .modal-content {
     position: relative;
