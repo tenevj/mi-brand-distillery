@@ -330,7 +330,7 @@ header img {
     margin: 60px auto 0 auto;
     position: relative;
     width: 100%;
-    max-width: 80vw;
+    max-width: 70vw;
     height: auto; /* Auto height to let content determine size */
     max-height: 90vh;
     display: flex;
@@ -382,6 +382,9 @@ header img {
 @media (max-width: 768px) {
     .query-building-section {
         padding: 8vh 8vw;
+    }
+    .background-wrapper{
+        max-width: 90vw;
     }
 
     .title, .intro, .details, .arrow {
