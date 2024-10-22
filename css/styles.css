@@ -179,7 +179,7 @@ header img {
     position: relative;
     width: 85%; /* Flexible width for different screens */
     max-width: 60vw; /* Limits the container's max width */
-    margin: 2vh auto; /* Center it horizontally on the page */
+    margin: 1vh auto; /* Center it horizontally on the page */
     text-align: center; 
     padding: 1em; /* Provides consistent inner spacing */
     background-color: #f2f0ef; 
