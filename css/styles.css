@@ -183,6 +183,7 @@ header img {
     text-align: center; 
     padding: 1em; /* Provides consistent inner spacing */
     background-color: #f2f0ef; 
+    /* border: 1px solid black; */
     border-radius: 15px;
     box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2);
     min-height: 150px; /* Minimum height for adequate content space */
@@ -596,14 +597,14 @@ header img {
     position: relative;
     overflow: hidden;
     border-radius: 15px; /* Rounded corners for the card */
-    background: #f0f0f0;
+    background: #f2f0ef; 
     padding: 1rem;
     width: 100%;
     max-width: 250px;
     flex: 0 0 33%; /* 0 0 22% => Around 4 per row */
     text-align: center;
     box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2);
-    /*border: 2px solid black; /* Black border around the card */
+    /*border: 1px solid black; /* Black border around the card */
 }
 .counter {
     font-size: 2rem;
