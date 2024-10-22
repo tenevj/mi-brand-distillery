@@ -377,10 +377,15 @@ header img {
 .title {
     text-align: center;
     font-size: 4vw; /* Slightly larger title */
+    font-weight: bold;
     margin-bottom: 4rem;
 }
+.intro{
+    font-weight: bold;
+}
 .details{
-    font-size: 2.5vw;
+    font-weight: lighter;
+    font-size: 2vw;
 }
 
 @media (max-width: 768px) {
@@ -419,7 +424,6 @@ header img {
     transition: background-color 0.3s ease;
 }
 
-
 .learn-more:hover {
     background-color: #083A81;
     color: white;
@@ -429,7 +433,6 @@ header img {
 
 .modal-content {
     position: relative;
-
     margin: auto;
     display: block;
     width: 70vw;
@@ -750,11 +753,3 @@ header img {
 .circle {
     animation-delay: 1.75s;
 } 
-
-
-
-
-
-
-
-
