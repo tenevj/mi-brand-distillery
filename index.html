@@ -734,7 +734,7 @@
 
 
     
-<script> /* Modalisimus */
+<!-- <script> /* Modalisimus */
 document.addEventListener("DOMContentLoaded", function() {
     var modal = document.getElementById("imageModal");
     var closeSpan = document.getElementsByClassName("close")[0];
@@ -744,7 +744,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var serviceContents = [
         {
             images: ["img/text_bg.jpg", "img/text_bg.jpg"],
-            titles: ["Query building", "Query building & platform setup"],
+            titles: ["query building", "query building & platform setup"],
             intros: [
                 "Discover the most relevant and valuable content with pricing tailored to fit any budget.",
                 ""
@@ -757,7 +757,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Repeat similar objects for the remaining 5 services
         {
             images: ["img/q2--.jpg", "img/q2--.jpg"],
-            titles: ["Media analysis & insights", "Media analysis & insights"],
+            titles: ["media analysis & insights", "media analysis & insights"],
             intros: [
                 "Gain a comprehensive understanding of your brand by seeing it through your audience's eyes.",
                 ""
@@ -855,7 +855,139 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 });
 
+</script> -->
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var modal = document.getElementById("imageModal");
+        var closeSpan = document.getElementsByClassName("close")[0];
+        var learnMoreButton = document.getElementById("learnMoreButton");
+        var serviceItems = document.querySelectorAll(".service-item");
+
+        var serviceContents = [
+        {
+            images: ["img/text_bg.jpg", "img/text_bg.jpg"],
+            titles: ["query building", "query building & platform setup"],
+            intros: [
+                "Discover the most relevant and valuable content with pricing tailored to fit any budget.",
+                ""
+            ],
+            details: [
+                "Our expertise in crafting targeted searches ensures you receive the most pertinent information at minimal cost, regardless of your platform. We excel at filtering out the noise to deliver the most relevant content across all targeted markets.",
+                "With our deep understanding of Boolean syntax and extensive experience with various media monitoring platforms, we offer a wide range of customized services to meet your needs. Our well-crafted and refined Boolean queries makes them ideal for media monitoring, newsletters, daily scans, brand and product reputation analysis, landscape analysis, reactive moments monitoring, event reporting, and key message tracking and measurement. As part of the process, we fine-tune of our queries to filter out spam, passing mentions, and other unwanted content, such as press releases, stock news, and job offers, ensuring you receive only the most relevant information."
+            ]
+        },
+        // Repeat similar objects for the remaining 5 services
+        {
+            images: ["img/q2--.jpg", "img/q2--.jpg"],
+            titles: ["media analysis & insights", "media analysis & insights"],
+            intros: [
+                "Gain a comprehensive understanding of your brand by seeing it through your audience's eyes.",
+                ""
+            ],
+            details: [
+                "Explore the industry landscape with a 360-degree view to better understand your positioning relative to competitors. To truly measure your brand’s success, it’s essential to assess the triumphs and shortcomings of your competition.",
+                "We create comprehensive traditional and social media reports utilizing both qualitative and quantitative research methods. Our analysis and deliverables are tailored to meet your specific needs, preferences, and budget. Based on our research findings, we provide actionable recommendations to help you enhance your media presence and strengthen your brand image. Our services include, but are not limited to, brand reputation analysis, product/service analysis, peer analysis, industry landscape analysis, crisis monitoring, influencer identification and scoring, adverse events reporting, and SWOT analysis."
+            ]
+        },
+        {
+            images: ["img/text_bg.jpg", "img/text_bg.jpg"],
+            titles: ["Data processing & content indexing", "Data processing & content indexing"],
+            intros: [
+                "Save valuable time by letting us process thousands of articles and social media posts on your behalf.",
+                ""
+            ],
+            details: [
+                "You want to focus on decision-making, but you know good decision making requires quality data. We will provide you with the most relevant, high-salience data so you can maximize the impact of your insights.",
+                "We provide expert content curation services, removing duplicates, spam, and irrelevant mentions, and offer detailed article tagging based on your project's specific taxonomy. Our process includes complex tagging, covering categories and sub-categories, and extends to reviewing and refining automatically tagged content. We handle tag removal and retagging, conduct manual sentiment analysis, and train AI engines, including ongoing retraining. Additionally, we set up Boolean code rules for seamless automatic tagging."
+            ]
+        },
+        {
+            images: ["img/text_bg.jpg", "img/text_bg.jpg"],
+            titles: ["Newsletters", "Newsletters"],
+            intros: [
+                "Browse through the most significant mentions of your brand as you enjoy your morning coffee.",
+                ""
+            ],
+            details: [
+                "If you find sifting through an overwhelming number of articles too time-consuming, our distilled newsletters and executive summaries offer a concise overview, allowing you to stay informed in just 15 minutes.",
+                "Our advanced newsletter service encompasses every stage of the process. From crafting and configuring search queries in the media monitoring environment to designing and formatting the final deliverable, we ensure seamless delivery to the end client. Our lead analysts bring years of experience working with top global companies across diverse sectors, including energy and mining, genomics, semiconductors, high-tech, healthcare, aerospace, and defense."
+            ]
+        },
+        {
+            images: ["img/text_bg.jpg", "img/text_bg.jpg"],
+            titles: ["Gap coverage", "Gap coverage"],
+            intros: [
+                "Optimize your use of data providers, social listening, and media monitoring tools without breaking the bank.",
+                ""
+            ],
+            details: [
+                "Access all pertinent traditional and social media content on a budget and with the right starting point. We specialize in collecting and integrating diverse data into a single, user-friendly tool for seamless visualization and analysis.",
+                "Every media monitoring platform has its limitations, such as missing coverage from commonly crawled websites or the inability to access specific sites within a custom source panel. We specialize in bridging these gaps, particularly from social platforms like LinkedIn, which often pose challenges for most monitoring tools."
+            ]
+        },
+        {
+            images: ["img/text_bg.jpg", "img/text_bg.jpg"],
+            titles: ["AI implementations", "AI implementations"],
+            intros: [
+                "Harness the power of AI effectively with our curated library of standard and custom AI prompts.",
+                ""
+            ],
+            details: [
+                "We prioritize human validation to ensure excellence in AI outcomes. If a ready-made solution doesn’t meet your needs, we swiftly create tailored prompts that deliver precise and reliable results.",
+                "We harness the full potential of ChatGPT and other AI-powered tools using prompts meticulously developed and tested in-house. Our expertise allows us to effectively sense-check and enhance outputs for optimal results. Our implementations include Boolean code development, localization, text editing and summarization, website scraping, and datasheet population."
+            ]
+        }
+    ];
+
+        var currentIndex = 0;
+        var currentServiceContent = {};
+
+        serviceItems.forEach(function(item, index) {
+            item.addEventListener('click', function() {
+                currentIndex = 0; // Reset index on item click
+                currentServiceContent = serviceContents[index];
+                updateModalContent(currentServiceContent, currentIndex);
+                // Make the Learn More button visible again
+                learnMoreButton.style.display = "block";
+                modal.style.display = "block";
+            });
+        });
+
+        function updateModalContent(content, index) {
+            var backgroundWrapper = document.querySelector('.background-wrapper');
+            if (backgroundWrapper) {
+                backgroundWrapper.style.backgroundImage = `url(${content.images[index]})`;
+            }
+            document.getElementById("modalTitle").textContent = content.titles[index];
+            document.getElementById("modalIntro").textContent = content.intros[index];
+            document.getElementById("modalDetails").textContent = content.details[index];
+        }
+
+        learnMoreButton.onclick = function() {
+            // Append the additional text from index [1] of details into a new paragraph
+            var detailsPara = document.createElement("p");
+            detailsPara.className = "details";
+            detailsPara.textContent = currentServiceContent.details[1];
+            document.getElementById("modalDetails").appendChild(detailsPara);
+
+            // Hide the button after it's clicked
+            learnMoreButton.style.display = "none";
+        };
+
+        closeSpan.onclick = function() {
+            modal.style.display = "none";
+        };
+
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    });
 </script>
+
 
 
 
