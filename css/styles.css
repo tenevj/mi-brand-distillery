@@ -175,11 +175,10 @@ header img {
 }
 
 
-.quote-container {
-        
+.quote-container {        
     position: relative;
     width: 85%; /* Flexible width for different screens */
-    max-width: 50vw; /* Limits the container's max width */
+    max-width: 60vw; /* Limits the container's max width */
     margin: 2vh auto; /* Center it horizontally on the page */
     text-align: center; 
     padding: 1em; /* Provides consistent inner spacing */
@@ -207,6 +206,7 @@ header img {
 @media (max-width: 768px) {
     .quote-container {
         width: 95%; /* Slightly wider for smaller screens */
+        max-width: 80vw;
         padding: 1em; /* Adjusts padding appropriately */
     }
 
@@ -595,13 +595,14 @@ header img {
 .number-card {
     position: relative;
     overflow: hidden;
-    border-radius: 10px; /* Rounded corners for the card */
+    border-radius: 15px; /* Rounded corners for the card */
     background: #f0f0f0;
     padding: 1rem;
     width: 100%;
     max-width: 250px;
     flex: 0 0 33%; /* 0 0 22% => Around 4 per row */
     text-align: center;
+    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2);
     /*border: 2px solid black; /* Black border around the card */
 }
 .counter {
