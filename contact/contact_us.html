@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <title>Contact Form</title>
+</head>
+<body>
+
+<section class="contact-form">
+    <h2 class="contact-heading">Contact Us</h2>
+    <form action="YOUR_FORM_HANDLER_URL" method="POST">
+        <div class="form-group">
+            <i class="icon-placeholder">👤</i> <!-- Placeholder for Icon -->
+            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+            <i class="icon-placeholder">✉️</i> <!-- Placeholder for Icon -->
+            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+            <i class="icon-placeholder">📞</i> <!-- Placeholder for Icon -->
+            <input type="tel" class="form-control" name="phone" placeholder="Your Phone Number" required>
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+    </form>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
