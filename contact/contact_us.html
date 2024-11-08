@@ -6,87 +6,137 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/styles.css">
     <style>
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 95vw;
+            margin: auto;
+            padding: 15vh 0;
+        }
+    
+        .contact-form-container {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+        }
+    
         .contact-form {
-            max-width: 45vw;
-            margin: 5vh auto;
+            flex: 1 1 50%;
+            max-width: 50%;
             background-color: #f9f9f9;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
         }
-        .contact-heading {
+    
+        .contact-description {
+            flex: 1 1 50%;
+            max-width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .branding-image {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+    
+        .description-text {
+            margin-top: 20px;
             text-align: center;
+            font-size: 1.2em;
             color: #083A81;
-            margin-bottom: 20px;
         }
-        .form-group {
-            position: relative;
-        }
-        .icon-placeholder {
-            position: absolute;
-            top: 12px;
-            left: 15px;
-            color: #ccc;
-        }
-        .form-control {
-            padding-left: 40px;
-            margin-bottom: 15px;
-            border-radius: 50px;
-            max-width: 40vw;/*calc(80% - 60px); /* Reduce width to fit the logo */
-            display: inline-block;
-            vertical-align: top;
-        }
-        .small-contact-logo {
-            vertical-align: middle;
-            display: inline-block;
-            width: 10vw;
-            margin-left: 5vw;
-        }
-        .form-footer {
-            clear: both;
-            margin-top: 25px;
-        }
-        .btn-primary {
-            background-color: #083A81;
-            border: none;
-        }
-        .btn-primary:hover {
-            background-color: #06569D;
+    
+        @media (max-width: 768px) {
+            .contact-form-container {
+                flex-direction: column;
+            }
+    
+            .contact-form,
+            .contact-description {
+                flex: 1 1 auto;
+                max-width: 100%;
+                margin-right: 0;
+            }
+    
+            .contact-form {
+                margin-bottom: 20px;
+            }
         }
     </style>
+    
     <title>Contact Form</title>
 </head>
 <body>
 
-<section class="contact-form">
-    <h2 class="contact-heading">Contact Us <img src="../img/logo-wb.png" alt="Contact Logo" class="small-contact-logo"></h2> 
-    <form action="YOUR_FORM_HANDLER_URL" method="POST">
-        <div class="form-group">
-            <i class="icon-placeholder">👤</i>
-            <input type="text" class="form-control" name="name" placeholder="Your Name">
-            
+    <!-- Navigation Bar -->
+     <div>
+    <header style="display: flex; justify-content: space-between; align-items: center; height: 60px;">
+        <img src="../img/logo_bw_notxt_transparent.png" 
+        style="margin-left: 4vw; width: auto; height: auto;" id="base64logo">
+        
+        <!-- <div class="navbar" style="position: fixed; left: 50%; transform: translateX(-50%);"> -->
+        <div class="navbar" >
+            <ul>
+                <li>
+                    <a href="mibdistillery.com/#about">About</a>
+                </li>
+                <li>
+                    <a href="mibdistillery.com/#services">Services</a>
+                </li>
+                <li>
+                    <a href="mibdistillery.com/#team">Team</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
         </div>
-        <div class="form-group">
-            <i class="icon-placeholder">📞</i>
-            <input type="tel" class="form-control" name="phone" placeholder="Your Phone Number">
-           
-        </div>
+    </header>
+    </div>
+    <div></div>
 
-        <div class="form-footer">
-            <div class="form-group">
-                <i class="icon-placeholder">✉️</i>
-                <input type="email" class="form-control" name="email" placeholder="Your Email *" required>
+    <section class="contact-section">
+        <div class="contact-form-container">
+            <div class="contact-form">
+                <h2 class="contact-heading">Contact Us </h2>
+                <form action="YOUR_FORM_HANDLER_URL" method="POST">
+                    <div class="form-group">
+                        <i class="icon-placeholder">👤</i>
+                        <input type="text" class="form-control" name="name" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <i class="icon-placeholder">📞</i>
+                        <input type="tel" class="form-control" name="phone" placeholder="Your Phone Number">
+                    </div>
+                    <div class="form-footer">
+                        <div class="form-group">
+                            <i class="icon-placeholder">✉️</i>
+                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <!-- <span>* fields marked with asterisk are required<br><br></span> -->
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                    </div>
+                </form>
             </div>
-
-            <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" placeholder="Your Message *" required></textarea>
+            <div class="contact-description">
+                <img src="../img/Business Card photo.JPG" alt="Branding Image" class="branding-image">
+                <p class="description-text">We distill your brand's essence with precision and clarity, enhancing your storytelling to its highest potential. Partner with us to craft a profound message that resonates.</p>
             </div>
-            <span>* fields marked with asterisk are required<br><br></span>
-            
-            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
         </div>
-    </form>
-</section>
+    </section>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>

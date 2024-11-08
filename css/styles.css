@@ -676,12 +676,14 @@ header img {
 
 
 .bottom-footer {
+
     width: 100%; /* Full width to ensure bottom position */
     margin-top: 5px;
     text-align: center; /* Center align text within the bottom footer */
 }
 .bottom-footer p{
     color: white;
+    
 }
 
 @media (max-width: 768px) {
