@@ -105,8 +105,12 @@ header img {
     background-color: rgb(8, 58, 129); /* Light black on hover */
     color: #ffffff; /* Black text on hover */
     border: none; /* Ensure no border */
-
 }
+.navbar ul li a img {
+    height: 30px;
+    width: auto;
+    margin-right: 0.5rem;
+  }
 
 
 
