@@ -102,14 +102,13 @@ header img {
     display: inline-block; /* Allows block-level styling (consistent height/width) */
 }
 .navbar a:hover {
-    background-color: rgb(8, 58, 129); /* Light black on hover */
-    color: #ffffff; /* Black text on hover */
+    background-color: rgb(8, 58, 129);
+    color: #ffffff; 
     border: none; /* Ensure no border */
 }
 .navbar ul li a img {
     height: 30px;
     width: auto;
-    margin-right: 0.5rem;
   }
 
 
