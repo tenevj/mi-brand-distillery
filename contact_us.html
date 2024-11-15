@@ -109,7 +109,7 @@
         <div class="contact-form-container">
             <div class="contact-form">
                 <h2 class="contact-heading">Contact Us </h2>
-                <form action="send_email.php" method="post">
+                <form id="contact-form" method="post">
                     <div class="form-group">
                         <i class="icon-placeholder">👤</i>
                         <input type="text" class="form-control" name="name" placeholder="Your Name">
@@ -130,6 +130,8 @@
                         <button type="submit" class="btn btn-primary btn-block">Send Message</button>
                     </div>
                 </form>
+                <div id="success-message" style="display: none;">Thank you for your message! We will get back to you as soon as possible.</div>
+                <div id="error-message" style="display: none;">Error sending email.</div>
             </div>
             <div class="contact-description">
                 <img src="./img/Business Card photo.JPG" alt="Branding Image" class="branding-image">
@@ -138,6 +140,35 @@
         </div>
     </section>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var contactForm = document.getElementById("contact-form");
+        contactForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            fetch("send_email.php", {
+                method: "POST",
+                body: new FormData(contactForm)
+            })
+            .then(function(response) {
+                return response.text();
+            })
+            .then(function(result) {
+                if (result === "success") {
+                    document.getElementById("success-message").style.display = "block";
+                    document.getElementById("error-message").style.display = "none";
+                } else {
+                    document.getElementById("error-message").style.display = "block";
+                    document.getElementById("success-message").style.display = "none";
+                }
+            })
+            .catch(function(error) {
+                console.error("Error:", error);
+                document.getElementById("error-message").style.display = "block";
+                document.getElementById("success-message").style.display = "none";
+            });
+        });
+    });
+</script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
