@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  url: string;
+}
+
+const { title, description, pubDate, url } = Astro.props;
+---
+
+<article class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+  <a href={url}>
+    <h2 class="text-2xl font-bold text-gray-900 mb-2">{title}</h2>
+    <p class="text-gray-600 mb-4">{description}</p>
+    <time datetime={pubDate.toISOString()} class="text-sm text-gray-500">
+      {pubDate.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })}
+    </time>
+  </a>
+</article>
