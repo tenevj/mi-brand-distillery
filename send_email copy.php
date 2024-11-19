@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = $_POST["phone"];
     $message = $_POST["message"];
 
-    $to = "deyan.haustov@mibdistillery.com, zhivko.tenev@mibdistillery.com, ztenev@prosek.com,";
+    $to = "ztenev@prosek.com";
     $subject = "New Message from Contact Form";
     $email_body = "
         <html>
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= 'From: <' . $email . '>' . "\r\n";
+    $headers .= 'From: <mibdmailer@gmail.com>' . "\r\n";
 
 
     if (mail($to, $subject, $email_body, $headers)) {
