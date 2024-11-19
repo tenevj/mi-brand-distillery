@@ -1,11 +1,20 @@
 <?php
+// Include PHPMailer classes
+require 'phpmailer/PHPMailer.php';
+require 'phpmailer/SMTP.php';
+require 'phpmailer/Exception.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// The rest of your code remains the same
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $email = $_POST["email"];
     $phone = $_POST["phone"];
     $message = $_POST["message"];
 
-    $to = "zhivko.tenev@mibdistillery.com, ztenev@prosek.com";
+    $to = "zhivko.tenev@mibdistillery.com";
     $subject = "New Message from Contact Form";
     $email_body = "
         <html>
@@ -36,15 +45,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </html>
     ";
 
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= 'From: <tenevj@gmail.com>' . "\r\n";
-    $headers .= 'Cc: undeddo@gmail.com' . "\r\n";
+    // Set up PHPMailer
+    $mail = new PHPMailer(true);
+    try {
+        // Server settings
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'mibdmailer@gmail.com'; // Your Gmail address
+        $mail->Password = 'ujcktdzufxpnpeuo'; // App password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
 
-    if (mail($to, $subject, $email_body, $headers)) {
+        // Recipients
+        $mail->setFrom('mibdmailer@gmail.com', 'MIBD Mailer');
+        $mail->addAddress($to); // Recipient
+        $mail->addReplyTo($email, $name); // Reply-to address
+
+        // Content
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body    = $email_body;
+
+        // Send email
+        $mail->send();
         echo "success";
-    } else {
-        echo "error";
+    } catch (Exception $e) {
+        echo "error: {$mail->ErrorInfo}";
     }
 }
 ?>
