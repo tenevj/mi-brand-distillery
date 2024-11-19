@@ -66,6 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isHTML(true);
         $mail->Subject = $subject;
         $mail->Body    = $email_body;
+        $mail->CharSet = 'UTF-8'; // Explicitly set UTF-8 encoding
 
         // Send email
         $mail->send();
