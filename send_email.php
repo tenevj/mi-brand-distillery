@@ -59,7 +59,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Recipients
         $mail->setFrom('mibdmailer@gmail.com', 'MIBD Mailer');
-        $mail->addAddress($to); // Recipient
+        //$mail->addAddress($to); // Recipient
+        $mail->addAddress('zhivko.tenev@mibdistillery.com');  // First recipient
+        $mail->addAddress('deyan.haustov@mibdistillery.com');  // Second recipient
+
         $mail->addReplyTo($email, $name); // Reply-to address
 
         // Content
