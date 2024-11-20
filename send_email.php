@@ -7,6 +7,9 @@ require 'phpmailer/Exception.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+// Load configuration
+$env_config = require '../env_config.php';
+
 // The rest of your code remains the same
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
@@ -52,8 +55,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'mibdmailer@gmail.com'; // Your Gmail address
-        $mail->Password = 'ujcktdzufxpnpeuo'; // App password
+        $mail->Username = $env_config['smtp_username'];
+        $mail->Password = $env_config['smtp_password'];
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
