@@ -773,7 +773,7 @@ header img {
 .blog-container {
     max-width: 1200px;
     margin: 2rem auto;
-    padding: 80px 15px 0 15px; /* Increased top padding */
+    padding: 100px 15px 0 15px; /* Increased top padding */
     /* If needed, adjust the 80px value based on your header height */
 }
 
