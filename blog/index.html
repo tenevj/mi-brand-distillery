@@ -154,6 +154,28 @@
                 }
             }
         </style>
+    
+        <style>
+            .blog-posts-wrapper img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+                border-radius: 8px;
+                object-fit: cover;
+            }
+            .blog-posts-wrapper .post-image-container {
+                max-height: 400px;
+            }
+            .blog-posts-wrapper .post-image-container img {
+                max-height: 300px;
+            }
+            @media (min-width: 769px) {
+                .blog-posts-wrapper .post-image-container img {
+                    max-height: 400px;
+                }
+            }
+        </style>
     </head>
       <body>
         <!-- Navigation Bar -->
