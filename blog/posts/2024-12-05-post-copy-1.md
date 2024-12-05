@@ -1,8 +1,8 @@
 ---
-    title: "Sample Post"
-    date: "2023-10-01"
-    ---
+title: "Sample Post"
+date: "2023-10-01"
+---
 
-    # Sample Blog Post
+# Sample Blog Post
 
-    This is a sample blog post. You can add your content here.
+This is a sample blog post. You can add your content here.
