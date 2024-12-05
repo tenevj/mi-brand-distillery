@@ -883,13 +883,17 @@ header img {
     justify-content: center;
     color: #083A81;
     transition: all 0.3s ease;
+
+    padding: 10px;
 }
 
 .share-button:hover {
     background: #083A81;
     color: white;
-    transform: translateY(-2px);
-}
+    
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
 
 /* Pagination */
 .pagination-container {
