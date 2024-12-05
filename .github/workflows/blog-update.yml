@@ -1,15 +1,15 @@
 name: Update Blog
 
-    on:
-      push:
-        paths:
-          - 'blog/**'
+on:
+  push:
+    paths:
+      - 'blog/**'
 
-    jobs:
-      build:
-        runs-on: ubuntu-latest
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-        steps:
-          - uses: actions/checkout@v2
-          - run: npm install --save-dev vite
-          - run: node blog/generate-blog.js
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install --save-dev vite
+      - run: node blog/generate-blog.js
