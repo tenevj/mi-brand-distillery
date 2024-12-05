@@ -35,7 +35,9 @@ function generateBlogPosts() {
                             title: frontMatter.title,
                             date: frontMatter.date,
                             content: content.replace(frontMatterRegex, ''), // Remove the front matter from the content
-                            image: frontMatter.image || 'default.jpg' // Default image if not specified in front matter
+                            //image: frontMatter.image || 'default.jpg' // Default image if not specified in front matter
+                            image: `images/${frontMatter.image || 'default.jpg'}`
+
                         });
                     } catch (error) {
                         console.error("Error parsing YAML front matter in file:", file);
