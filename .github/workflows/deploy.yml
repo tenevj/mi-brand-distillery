@@ -20,9 +20,6 @@ jobs:
         with:
           node-version: 16
 
-      - name: Create .nojekyll
-        run: touch .nojekyll
-
       - name: Install dependencies
         run: |
           cd blog
@@ -32,7 +29,6 @@ jobs:
         run: |
           cd blog
           npm run build
-          cp ../.nojekyll dist/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
