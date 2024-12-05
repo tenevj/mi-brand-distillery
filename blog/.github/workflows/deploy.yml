@@ -26,6 +26,7 @@ jobs:
         run: |
           cd blog
           npm run build
+          touch dist/.nojekyll # Create .nojekyll file in dist
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
