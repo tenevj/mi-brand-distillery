@@ -796,6 +796,13 @@ header img {
     overflow: hidden;
     border-radius: 12px 12px 0 0;
 }
+/* Limit width on wide screens */
+@media (min-width: 1200px) {
+    .post-image-container {
+        max-width: 800px; /* Limit the maximum width */
+        margin: 0 auto; /* Center the container */
+    }
+}
 
 .featured-image {
     width: 100%;
@@ -890,7 +897,7 @@ header img {
 .share-button:hover {
     background: #083A81;
     color: white;
-    
+
     transform: scale(1.1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   }
