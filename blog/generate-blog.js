@@ -14,6 +14,7 @@ function generateBlogPosts() {
         
         // Loop through each file in the directory
         files.forEach(file => {
+            console.log('Processing file:', file);  // Debugging line
             // Process only markdown (.md) files
             if (file.endsWith('.md')) {
                 const filePath = path.join(blogDir, file); // Get the full path of the file
@@ -68,12 +69,8 @@ function updateBlogPage() {
                 <div class="post-header">
                     <h2 class="post-title">${post.title}</h2>
                     <div class="post-meta">
-                        <time datetime="${post.date}">
-                            <i class="far fa-calendar-alt"></i> ${post.date}
-                        </time>
-                        <span class="reading-time">
-                            <i class="far fa-clock"></i> 5 min read
-                        </span>
+                        <time datetime="${post.date}"><i class="far fa-calendar-alt"></i> ${post.date}</time>
+                        <span class="reading-time"><i class="far fa-clock"></i> 5 min read</span>
                     </div>
                 </div>
 
@@ -97,8 +94,15 @@ function updateBlogPage() {
         postsHtml += postItem; // Append each post's HTML to the postsHtml string
     });
 
-    // Replace the placeholder <ul id="blog-posts"></ul> with the new blog posts HTML
-    blogHtmlContent = blogHtmlContent.replace('<ul id="blog-posts"></ul>', `<ul id="blog-posts">${postsHtml}</ul>`);
+    // Replace or append the new posts inside the <ul id="blog-posts">
+    const postsContainerRegex = /<ul id="blog-posts">.*?<\/ul>/s;
+    if (postsContainerRegex.test(blogHtmlContent)) {
+        // If the placeholder is found, append to it
+        blogHtmlContent = blogHtmlContent.replace(postsContainerRegex, `<ul id="blog-posts">${postsHtml}</ul>`);
+    } else {
+        // If the placeholder doesn't exist, add it (shouldn't happen if the HTML structure is correct)
+        blogHtmlContent = blogHtmlContent.replace('<ul id="blog-posts"></ul>', `<ul id="blog-posts">${postsHtml}</ul>`);
+    }
 
     // Write the updated content back to the index.html file
     fs.writeFileSync(blogHtmlPath, blogHtmlContent, 'utf8');
