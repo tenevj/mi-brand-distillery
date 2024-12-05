@@ -1,0 +1,60 @@
+---
+// This imports the necessary components and utilities
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+// This fetches ALL .md files from the blog folder and sorts them by date
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title="Our Blog" description="Welcome to our blog" />
+  </head>
+  <body>
+    <Header />
+    <main class="container blog-container">
+      <div class="blog-posts">
+        {/* This loops through all your .md files and creates a preview for each */}
+        {posts.map((post) => (
+          <article class="blog-post">
+            <div class="post-image-container">
+              {post.data.heroImage && (
+                <img src={post.data.heroImage} alt="" class="featured-image img-fluid"/>
+              )}
+            </div>
+            
+            <div class="post-header">
+              <h2 class="post-title">
+                <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+              </h2>
+              <div class="post-meta">
+                <time datetime={post.data.pubDate}>
+                  {new Date(post.data.pubDate).toLocaleDateString('en-us', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                  })}
+                </time>
+              </div>
+            </div>
+
+            <div class="post-content">
+              <p>{post.data.description}</p>
+              <div class="read-more-container">
+                <a href={`/blog/${post.slug}/`} class="btn btn-primary read-more">
+                  Read More
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
