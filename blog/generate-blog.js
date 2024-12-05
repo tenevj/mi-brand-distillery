@@ -37,24 +37,27 @@ function generateBlogPosts() {
 }
 
 function updateBlogPage() {
-    const blogDir = path.join(__dirname, 'posts');
     const blogPosts = generateBlogPosts();
     const blogHtmlPath = path.join(__dirname, 'index.html');
 
     let blogHtmlContent = fs.readFileSync(blogHtmlPath, 'utf8');
-    const blogPostsList = document.createElement('ul');
 
+    // Generate the HTML for the blog posts as a string
+    let blogPostsHtml = '';
     blogPosts.forEach(post => {
-        const postItem = document.createElement('li');
-        postItem.innerHTML = `
-            <h3>${post.title}</h3>
-            <p>${post.date}</p>
-            <div>${post.content}</div>
+        blogPostsHtml += `
+            <li>
+                <h3>${post.title}</h3>
+                <p>${post.date}</p>
+                <div>${post.content}</div>
+            </li>
         `;
-        blogPostsList.appendChild(postItem);
     });
 
-    blogHtmlContent = blogHtmlContent.replace('<ul id="blog-posts"></ul>', blogPostsList.outerHTML);
+    // Replace the placeholder <ul id="blog-posts"></ul> with the generated posts HTML
+    blogHtmlContent = blogHtmlContent.replace('<ul id="blog-posts"></ul>', `<ul id="blog-posts">${blogPostsHtml}</ul>`);
+
+    // Write the updated HTML back to the file
     fs.writeFileSync(blogHtmlPath, blogHtmlContent, 'utf8');
 }
 
