@@ -5,6 +5,9 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -17,6 +20,9 @@ jobs:
         with:
           node-version: 16
 
+      - name: Create .nojekyll
+        run: touch .nojekyll
+
       - name: Install dependencies
         run: |
           cd blog
@@ -26,12 +32,11 @@ jobs:
         run: |
           cd blog
           npm run build
-          touch dist/.nojekyll # Create .nojekyll file in dist
+          cp ../.nojekyll dist/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: main
           folder: blog/dist
-          target-folder: blog
+          branch: gh-pages
           clean: true
