@@ -50,6 +50,25 @@
                 }
             }
         </style>
+    
+        <style>
+            .blog-posts-wrapper .post-image-container img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+                border-radius: 8px;
+            }
+            .blog-posts-wrapper .post-image-container img {
+                max-height: 300px;
+                object-fit: cover;
+            }
+            @media (min-width: 769px) {
+                .blog-posts-wrapper .post-image-container img {
+                    max-height: 400px;
+                }
+            }
+        </style>
     </head>
       <body>
         <!-- Navigation Bar -->
@@ -98,7 +117,7 @@
         <section class="section" id="blog">
           <h2>Blog Posts</h2>
           
-          <div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><ul id="blog-posts">
+          <div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><ul id="blog-posts">
             <article class="blog-post">
                 <div class="post-image-container">
                     <img src="images/example.jpg" alt="My new Blog Post" class="featured-image">
@@ -212,7 +231,7 @@ In this post, I will introduce myself and give you a glimpse...</p> <!-- truncat
                 </div>
             </article>
             <hr class="post-divider">
-        </ul></div></div>
+        </ul></div></div></div>
         
         </section>
 
