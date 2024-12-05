@@ -799,7 +799,7 @@ header img {
 /* Limit width on wide screens */
 @media (min-width: 1200px) {
     .post-image-container {
-        max-width: 800px; /* Limit the maximum width */
+        max-width: 600px; /* Limit the maximum width */
         margin: 0 auto; /* Center the container */
     }
 }
