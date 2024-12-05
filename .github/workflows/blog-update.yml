@@ -18,12 +18,16 @@ jobs:
       - name: Generate Blog Posts
         run: node blog/generate-blog.js
 
+      - name: Check changes in index.html
+        run: |
+          git diff blog/index.html
+
       - name: Commit updated index.html
         run: |
           git config --global user.email "tenevj@gmail.com"
           git config --global user.name "Jikkata"
           git add blog/index.html
-          git commit -m "Update blog posts in index.html"
+          git commit -m "Update blog posts in index.html" || echo "No changes to commit"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
