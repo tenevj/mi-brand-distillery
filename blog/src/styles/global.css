@@ -1,0 +1,10 @@
+/* Import your existing styles */
+    @import url('../../css/bootstrap.min.css');
+    @import url('../../css/styles.css');
+
+    /* Add any blog-specific styles here */
+    .blog-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
