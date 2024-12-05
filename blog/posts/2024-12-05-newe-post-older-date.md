@@ -1,15 +1,15 @@
 ---
 title: "My new Blog Post"
 date: "2024-12-05"
-image: "example.jpg"
+image: ""
 ---
 
 # Heyho
 
+This is the next post. its very very long <br>
+This is the next post. its very very long 
 This is the next post. its very very long
-This is the next post. its very very long
-This is the next post. its very very long
-This is the next post. its very very long
+This is the next post. its very very long<br>
 This is the next post. its very very long
 This is the next post. its very very long
 This is the next post. its very very long
