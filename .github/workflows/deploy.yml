@@ -1,8 +1,9 @@
-name: Deploy Blog
+name: Deploy Blog to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: 
+      - main
   workflow_dispatch:
 
 permissions:
@@ -12,23 +13,27 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 18
 
-      - name: Install dependencies
-        run: |
-          cd blog
-          npm install
+      - name: Install Dependencies
+        working-directory: blog
+        run: npm install
 
-      - name: Build
-        run: |
-          cd blog
-          npm run build
+      - name: Build Site
+        working-directory: blog
+        run: npm run build
+        env:
+          NODE_OPTIONS: '--max_old_space_size=4096'
+
+      - name: List Dist Contents
+        working-directory: blog
+        run: ls -la dist
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
