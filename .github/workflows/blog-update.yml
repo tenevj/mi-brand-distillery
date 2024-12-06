@@ -29,7 +29,8 @@ jobs:
           git config --global user.email "tenevj@gmail.com"
           git config --global user.name "Jikkata"
           git add blog/index.html
-          git commit -m "Update blog posts in index.html" || echo "No changes to commit"
+          
+          git diff --cached --exit-code || git commit -m "Update blog posts in index.html"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
