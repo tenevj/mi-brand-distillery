@@ -131,8 +131,6 @@ function updateBlogPage() {
                     <img src="${post.image}" alt="${post.title}" class="featured-image">
                 </div>
 
-
-
                 <div class="post-content">
                     <p>${post.content.slice(0, 200)}...</p> <!-- truncated content -->
                     <div class="read-more-container">
