@@ -2,7 +2,7 @@
 const fs = require('fs'); // To work with the file system
 const path = require('path'); // To handle and transform file paths
 const yaml = require('js-yaml'); // To parse YAML front matter in markdown files
-const marked = require('marked');
+
 
 //LATEST CHANGE 2024-12-06 17:57:08
     const posts = []; // Array to hold the blog posts
