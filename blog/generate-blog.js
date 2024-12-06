@@ -113,34 +113,6 @@ function updateBlogPage() {
     // Read the HTML file into memory
     let blogHtmlContent = fs.readFileSync(blogHtmlPath, 'utf8');
 
-    // Add scoped styles for blog posts
-    const scopedStyles = `
-        <style>
-            .blog-posts-wrapper .post-image-container img {
-                max-width: 100%;
-                height: auto;
-                display: block;
-                margin: 0 auto;
-                border-radius: 8px;
-            }
-            .blog-posts-wrapper .post-image-container img {
-                max-height: 300px;
-                object-fit: cover;
-            }
-            @media (min-width: 769px) {
-                .blog-posts-wrapper .post-image-container img {
-                    max-height: 400px;
-                }
-            }
-        </style>
-    `;
-    if (!blogHtmlContent.includes('<style>.blog-posts-wrapper')) {
-        blogHtmlContent = blogHtmlContent.replace(
-            '</head>',
-            `${scopedStyles}</head>` // Inject styles only for blog posts
-        );
-    }
-
     // Create the HTML for the blog posts
     let postsHtml = '';
     blogPosts.forEach(post => {
