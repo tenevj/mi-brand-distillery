@@ -93,13 +93,43 @@ function updateBlogPage() {
                     </div>
                 </div>
     
+
+
                 <div class="share-buttons">
                     <span class="share-text">Share:</span>
-                    <a href="#" class="share-button" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="share-button" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="share-button" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="share-button" aria-label="Share via Email"><i class="far fa-envelope"></i></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}" 
+                    class="share-button" 
+                    aria-label="Share on Facebook" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(post.title)}" 
+                    class="share-button" 
+                    aria-label="Share on Twitter" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/shareArticle?url=${encodeURIComponent(window.location.href)}&title=${encodeURIComponent(post.title)}" 
+                    class="share-button" 
+                    aria-label="Share on LinkedIn" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(post.content.slice(0, 200))} - ${encodeURIComponent(window.location.href)}" 
+                    class="share-button" 
+                    aria-label="Share via Email" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                        <i class="far fa-envelope"></i>
+                    </a>
                 </div>
+
+
+
+
             </article>
             <hr class="post-divider">
         `;
