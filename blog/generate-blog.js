@@ -8,35 +8,41 @@ const yaml = require('js-yaml'); // To parse YAML front matter in markdown files
     const posts = []; // Array to hold the blog posts
 // Function to generate the list of blog posts
 function generateBlogPosts() {
-    const blogDir = path.join(__dirname, 'posts');
-    const md = new markdownIt(); // Initialize markdown-it
-    const posts = []; // Array to store the blog posts
+    const blogDir = path.join(__dirname, 'posts'); // Directory where markdown files are stored
 
+    // Check if the 'posts' directory exists
     if (fs.existsSync(blogDir)) {
-        const files = fs.readdirSync(blogDir);
-
+        const files = fs.readdirSync(blogDir); // Get all files in the 'posts' directory
+        
+        // Loop through each file in the directory
         files.forEach(file => {
+            console.log('Processing file:', file);  // Debugging line
+            // Process only markdown (.md) files
             if (file.endsWith('.md')) {
-                const filePath = path.join(blogDir, file);
-                const content = fs.readFileSync(filePath, 'utf8');
+                const filePath = path.join(blogDir, file); // Get the full path of the file
+                const content = fs.readFileSync(filePath, 'utf8'); // Read the content of the markdown file
 
+                // Regex to extract front matter (YAML) from markdown files
                 const frontMatterRegex = /^---([\s\S]*?)---/;
                 const match = content.match(frontMatterRegex);
 
+                // If front matter exists, parse it
                 if (match) {
                     try {
+                        // Use js-yaml to parse the front matter
                         const frontMatter = yaml.load(match[1]);
+                        
+                        // Handle missing or empty `image`
                         const image = frontMatter.image && frontMatter.image.trim() !== '' 
                             ? `images/${frontMatter.image}` 
                             : 'images/default.jpg';
-
-                        // Convert Markdown content to HTML
-                        const htmlContent = md.render(content.replace(frontMatterRegex, '').trim());
-
+                        
+                        
+                        // Push the parsed data into the posts array
                         posts.push({
                             title: frontMatter.title,
                             date: frontMatter.date,
-                            content: htmlContent, // Use rendered HTML
+                            content: content.replace(frontMatterRegex, '').replace(/\n/g, '<br>'), // Remove the front matter from the content; 2024-12-06 18:49:06 respect new lines 
                             image
                         });
                     } catch (error) {
@@ -48,9 +54,8 @@ function generateBlogPosts() {
         });
     }
 
-    return posts;
+    return posts; // Return the array of blog posts
 }
-
     
 
 
