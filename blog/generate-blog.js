@@ -92,33 +92,33 @@ function updateBlogPage() {
                         <button class="btn btn-primary read-more" onclick="toggleContent(this)">Read More</button>
                     </div>
                 </div>
-    
+
 
 
                 <div class="share-buttons">
                     <span class="share-text">Share:</span>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}" 
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://tenevj.github.io/mi-brand-distillery/blog/${file}`)}" 
                     class="share-button" 
                     aria-label="Share on Facebook" 
                     target="_blank" 
                     rel="noopener noreferrer">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(post.title)}" 
+                    <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://tenevj.github.io/mi-brand-distillery/blog/${file}`)}&text=${encodeURIComponent(post.title)}" 
                     class="share-button" 
                     aria-label="Share on Twitter" 
                     target="_blank" 
                     rel="noopener noreferrer">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="https://www.linkedin.com/shareArticle?url=${encodeURIComponent(window.location.href)}&title=${encodeURIComponent(post.title)}" 
+                    <a href="https://www.linkedin.com/shareArticle?url=${encodeURIComponent(`https://tenevj.github.io/mi-brand-distillery/blog/${file}`)}&title=${encodeURIComponent(post.title)}" 
                     class="share-button" 
                     aria-label="Share on LinkedIn" 
                     target="_blank" 
                     rel="noopener noreferrer">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(post.content.slice(0, 200))} - ${encodeURIComponent(window.location.href)}" 
+                    <a href="mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(post.content.slice(0, 200))} - ${encodeURIComponent(`https://tenevj.github.io/mi-brand-distillery/blog/${file}`)}" 
                     class="share-button" 
                     aria-label="Share via Email" 
                     target="_blank" 
@@ -126,6 +126,8 @@ function updateBlogPage() {
                         <i class="far fa-envelope"></i>
                     </a>
                 </div>
+
+
 
 
 
