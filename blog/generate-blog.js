@@ -113,7 +113,7 @@ function updateBlogPage() {
                 target="_blank" 
                 rel="noopener noreferrer">
                     <i class="fab fa-facebook-f"></i>
-					Share on Facebook
+					
                 </a>
 
                 <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(`${baseUrl}${postId}`)}&text=${encodeURIComponent(post.title)}" 
@@ -122,7 +122,7 @@ function updateBlogPage() {
                 target="_blank" 
                 rel="noopener noreferrer">
                     <i class="fab fa-twitter"></i>
-                Share on Twitter
+                
                 </a>
 
 
@@ -132,7 +132,7 @@ function updateBlogPage() {
                 target="_blank" 
                 rel="noopener noreferrer">
                     <i class="fab fa-linkedin-in"></i>
-					Share on LinkedIn
+					
                 </a>
 
                 <a href="mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(post.content.slice(0, 200))}%0A%0A${encodeURIComponent(`${baseUrl}${postId}`)}" 				
@@ -141,7 +141,7 @@ function updateBlogPage() {
                 target="_blank" 
                 rel="noopener noreferrer">
                     <i class="far fa-envelope"></i>
-					Share via Email
+					
                 </a>
             </div>
 
