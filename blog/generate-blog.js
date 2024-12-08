@@ -72,7 +72,7 @@ function updateBlogPage() {
     blogPosts.forEach(post => {
         const postItem = `
             <article class="blog-post">
-
+    
                 <div class="post-header">
                     <h2 class="post-title">${post.title}</h2>
                     <div class="post-meta">
@@ -80,19 +80,19 @@ function updateBlogPage() {
                         <span class="reading-time"><i class="far fa-clock"></i> 5 min read</span>
                     </div>
                 </div>
-
+    
                 <div class="post-image-container">
                     <img src="${post.image}" alt="${post.title}" class="featured-image">
                 </div>
-
+    
                 <div class="post-content">
-                    <p>${post.content.slice(0, 200)}...</p> <!-- truncated content -->
+                    <p class="excerpt">${post.content.slice(0, 200)}...</p>
+                    <p class="full-content" style="display: none;">${post.content}</p>
                     <div class="read-more-container">
-                        <a href="#full-post" class="btn btn-primary read-more">Read More</a>
-                        /* <a href="/blog/${post.title.toLowerCase().replace(/\s+/g, '-')}" class="btn btn-primary read-more">Read More</a> */
+                        <button class="btn btn-primary read-more" onclick="toggleContent(this)">Read More</button>
                     </div>
-                </div>\
-
+                </div>
+    
                 <div class="share-buttons">
                     <span class="share-text">Share:</span>
                     <a href="#" class="share-button" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -105,6 +105,7 @@ function updateBlogPage() {
         `;
         postsHtml += postItem; // Append each post's HTML to the postsHtml string
     });
+    
 
     // Wrap the postsHtml in a scoped container
     postsHtml = `<div class="blog-posts-wrapper"><ul id="blog-posts">${postsHtml}</ul></div>`;
