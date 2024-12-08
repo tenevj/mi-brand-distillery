@@ -100,19 +100,6 @@ function updateBlogPage() {
                         <button class="btn btn-primary read-more" onclick="toggleContent(this)">Read More</button>
                     </div>
                 </div>
-
-                <div class="post-image-container">
-                <img src="${post.image}" alt="${post.title}" class="featured-image">
-            </div>
-    
-            <div class="post-content">
-                <p class="excerpt">${post.content.slice(0, 200)}...</p>
-                <p class="full-content" style="display: none;">${post.content}</p>
-                <div class="read-more-container">
-                    <button class="btn btn-primary read-more" onclick="toggleContent(this)">Read More</button>
-                </div>
-            </div>
-    
             
 
 
@@ -133,20 +120,22 @@ function updateBlogPage() {
                 rel="noopener noreferrer">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a href="https://www.linkedin.com/shareArticle?url=${encodeURIComponent(`${baseUrl}${postId}`)}&title=${encodeURIComponent(post.title)}" 
-                class="share-button" 
-                aria-label="Share on LinkedIn" 
-                target="_blank" 
-                rel="noopener noreferrer">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(post.content.slice(0, 200))} - ${encodeURIComponent(`${baseUrl}${postId}`)}" 
-                class="share-button" 
-                aria-label="Share via Email" 
-                target="_blank" 
-                rel="noopener noreferrer">
-                    <i class="far fa-envelope"></i>
-                </a>
+<a href="https://www.linkedin.com/shareArticle?url=${encodeURIComponent(`${baseUrl}${postId}`)}&title=${encodeURIComponent(post.title)}&summary=${encodeURIComponent(post.content.slice(0, 200))}" 
+   class="share-button" 
+   aria-label="Share on LinkedIn" 
+   target="_blank" 
+   rel="noopener noreferrer">
+    <i class="fab fa-linkedin-in"></i>
+</a>
+
+<a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${baseUrl}${postId}`)}" 
+   class="share-button" 
+   aria-label="Share on Facebook" 
+   target="_blank" 
+   rel="noopener noreferrer">
+    <i class="fab fa-facebook-f"></i>
+</a>
+
             </div>
 
     
