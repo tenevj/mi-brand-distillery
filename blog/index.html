@@ -224,6 +224,24 @@
         </footer>
 
         <!-- Scripts -->
+        <script>
+        function toggleContent(button) {
+            const postContent = button.closest('.post-content'); // Find the parent container
+            const fullContent = postContent.querySelector('.full-content');
+            const excerpt = postContent.querySelector('.excerpt');
+        
+            if (fullContent.style.display === 'none') {
+                // Show the full content and update the button text
+                fullContent.style.display = 'block';
+                excerpt.style.display = 'none';
+                button.textContent = 'Show Less';
+            } else {
+                // Hide the full content and revert the button text
+                fullContent.style.display = 'none';
+                excerpt.style.display = 'block';
+                button.textContent = 'Read More';
+            }
+        }</script>
         <script src="../js/bootstrap.bundle.min.js"></script>
       </body>
     </html>
