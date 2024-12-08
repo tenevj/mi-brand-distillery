@@ -12,7 +12,7 @@ function generateBlogPosts() {
 
     // Check if the 'posts' directory exists
     if (fs.existsSync(blogDir)) {
-        const files = fs.readdirSync(blogDir); // Get all files in the 'posts' directory
+        const files = fs.readdirSync(blogDir).sort().reverse(); // Get all files in the 'posts' directory
         
         // Loop through each file in the directory
         files.forEach(file => {

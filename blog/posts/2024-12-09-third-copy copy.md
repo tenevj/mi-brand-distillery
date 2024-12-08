@@ -1,7 +1,7 @@
 ---
 title: "Lorem Lapsus"
 author: "Zhivko Tenev"
-date: "2024-12-06"
+date: "2024-12-09"
 tags: 
   - Media
   - Intelligence
