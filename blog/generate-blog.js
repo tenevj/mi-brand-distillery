@@ -1,78 +1,63 @@
-const fs = require('fs');
-const path = require('path');
-const markdownIt = require('markdown-it');
-const fm = require('front-matter'); // For parsing the YAML front matter
-const md = new markdownIt(); // Markdown parser
+// Importing required libraries
+const fs = require('fs'); // To work with the file system
+const path = require('path'); // To handle and transform file paths
+const yaml = require('js-yaml'); // To parse YAML front matter in markdown files
 
-// Directory where markdown posts are stored
-const postsDirectory = path.join(__dirname, 'posts');
 
-// Function to generate individual post pages
-function generateIndividualPostPage(post) {
-    const postSlug = post.title.toLowerCase().replace(/\s+/g, '-'); // Generate a slug from the title
-    const postPath = path.join(__dirname, 'blog', `${postSlug}.html`); // Path for the individual post
-
-    // Generate the full HTML content for the individual post
-    const fullPostContent = `
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>${post.title}</title>
-        </head>
-        <body>
-            <header>
-                <h1>${post.title}</h1>
-                <p><i class="far fa-calendar-alt"></i> ${post.date}</p>
-            </header>
-            <div class="post-content">
-                ${md.render(post.content)} <!-- Render the full markdown content -->
-            </div>
-            <footer>
-                <a href="/" class="btn">Back to Home</a>
-            </footer>
-        </body>
-        </html>
-    `;
-
-    // Write the content to the individual post file
-    fs.writeFileSync(postPath, fullPostContent, 'utf8');
-}
-
-// Function to generate blog posts HTML for the main page (index.html)
+//LATEST CHANGE 2024-12-06 17:57:08
+    const posts = []; // Array to hold the blog posts
+// Function to generate the list of blog posts
 function generateBlogPosts() {
-    const files = fs.readdirSync(postsDirectory);
-    const blogPosts = [];
+    const blogDir = path.join(__dirname, 'posts');
+    const md = new markdownIt(); // Initialize markdown-it
+    const posts = []; // Array to store the blog posts
 
-    files.forEach(file => {
-        if (file.endsWith('.md')) {
-            const filePath = path.join(postsDirectory, file);
-            const fileContent = fs.readFileSync(filePath, 'utf8');
-            const { attributes: frontMatter, body } = fm(fileContent);
+    if (fs.existsSync(blogDir)) {
+        const files = fs.readdirSync(blogDir);
 
-            // Generate the blog post object with metadata
-            const post = {
-                title: frontMatter.title || 'Untitled',
-                image: frontMatter.image || 'default.jpg',
-                date: frontMatter.date || 'No date provided',
-                content: body,
-            };
+        files.forEach(file => {
+            if (file.endsWith('.md')) {
+                const filePath = path.join(blogDir, file);
+                const content = fs.readFileSync(filePath, 'utf8');
 
-            blogPosts.push(post);
+                const frontMatterRegex = /^---([\s\S]*?)---/;
+                const match = content.match(frontMatterRegex);
 
-            // Generate the individual post page
-            generateIndividualPostPage(post);
-        }
-    });
+                if (match) {
+                    try {
+                        const frontMatter = yaml.load(match[1]);
+                        const image = frontMatter.image && frontMatter.image.trim() !== '' 
+                            ? `images/${frontMatter.image}` 
+                            : 'images/default.jpg';
 
-    return blogPosts;
+                        // Convert Markdown content to HTML
+                        const htmlContent = md.render(content.replace(frontMatterRegex, '').trim());
+
+                        posts.push({
+                            title: frontMatter.title,
+                            date: frontMatter.date,
+                            content: htmlContent, // Use rendered HTML
+                            image
+                        });
+                    } catch (error) {
+                        console.error("Error parsing YAML front matter in file:", file);
+                        console.error(error);
+                    }
+                }
+            }
+        });
+    }
+
+    return posts;
 }
 
-// Function to update the main blog page (index.html)
+    
+
+
+// Function to update the blog page with the generated blog posts
 function updateBlogPage() {
-    const blogPosts = generateBlogPosts(); // Get the list of blog posts
-    const blogHtmlPath = path.join(__dirname, 'index.html'); // Path to the main blog page
+    const blogPosts = generateBlogPosts(); // Generate the list of blog posts
+    const blogHtmlPath = path.join(__dirname, 'index.html'); // Path to the HTML file
 
     // Read the HTML file into memory
     let blogHtmlContent = fs.readFileSync(blogHtmlPath, 'utf8');
@@ -80,9 +65,9 @@ function updateBlogPage() {
     // Create the HTML for the blog posts
     let postsHtml = '';
     blogPosts.forEach(post => {
-        const postSlug = post.title.toLowerCase().replace(/\s+/g, '-');
         const postItem = `
             <article class="blog-post">
+
                 <div class="post-header">
                     <h2 class="post-title">${post.title}</h2>
                     <div class="post-meta">
@@ -98,9 +83,17 @@ function updateBlogPage() {
                 <div class="post-content">
                     <p>${post.content.slice(0, 200)}...</p> <!-- truncated content -->
                     <div class="read-more-container">
-                        <a href="/blog/${postSlug}" class="btn btn-primary read-more">Read More</a>
-                        
+                        <a href="#full-post" class="btn btn-primary read-more">Read More</a>
+                        /* <a href="/blog/${post.title.toLowerCase().replace(/\s+/g, '-')}" class="btn btn-primary read-more">Read More</a> */
                     </div>
+                </div>\
+
+                <div class="share-buttons">
+                    <span class="share-text">Share:</span>
+                    <a href="#" class="share-button" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="share-button" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="share-button" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="share-button" aria-label="Share via Email"><i class="far fa-envelope"></i></a>
                 </div>
             </article>
             <hr class="post-divider">
@@ -108,16 +101,16 @@ function updateBlogPage() {
         postsHtml += postItem; // Append each post's HTML to the postsHtml string
     });
 
-    // Wrap the postsHtml in a container
+    // Wrap the postsHtml in a scoped container
     postsHtml = `<div class="blog-posts-wrapper"><ul id="blog-posts">${postsHtml}</ul></div>`;
 
     // Replace or append the new posts inside the <ul id="blog-posts">
     const postsContainerRegex = /<ul id="blog-posts">.*?<\/ul>/s;
     if (postsContainerRegex.test(blogHtmlContent)) {
-        // If the placeholder is found, replace it with new content
+        // If the placeholder is found, append to it
         blogHtmlContent = blogHtmlContent.replace(postsContainerRegex, postsHtml);
     } else {
-        // If the placeholder doesn't exist, add it
+        // If the placeholder doesn't exist, add it (shouldn't happen if the HTML structure is correct)
         blogHtmlContent = blogHtmlContent.replace('<ul id="blog-posts"></ul>', postsHtml);
     }
 
@@ -127,3 +120,5 @@ function updateBlogPage() {
 
 // Call the function to update the blog page
 updateBlogPage();
+
+
