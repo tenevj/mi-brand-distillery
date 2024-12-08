@@ -3,7 +3,7 @@ name: Update Blog
 on:
   push:
     paths:
-      - 'blog/**'  # Trigger on changes in the 'blog' directory
+      - 'blog/**'
 
 jobs:
   build:
@@ -12,33 +12,22 @@ jobs:
       contents: write  # Ensure write access to repository contents
 
     steps:
-      # Step 1: Check out the repository
       - uses: actions/checkout@v2
 
-      # Step 2: Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '14'  # Specify your desired Node.js version
-
-      # Step 3: Install dependencies (including markdown-it)
       - name: Install dependencies
-        run: npm install --save-dev vite js-yaml markdown-it
+        run: npm install --save-dev vite js-yaml
 
-      # Step 4: Generate Blog Posts
       - name: Generate Blog Posts
         run: node blog/generate-blog.js
 
-      # Step 5: Check for changes in index.html
       - name: Check changes in index.html
         run: |
           git diff blog/index.html
 
-      # Step 6: Commit and push changes if any updates were made to index.html
       - name: Commit updated index.html
         run: |
-          git config --global user.email "your-email@example.com"
-          git config --global user.name "YourUsername"
+          git config --global user.email "tenevj@gmail.com"
+          git config --global user.name "Jikkata"
           git add blog/index.html
           git commit -m "Update blog posts in index.html" || echo "No changes to commit"
           git diff --cached --exit-code || git commit -m "Update blog posts in index.html"
