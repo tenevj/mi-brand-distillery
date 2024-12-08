@@ -57,7 +57,12 @@ function generateBlogPosts() {
     return posts; // Return the array of blog posts
 }
     
-
+// Function to generate a slug from the post title
+function generateSlug(title, date) {
+    const formattedTitle = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+    const timestamp = new Date(date).getTime();  // Use the post date as part of the ID
+    return `${formattedTitle}-${timestamp}`;
+}
 
 // Function to update the blog page with the generated blog posts
 function updateBlogPage() {
@@ -70,8 +75,11 @@ function updateBlogPage() {
     // Create the HTML for the blog posts
     let postsHtml = '';
     blogPosts.forEach(post => {
+        const postId = generateSlug(post.title, post.date);
+        const baseUrl = "https://tenevj.github.io/mi-brand-distillery/blog/";
+
         const postItem = `
-            <article class="blog-post">
+            <article class="blog-post" id="${postId}">
     
                 <div class="post-header">
                     <h2 class="post-title">${post.title}</h2>
@@ -93,39 +101,55 @@ function updateBlogPage() {
                     </div>
                 </div>
 
-
-
-                <div class="share-buttons">
-                    <span class="share-text">Share:</span>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://tenevj.github.io/mi-brand-distillery/blog/${file}`)}" 
-                    class="share-button" 
-                    aria-label="Share on Facebook" 
-                    target="_blank" 
-                    rel="noopener noreferrer">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://tenevj.github.io/mi-brand-distillery/blog/${file}`)}&text=${encodeURIComponent(post.title)}" 
-                    class="share-button" 
-                    aria-label="Share on Twitter" 
-                    target="_blank" 
-                    rel="noopener noreferrer">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/shareArticle?url=${encodeURIComponent(`https://tenevj.github.io/mi-brand-distillery/blog/${file}`)}&title=${encodeURIComponent(post.title)}" 
-                    class="share-button" 
-                    aria-label="Share on LinkedIn" 
-                    target="_blank" 
-                    rel="noopener noreferrer">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(post.content.slice(0, 200))} - ${encodeURIComponent(`https://tenevj.github.io/mi-brand-distillery/blog/${file}`)}" 
-                    class="share-button" 
-                    aria-label="Share via Email" 
-                    target="_blank" 
-                    rel="noopener noreferrer">
-                        <i class="far fa-envelope"></i>
-                    </a>
+                <div class="post-image-container">
+                <img src="${post.image}" alt="${post.title}" class="featured-image">
+            </div>
+    
+            <div class="post-content">
+                <p class="excerpt">${post.content.slice(0, 200)}...</p>
+                <p class="full-content" style="display: none;">${post.content}</p>
+                <div class="read-more-container">
+                    <button class="btn btn-primary read-more" onclick="toggleContent(this)">Read More</button>
                 </div>
+            </div>
+    
+            
+
+
+            
+            <div class="share-buttons">
+                <span class="share-text">Share:</span>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${baseUrl}${postId}`)}" 
+                class="share-button" 
+                aria-label="Share on Facebook" 
+                target="_blank" 
+                rel="noopener noreferrer">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(`${baseUrl}${postId}`)}&text=${encodeURIComponent(post.title)}" 
+                class="share-button" 
+                aria-label="Share on Twitter" 
+                target="_blank" 
+                rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/shareArticle?url=${encodeURIComponent(`${baseUrl}${postId}`)}&title=${encodeURIComponent(post.title)}" 
+                class="share-button" 
+                aria-label="Share on LinkedIn" 
+                target="_blank" 
+                rel="noopener noreferrer">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(post.content.slice(0, 200))} - ${encodeURIComponent(`${baseUrl}${postId}`)}" 
+                class="share-button" 
+                aria-label="Share via Email" 
+                target="_blank" 
+                rel="noopener noreferrer">
+                    <i class="far fa-envelope"></i>
+                </a>
+            </div>
+
+    
 
 
 
