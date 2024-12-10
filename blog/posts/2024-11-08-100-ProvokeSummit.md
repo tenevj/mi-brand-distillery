@@ -3,7 +3,7 @@ title: "Generative AI in the Newsroom: Insights from PRovoke Global 2024 Panel"
 author: "MI Brand Distillery"
 date: "2024-11-08"
 tags: 
-  - Generative AI
+  - AI
   - PRovoke2024
   - Media Summit
 category: "PRovoke Summit"

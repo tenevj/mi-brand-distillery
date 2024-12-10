@@ -5,7 +5,6 @@ date: "2024-11-08"
 tags: 
   - FIBEP2024
   - Media Summit
-  - MediaIntelligence
 category: "FIBEP Summit"
 description: "MIBD at the FIBEP Congress 24"
 image: ""

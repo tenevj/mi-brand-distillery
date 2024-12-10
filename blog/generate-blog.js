@@ -99,7 +99,7 @@ function updateBlogPage() {
     }
     // Add tag HTML to the page 
     blogHtmlContent = blogHtmlContent.replace(
-        /<div id="tag-container" style="padding: 0px 0px 50px 0px;">.*?<\/div>/s,
+        /<div id="tag-container".*?<\/div>/s,
         `<div id="tag-container" style="padding: 0px 0px 50px 0px;">${tagHtml}</div>`
     );
 
@@ -186,7 +186,8 @@ function updateBlogPage() {
     
 
     // Wrap the postsHtml in a scoped container
-    postsHtml = `<div class="blog-posts-wrapper"><ul id="blog-posts">${postsHtml}</ul></div>`;
+    //postsHtml = `<div class="blog-posts-wrapper"><ul id="blog-posts">${postsHtml}</ul></div>`;
+    postsHtml = `<ul id="blog-posts">${postsHtml}</ul>`;
 
     // Replace or append the new posts inside the <ul id="blog-posts">
     const postsContainerRegex = /<ul id="blog-posts">.*?<\/ul>/s;
