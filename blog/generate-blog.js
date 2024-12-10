@@ -4,8 +4,8 @@ const path = require('path'); // To handle and transform file paths
 const yaml = require('js-yaml'); // To parse YAML front matter in markdown files
 
 
-//LATEST CHANGE 2024-12-06 17:57:08
-    const posts = []; // Array to hold the blog posts
+//2024-12-06 17:57:08 
+const posts = []; // Array to hold the blog posts
 // Function to generate the list of blog posts
 function generateBlogPosts() {
     const blogDir = path.join(__dirname, 'posts'); // Directory where markdown files are stored
@@ -42,6 +42,7 @@ function generateBlogPosts() {
                         posts.push({
                             title: frontMatter.title,
                             date: frontMatter.date,
+                            tags: frontMatter.tags || [], // Extract tags
                             content: content.replace(frontMatterRegex, '').replace(/\n/g, '<br>'), // Remove the front matter from the content; 2024-12-06 18:49:06 respect new lines 
                             image
                         });
@@ -56,7 +57,25 @@ function generateBlogPosts() {
 
     return posts; // Return the array of blog posts
 }
-    
+
+
+// Generate and count tags
+function getTagData(blogPosts) {
+    const tagCounts = {};
+
+    blogPosts.forEach(post => {
+        post.tags.forEach(tag => {
+            if (tagCounts[tag]) {
+                tagCounts[tag]++;
+            } else {
+                tagCounts[tag] = 1;
+            }
+        });
+    });
+
+    return tagCounts;
+}
+
 // Function to generate a slug from the post title
 function generateSlug(title, date) {
     const formattedTitle = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
@@ -72,11 +91,24 @@ function updateBlogPage() {
     // Read the HTML file into memory
     let blogHtmlContent = fs.readFileSync(blogHtmlPath, 'utf8');
 
+    // Generate tag HTML
+    const tagData = getTagData(blogPosts);
+    let tagHtml = '';
+    for (const [tag, count] of Object.entries(tagData)) {
+        tagHtml += `<span class="tag" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag} (${count})</span>`;
+    }
+    // Add tag HTML to the page 
+    blogHtmlContent = blogHtmlContent.replace(
+        /<div id="tag-container">.*?<\/div>/s,
+        `<div id="tag-container">${tagHtml}</div>`
+    );
+
     // Create the HTML for the blog posts
     let postsHtml = '';
     blogPosts.forEach(post => {
         const postId = generateSlug(post.title, post.date);
         const baseUrl = "https://tenevj.github.io/mi-brand-distillery/blog/";
+        const tagsHtml = post.tags.map(tag => `<span class="post-tag">${tag}</span>`).join(' ');
 
         // Extract content after the front matter (YAML is already stripped in the content property)
         const postContent = post.content.replace(/<br>/g, ' '); // Replace <br> tags with spaces to count words properly
@@ -152,6 +184,8 @@ function updateBlogPage() {
                     <i class="far fa-envelope"></i>
 					
                 </a>
+
+                <div class="post-tags">${tagsHtml}</div>
             </div>
 
     

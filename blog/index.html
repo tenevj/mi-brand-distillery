@@ -13,6 +13,22 @@
         <link rel="icon" href="../favicon.ico" type="image/x-icon">
     
         <style>
+            #tag-container .tag {
+                display: inline-block;
+                margin: 5px;
+                padding: 5px 10px;
+                border: 1px solid #ccc;
+                border-radius: 15px;
+                cursor: pointer;
+                background-color: #f0f0f0;
+                color: #333;
+            }
+
+            #tag-container .tag.selected {
+                background-color: #083A81; /* Your corporate blue */
+                color: white;
+            }
+
             .post-content p {
                 font-size: 1.2rem;
                 text-align: left;
@@ -207,6 +223,52 @@
         </footer>
 
         <!-- Scripts -->
+
+        <!-- Filter by tag -->
+        <script>
+            let selectedTags = [];
+        
+            function filterByTag(tag) {
+                const tagIndex = selectedTags.indexOf(tag);
+        
+                if (tagIndex === -1) {
+                    selectedTags.push(tag);
+                } else {
+                    selectedTags.splice(tagIndex, 1);
+                }
+        
+                const posts = document.querySelectorAll('.blog-post');
+        
+                posts.forEach(post => {
+                    const postTags = post.getAttribute('data-tags').split(',');
+        
+                    if (
+                        selectedTags.length === 0 ||
+                        selectedTags.some(selectedTag => postTags.includes(selectedTag))
+                    ) {
+                        post.style.display = 'block';
+                    } else {
+                        post.style.display = 'none';
+                    }
+                });
+        
+                updateTagSelection();
+            }
+        
+            function updateTagSelection() {
+                const tags = document.querySelectorAll('.tag');
+                tags.forEach(tag => {
+                    const tagName = tag.getAttribute('data-tag');
+                    if (selectedTags.includes(tagName)) {
+                        tag.classList.add('selected');
+                    } else {
+                        tag.classList.remove('selected');
+                    }
+                });
+            }
+        </script>
+        
+        <!-- Toggle full text view -->
         <script>
         function toggleContent(button) {
             const postContent = button.closest('.post-content'); // Find the parent container
