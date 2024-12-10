@@ -175,19 +175,11 @@ function updateBlogPage() {
                 rel="noopener noreferrer">
                     <i class="far fa-envelope"></i>
                 </a>
-
+                
                 <div class="post-tags">${tagsHtml}</div>
             </div>
 
-    
-
-
-
-
-
-
             </article>
-            /* <hr class="post-divider"> */
         `;
         postsHtml += postItem; // Append each post's HTML to the postsHtml string
     });
