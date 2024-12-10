@@ -13,7 +13,12 @@
         <link rel="icon" href="../favicon.ico" type="image/x-icon">
     
         <style>
-            .blog-post {
+          .post-header {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+          }
+
+            .blog-post { /* to be added to the .css later */
                 border: 1px solid #000000;
                 height: 100%;
                 background-image: url('../img/rhodium.jpg');
@@ -25,6 +30,7 @@
                 -webkit-text-size-adjust: auto; /*better readability on mobile devices within WebKit browsers*/
                 -ms-text-size-adjust: 100%;
                 text-size-adjust: auto;
+                margin: 2rem 0 0 0;
             }
 
             .post-tag {
@@ -55,7 +61,7 @@
                 color: white;
             }
 
-            .post-content p {
+            .post-content p {/* to be added to the .css later */
                 font-size: 1rem;
                 text-align: left;
                 width: 100%;
@@ -71,20 +77,13 @@
                 max-height: 400px;
                 object-fit: cover;                
             }
-            @media (min-width: 769px) {
+            @media (min-width: 769px) { /* wide screen */
                 .blog-posts-wrapper .post-image-container img {
-                    
+                    max-width: 450px;
                     max-height: 600px;
                 }
             }
 
-            .blog-posts-wrapper {                
-                background-size: cover; /* Ensure the image covers the whole div */
-                background-position: center center; /* Centers the image */
-                background-repeat: no-repeat; /* Prevents repeating the image */
-                height: 100%;
-                width: 100%;
-            }
         </style>
         
     </head>
@@ -117,9 +116,9 @@
           </div>
         </header>
 
-        <section class="section" style="padding: 0px 0px 0px 0px !important;" >
+        <section class="section" style="padding: 0px 0px 0px 0px; " >
           <!-- Hero Section -->
-          <div class="hero-section" id="home">
+          <div class="hero-section" id="home" style="margin: 0rem 0px 0px 0px; ">
             <!-- <div class="logo-container">
               <svg id="logoto" width="100%" height="100%" viewBox="-70 0 870 400" preserveAspectRatio="xMinYMin meet">
                 <path class="logo-part path-1" d="M10,270 L170,10"></path>
@@ -136,8 +135,9 @@
                 <circle class="logo-part circle" cx="680" cy="250" r="55"></circle>
               </svg>
             </div> -->
-            <div class="hero-overlay">
-              <p style="color: black; text-align: center; font-family: 'Favorit'; font-size: 3rem; font-weight: bold;">MI BRAND DISTILLERY BLOG</p>
+            <div class="hero-overlay" style="margin: 0px 0px 0px 0px; "> <!-- Moved the 7rem top margin here, bc its just the text, no animation -->
+              <p style="color: black; text-align: center; font-family: 'Favorit'; font-size: 3rem; font-weight: bold;
+              margin: 7rem 0px 0px 0px;" >MI BRAND DISTILLERY BLOG</p>
             </div>
           </div>
         </section>
@@ -145,7 +145,7 @@
         
         <!-- Blog Section -->
         <section class="section" id="blog">
-            <h2 style="padding: 0px 0px 20px 0px;">All Tags</h2>
+            <h2 style="padding: 0px 0px 0px 0px; margin: 0 0 0 0;">All Tags</h2>
 
             <div id="tag-container" style="padding: 0px 0px 50px 0px;"><span class="tag" data-tag="Social Media" onclick="filterByTag('Social Media')">Social Media (1)</span><span class="tag" data-tag="Media Analysis" onclick="filterByTag('Media Analysis')">Media Analysis (1)</span><span class="tag" data-tag="AI" onclick="filterByTag('AI')">AI (3)</span><span class="tag" data-tag="FIBEP2024" onclick="filterByTag('FIBEP2024')">FIBEP2024 (2)</span><span class="tag" data-tag="Media Summit" onclick="filterByTag('Media Summit')">Media Summit (4)</span><span class="tag" data-tag="PRovoke2024" onclick="filterByTag('PRovoke2024')">PRovoke2024 (1)</span></div> <!-- Placeholder for tag list -->
             <div class="blog-posts-wrapper">

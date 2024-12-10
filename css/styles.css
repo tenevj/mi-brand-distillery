@@ -918,9 +918,9 @@ header img {
     border-color: #083A81;
 }
 
-/* Post Divider */
+/* BLOG Post Divider */
 .post-divider {
-    margin: 3rem 0;
+    margin: 1rem 0;
     border-color: rgba(8, 58, 129, 0.2);
 }
 
