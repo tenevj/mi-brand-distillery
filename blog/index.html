@@ -13,6 +13,20 @@
         <link rel="icon" href="../favicon.ico" type="image/x-icon">
     
         <style>
+.blog-post {
+    border: 1px solid #083A81;
+    height: 100%;
+    background-image: url('../img/rhodium.jpg');
+    background-repeat:no-repeat; /* Ensures the image repeats seamlessly */
+    background-position: center;/*0 0; /* Begins the image tiling from the top left */
+    background-size: cover; /* contain / auto;*/
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+    background-color: transparent; /* Removes white background fields */
+    -webkit-text-size-adjust: auto; /*better readability on mobile devices within WebKit browsers*/
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: auto;
+}
+
             .post-tag {
                 display: inline-block;
                 margin: 5px;
@@ -36,20 +50,22 @@
                 background-color: #f0f0f0;
                 color: #333;
             }
-
             #tag-container .tag.selected {
                 background-color: #083A81; /* Your corporate blue */
                 color: white;
             }
+
 
             .post-content p {
                 font-size: 1rem;
                 text-align: left;
                 width: 100%;
                 padding: 0px 0px 0px 0px;
+                
             }
 
             .blog-posts-wrapper .post-image-container img {
+                
                 max-width: 300px;
                 height: auto;
                 display: block;
@@ -60,12 +76,13 @@
             }
             @media (min-width: 769px) {
                 .blog-posts-wrapper .post-image-container img {
+                    
                     max-height: 600px;
                 }
             }
 
-            .blog-posts-wrapper {
-                background-image: url('../rhodium.jpg');
+
+            .blog-posts-wrapper {                
                 background-size: cover; /* Ensure the image covers the whole div */
                 background-position: center center; /* Centers the image */
                 background-repeat: no-repeat; /* Prevents repeating the image */
