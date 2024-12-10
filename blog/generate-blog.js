@@ -78,6 +78,15 @@ function updateBlogPage() {
         const postId = generateSlug(post.title, post.date);
         const baseUrl = "https://tenevj.github.io/mi-brand-distillery/blog/";
 
+        // Extract content after the front matter (YAML is already stripped in the content property)
+        const postContent = post.content.replace(/<br>/g, ' '); // Replace <br> tags with spaces to count words properly
+        const wordCount = postContent.split(/\s+/).filter(word => word).length; // Count words excluding YAML
+
+        // Calculate reading time (average: 200 words per minute)
+        const averageReadingSpeed = 200;
+        const readingTime = Math.ceil(wordCount / averageReadingSpeed);
+
+
         const postItem = `
             <article class="blog-post" id="${postId}">
     
@@ -85,7 +94,7 @@ function updateBlogPage() {
                     <h2 class="post-title">${post.title}</h2>
                     <div class="post-meta">
                         <time datetime="${post.date}"><i class="far fa-calendar-alt"></i> ${post.date}</time>
-                        <span class="reading-time"><i class="far fa-clock"></i> 5 min read</span>
+                        <span class="reading-time"><i class="far fa-clock"></i> ${readingTime} min read</span>
                     </div>
                 </div>
     

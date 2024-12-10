@@ -9,7 +9,6 @@ tags:
 category: "Marketing Strategies"
 description: "Exploring the evolution of media intelligence in PR and marketing."
 image: ""
-reading_time: "57 min"
 draft: false
 ---
 
