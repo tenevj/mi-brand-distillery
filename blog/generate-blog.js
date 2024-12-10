@@ -120,7 +120,7 @@ function updateBlogPage() {
 
 
         const postItem = `
-            <article class="blog-post" id="${postId}">
+            <article class="blog-post" id="${postId}" data-tags="${post.tags.join(',')}">
     
                 <div class="post-header">
                     <h2 class="post-title">${post.title}</h2>
@@ -141,20 +141,15 @@ function updateBlogPage() {
                         <button class="btn btn-primary read-more" onclick="toggleContent(this)">Read More</button>
                     </div>
                 </div>
-            
 
-
-            
             <div class="share-buttons">
                 <span class="share-text">Share:</span>
-
                 <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${baseUrl}${postId}`)}" 
                 class="share-button" 
                 aria-label="Share on Facebook" 
                 target="_blank" 
                 rel="noopener noreferrer">
                     <i class="fab fa-facebook-f"></i>
-					
                 </a>
 
                 <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(`${baseUrl}${postId}`)}&text=${encodeURIComponent(post.title)}" 
@@ -163,9 +158,7 @@ function updateBlogPage() {
                 target="_blank" 
                 rel="noopener noreferrer">
                     <i class="fab fa-twitter"></i>
-                
                 </a>
-
 
                 <a href="https://www.linkedin.com/shareArticle?url=${encodeURIComponent(`${baseUrl}${postId}`)}&title=${encodeURIComponent(post.title)}&summary=${encodeURIComponent(post.content.slice(0, 200))}" 
                 class="share-button" 
@@ -173,7 +166,6 @@ function updateBlogPage() {
                 target="_blank" 
                 rel="noopener noreferrer">
                     <i class="fab fa-linkedin-in"></i>
-					
                 </a>
 
                 <a href="mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(post.content.slice(0, 200))}%0A%0A${encodeURIComponent(`${baseUrl}${postId}`)}" 				
@@ -182,7 +174,6 @@ function updateBlogPage() {
                 target="_blank" 
                 rel="noopener noreferrer">
                     <i class="far fa-envelope"></i>
-					
                 </a>
 
                 <div class="post-tags">${tagsHtml}</div>
@@ -196,7 +187,7 @@ function updateBlogPage() {
 
 
             </article>
-            <hr class="post-divider">
+            /* <hr class="post-divider"> */
         `;
         postsHtml += postItem; // Append each post's HTML to the postsHtml string
     });
