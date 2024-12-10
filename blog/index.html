@@ -13,6 +13,9 @@
         <link rel="icon" href="../favicon.ico" type="image/x-icon">
     
         <style>
+            .tag-container {
+                padding: 0px 0px 25px 10px;
+            }
             #tag-container .tag {
                 display: inline-block;
                 margin: 5px;
@@ -32,6 +35,8 @@
             .post-content p {
                 font-size: 1.2rem;
                 text-align: left;
+                width: 90%;
+                padding: 0px 50px 0px 50px;
             }
 
             .blog-posts-wrapper .post-image-container img {
@@ -48,12 +53,21 @@
                     max-height: 600px;
                 }
             }
+
+            .blog-posts-wrapper {
+                background-image: url('../rhodium.jpg');
+                background-size: cover; /* Ensure the image covers the whole div */
+                background-position: center center; /* Centers the image */
+                background-repeat: no-repeat; /* Prevents repeating the image */
+                height: 100%;
+                width: 100%;
+            }
         </style>
         
     </head>
       <body>
         <!-- Navigation Bar -->
-        <header style="display: flex; justify-content: space-between; align-items: center; height: 60px; top: 0;">
+        <header style="display: flex; justify-content: space-between; align-items: center; height: 60px; top: 0; padding: 0px 0px 0px 0px !important;">
           <img src="../img/logo_bw_notxt_transparent.png" 
                style="margin-left: 4vw; width: auto; height: auto;" id="base64logo">
           <div class="navbar">
@@ -80,7 +94,7 @@
           </div>
         </header>
 
-        <section class="section">
+        <section class="section" >
           <!-- Hero Section -->
           <div class="hero-section" id="home">
             <div class="logo-container">
@@ -108,7 +122,8 @@
         
         <!-- Blog Section -->
         <section class="section" id="blog">
-            <h2>Tags</h2>
+            <h2 style="padding: 0px 0px 20px 0px;">Tags</h2>
+
             <div id="tag-container"><span class="tag" data-tag="dolor" onclick="filterByTag('dolor')">dolor (2)</span><span class="tag" data-tag="lorem" onclick="filterByTag('lorem')">lorem (1)</span><span class="tag" data-tag="ipsum" onclick="filterByTag('ipsum')">ipsum (1)</span><span class="tag" data-tag="Social Media Analytics" onclick="filterByTag('Social Media Analytics')">Social Media Analytics (1)</span><span class="tag" data-tag="Media Analysis" onclick="filterByTag('Media Analysis')">Media Analysis (1)</span><span class="tag" data-tag="AI in Analytics" onclick="filterByTag('AI in Analytics')">AI in Analytics (1)</span><span class="tag" data-tag="Career Development" onclick="filterByTag('Career Development')">Career Development (1)</span><span class="tag" data-tag="Data Privacy" onclick="filterByTag('Data Privacy')">Data Privacy (1)</span><span class="tag" data-tag="Real-Time Monitoring" onclick="filterByTag('Real-Time Monitoring')">Real-Time Monitoring (1)</span><span class="tag" data-tag="Emerging Technologies" onclick="filterByTag('Emerging Technologies')">Emerging Technologies (1)</span><span class="tag" data-tag="Analytics Industry Trends" onclick="filterByTag('Analytics Industry Trends')">Analytics Industry Trends (1)</span><span class="tag" data-tag="Professional Growth" onclick="filterByTag('Professional Growth')">Professional Growth (1)</span><span class="tag" data-tag="Digital Strategy" onclick="filterByTag('Digital Strategy')">Digital Strategy (1)</span><span class="tag" data-tag="Generative AI" onclick="filterByTag('Generative AI')">Generative AI (1)</span><span class="tag" data-tag="Journalism Innovation" onclick="filterByTag('Journalism Innovation')">Journalism Innovation (1)</span><span class="tag" data-tag="Media Technology" onclick="filterByTag('Media Technology')">Media Technology (1)</span><span class="tag" data-tag="PRovokeGlobal" onclick="filterByTag('PRovokeGlobal')">PRovokeGlobal (1)</span><span class="tag" data-tag="PRovoke2024" onclick="filterByTag('PRovoke2024')">PRovoke2024 (1)</span><span class="tag" data-tag="Newsroom Transformation" onclick="filterByTag('Newsroom Transformation')">Newsroom Transformation (1)</span><span class="tag" data-tag="AI in Media" onclick="filterByTag('AI in Media')">AI in Media (1)</span><span class="tag" data-tag="Future of Journalism" onclick="filterByTag('Future of Journalism')">Future of Journalism (1)</span><span class="tag" data-tag="PR" onclick="filterByTag('PR')">PR (1)</span><span class="tag" data-tag="Media Summit" onclick="filterByTag('Media Summit')">Media Summit (1)</span></div> <!-- Placeholder for tag list -->
             <div class="blog-posts-wrapper">
                 <div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><div class="blog-posts-wrapper"><ul id="blog-posts">
