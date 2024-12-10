@@ -100,7 +100,7 @@ function updateBlogPage() {
     // Add tag HTML to the page 
     blogHtmlContent = blogHtmlContent.replace(
         /<div id="tag-container" style="padding: 0px 0px 50px 0px;">.*?<\/div>/s,
-        `<div id="tag-container">${tagHtml}</div>`
+        `<div id="tag-container">Tags: ${tagHtml}</div>`
     );
 
     // Create the HTML for the blog posts
