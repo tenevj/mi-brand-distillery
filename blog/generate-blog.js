@@ -132,7 +132,7 @@ function updateBlogPage() {
         .map(({ tag, count }) => `<span class="tag" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag} (${count})</span>`)
         .join('');
     const restTagHtml = restTags
-        .map(({ tag, count }) => `<span class="hidden-tag" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag} (${count})</span>`)
+        .map(({ tag, count }) => `<span class="rest-tags" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag} (${count})</span>`)
         .join('');
 
     // Add "Load More" button

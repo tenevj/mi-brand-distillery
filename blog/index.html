@@ -13,7 +13,7 @@
         <link rel="icon" href="../favicon.ico" type="image/x-icon">
     
         <style>
-            .hidden-tag {
+            .rest-tags {
                 display: none;
             }
 
@@ -147,11 +147,7 @@
         <section class="section" id="blog">
             <h2 style="padding: 0px 0px 0px 0px; margin: 0 0 0 0;">All Tags</h2>
 
-            <div id="tag-container" style="padding: 0px 0px 50px 0px;"><div id="top-tags"><span class="tag" data-tag="AI" onclick="filterByTag('AI')">AI (4)</span><span class="tag" data-tag="Media Summit" onclick="filterByTag('Media Summit')">Media Summit (4)</span><span class="tag" data-tag="Media Analysis" onclick="filterByTag('Media Analysis')">Media Analysis (2)</span><span class="tag" data-tag="FIBEP2024" onclick="filterByTag('FIBEP2024')">FIBEP2024 (2)</span><span class="tag" data-tag="GenZ" onclick="filterByTag('GenZ')">GenZ (1)</span></div>
-                     <div id="rest-tags" style="display: none;"><span class="hidden-tag" data-tag="Social Media" onclick="filterByTag('Social Media')">Social Media (1)</span><span class="hidden-tag" data-tag="PRovoke2024" onclick="filterByTag('PRovoke2024')">PRovoke2024 (1)</span></div>
-                     <button id="load-more-tags" onclick="loadMoreTags()">Load More Tags</button></div>
-                     <div id="rest-tags" style="display: none;"><span class="tag hidden" data-tag="Social Media" onclick="filterByTag('Social Media')">Social Media (1)</span><span class="tag hidden" data-tag="PRovoke2024" onclick="filterByTag('PRovoke2024')">PRovoke2024 (1)</span></div>
-                     <button id="load-more-tags" onclick="loadMoreTags()">Load More Tags</button></div> <!-- Placeholder for tag list -->
+            <div id="tag-container" style="padding: 0px 0px 50px 0px;"></div> <!-- Placeholder for tag list -->
             <div class="blog-posts-wrapper">
                 <ul id="blog-posts">
             <article class="blog-post" id="will-ai-replace-media-analysts-lets-ask-gen-z-1733788800000" data-tags="GenZ,Media Analysis,AI">
@@ -564,8 +560,8 @@
         <!-- Handle "Load More" Tags -->
         <script>
             function loadMoreTags() {
-                const hiddenTags = document.querySelectorAll('.hidden-tag');
-                hiddenTags.forEach(tag => tag.classList.remove('hidden-tag')); // Reveal all hidden tags
+                const hiddenTags = document.querySelectorAll('.rest-tags');
+                hiddenTags.forEach(tag => tag.classList.remove('rest-tags')); // Reveal all hidden tags
                 const loadMoreButton = document.getElementById('load-more-tags');
                 if (loadMoreButton) {
                     loadMoreButton.remove(); // Remove the "Load More" button after all tags are revealed
