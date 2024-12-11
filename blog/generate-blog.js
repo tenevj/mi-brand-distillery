@@ -122,7 +122,7 @@ function updateBlogPage() {
 
     // Replace the tag container with the new HTML
     blogHtmlContent = blogHtmlContent.replace(
-        /<div id="tag-container".*?<\/div>/s,
+        /<div id="tag-container" style="padding: 0px 0px 50px 0px;">.*?<\/div>/s,
         `<div id="tag-container" style="padding: 0px 0px 50px 0px;">${tagHtml}</div>`
     );
 
