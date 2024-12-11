@@ -103,22 +103,23 @@ function updateBlogPage() {
     const topTags = tagData.slice(0, 5);
     const restTags = tagData.slice(5);
 
-    // Generate HTML for the tags
-    const topTagHtml = topTags
-        .map(({ tag, count }) => `<span class="tag" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag} (${count})</span>`)
-        .join('');
-    const restTagHtml = restTags
-        .map(({ tag, count }) => `<span class="rest-tags" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag} (${count})</span>`)
-        .join('');
+// Generate HTML for the tags
+const topTagHtml = topTags
+    .map(({ tag, count }) => `<span class="tag" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag} (${count})</span>`)
+    .join('');
+const restTagHtml = restTags
+    .map(({ tag, count }) => `<span class="rest-tags" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag} (${count})</span>`)
+    .join('');
 
-    // Add "Load More" button
-    const loadMoreHtml = restTags.length > 0
-        ? `<button id="load-more-tags" onclick="loadMoreTags()">Load More Tags</button>`
-        : '';
+// Add "Load More" button
+const loadMoreHtml = restTags.length > 0
+    ? `<button id="load-more-tags" onclick="loadMoreTags()">Load More Tags</button>`
+    : '';
 
-    const tagHtml = `<div id="top-tags">${topTagHtml}</div>
-                     <div id="rest-tags" style="display: none;">${restTagHtml}</div>
-                     ${loadMoreHtml}`;
+const tagHtml = `<div id="top-tags">${topTagHtml}</div>
+                 <div id="rest-tags-container" style="display: none;">${restTagHtml}</div>
+                 ${loadMoreHtml}`;
+
 
     // Replace the tag container with the new HTML
     blogHtmlContent = blogHtmlContent.replace(

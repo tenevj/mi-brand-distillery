@@ -148,7 +148,7 @@
             <h2 style="padding: 0px 0px 0px 0px; margin: 0 0 0 0;">All Tags</h2>
 
             <div id="tag-container" style="padding: 0px 0px 50px 0px;"><div id="top-tags"><span class="tag" data-tag="AI" onclick="filterByTag('AI')">AI (4)</span><span class="tag" data-tag="Media Summit" onclick="filterByTag('Media Summit')">Media Summit (4)</span><span class="tag" data-tag="Media Analysis" onclick="filterByTag('Media Analysis')">Media Analysis (2)</span><span class="tag" data-tag="FIBEP2024" onclick="filterByTag('FIBEP2024')">FIBEP2024 (2)</span><span class="tag" data-tag="GenZ" onclick="filterByTag('GenZ')">GenZ (1)</span></div>
-                     <div id="rest-tags" style="display: none;"><span class="rest-tags" data-tag="Social Media" onclick="filterByTag('Social Media')">Social Media (1)</span><span class="rest-tags" data-tag="PRovoke2024" onclick="filterByTag('PRovoke2024')">PRovoke2024 (1)</span></div>
+                     <div id="rest-tags-container" style="display: none;"><span class="rest-tags" data-tag="Social Media" onclick="filterByTag('Social Media')">Social Media (1)</span><span class="rest-tags" data-tag="PRovoke2024" onclick="filterByTag('PRovoke2024')">PRovoke2024 (1)</span></div>
                      <button id="load-more-tags" onclick="loadMoreTags()">Load More Tags</button></div> <!-- Placeholder for tag list -->
             <div class="blog-posts-wrapper">
                 <ul id="blog-posts">
@@ -562,11 +562,18 @@
         <!-- Handle "Load More" Tags -->
         <script>
             function loadMoreTags() {
-                const hiddenTags = document.querySelectorAll('.rest-tags'); // Select all tags with the `rest-tags` class
+                // Select all elements inside the rest-tags-container with class "rest-tags"
+                const hiddenTags = document.querySelectorAll('#rest-tags-container .rest-tags');
+                
                 hiddenTags.forEach(tag => {
                     tag.style.display = 'inline-block'; // Make the hidden tags visible
-                    //tag.classList.remove('rest-tags'); // Optionally remove the `rest-tags` class if it's no longer needed
+                    // Optional: Remove the `rest-tags` class if no longer needed
+                    // tag.classList.remove('rest-tags');
                 });
+
+                // Show the rest-tags-container in case it's hidden
+                const restTagsContainer = document.getElementById('rest-tags-container');
+                restTagsContainer.style.display = 'block';
 
                 // Remove the "Load More" button
                 const loadMoreButton = document.getElementById('load-more-tags');
@@ -574,7 +581,8 @@
                     loadMoreButton.remove();
                 }
             }
-            console.log('Hidden tags:', hiddenTags);
+
+            
 
         </script>
 
