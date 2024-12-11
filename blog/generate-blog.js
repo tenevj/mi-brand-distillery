@@ -73,7 +73,11 @@ function getTagData(blogPosts) {
         });
     });
 
-    return tagCounts;
+    /* return tagCounts;
+} */
+    return Object.entries(tagCounts)
+        .sort((a, b) => b[1] - a[1]) // Sort by count
+        .map(([tag, count]) => ({ tag, count })); // Convert back to array of objects
 }
 
 // Function to generate a slug from the post title
@@ -93,7 +97,7 @@ function updateBlogPage() {
 
     // Generate tag HTML
     const tagData = getTagData(blogPosts);
-    let tagHtml = '';
+    /* let tagHtml = ''; */
 
     /* for (const [tag, count] of Object.entries(tagData)) {
         tagHtml += `<span class="tag" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag} (${count})</span>`;
@@ -102,7 +106,7 @@ function updateBlogPage() {
 
 
 
-    let tagCount = 0;
+    /* let tagCount = 0;
     for (const [tag, count] of Object.entries(tagData)) {
         const hiddenClass = tagCount >= 5 ? 'hidden-tag' : ''; // Hide tags after the 5th
         tagHtml += `<span class="tag ${hiddenClass}" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag} (${count})</span>`;
@@ -111,17 +115,41 @@ function updateBlogPage() {
     // Add a "Load More" button if there are more than 5 tags
     if (tagCount > 5) {
         tagHtml += `<button id="load-more-tags" onclick="loadMoreTags()">Load More</button>`;
-    }
-
-
-
-
-
+    }*/
     // Add tag HTML to the page 
+    /* blogHtmlContent = blogHtmlContent.replace(
+        /<div id="tag-container".*?<\/div>/s,
+        `<div id="tag-container" style="padding: 0px 0px 50px 0px;">${tagHtml}</div>`
+    ); */
+
+
+    // Split into top 5 tags and the rest
+    const topTags = tagData.slice(0, 5);
+    const restTags = tagData.slice(5);
+
+    // Generate HTML for the tags
+    const topTagHtml = topTags
+        .map(({ tag, count }) => `<span class="tag" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag} (${count})</span>`)
+        .join('');
+    const restTagHtml = restTags
+        .map(({ tag, count }) => `<span class="tag hidden" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag} (${count})</span>`)
+        .join('');
+
+    // Add "Load More" button
+    const loadMoreHtml = restTags.length > 0
+        ? `<button id="load-more-tags" onclick="loadMoreTags()">Load More Tags</button>`
+        : '';
+
+    const tagHtml = `<div id="top-tags">${topTagHtml}</div>
+                     <div id="rest-tags" style="display: none;">${restTagHtml}</div>
+                     ${loadMoreHtml}`;
+
+    // Replace the tag container with the new HTML
     blogHtmlContent = blogHtmlContent.replace(
         /<div id="tag-container".*?<\/div>/s,
         `<div id="tag-container" style="padding: 0px 0px 50px 0px;">${tagHtml}</div>`
     );
+
 
     // Create the HTML for the blog posts
     let postsHtml = '';
@@ -211,13 +239,15 @@ function updateBlogPage() {
 
     // Replace or append the new posts inside the <ul id="blog-posts">
     const postsContainerRegex = /<ul id="blog-posts">.*?<\/ul>/s;
-    if (postsContainerRegex.test(blogHtmlContent)) {
+    /* if (postsContainerRegex.test(blogHtmlContent)) {
         // If the placeholder is found, append to it
         blogHtmlContent = blogHtmlContent.replace(postsContainerRegex, postsHtml);
     } else {
         // If the placeholder doesn't exist, add it (shouldn't happen if the HTML structure is correct)
         blogHtmlContent = blogHtmlContent.replace('<ul id="blog-posts"></ul>', postsHtml);
-    }
+    } */
+
+    blogHtmlContent = blogHtmlContent.replace(/<ul id="blog-posts">.*?<\/ul>/s, postsHtml);
 
     // Write the updated content back to the index.html file
     fs.writeFileSync(blogHtmlPath, blogHtmlContent, 'utf8');
