@@ -562,21 +562,20 @@
         <!-- Handle "Load More" Tags -->
         <script>
             function loadMoreTags() {
-                const hiddenTags = document.querySelectorAll('.rest-tags');
-                hiddenTags.forEach(tag => tag.classList.remove('rest-tags')); // Reveal all hidden tags
+                const hiddenTags = document.querySelectorAll('.rest-tags'); // Select all tags with the `rest-tags` class
+                hiddenTags.forEach(tag => {
+                    tag.style.display = 'inline-block'; // Make the hidden tags visible
+                    tag.classList.remove('rest-tags'); // Optionally remove the `rest-tags` class if it's no longer needed
+                });
+
+                // Remove the "Load More" button
                 const loadMoreButton = document.getElementById('load-more-tags');
                 if (loadMoreButton) {
-                    loadMoreButton.remove(); // Remove the "Load More" button after all tags are revealed
+                    loadMoreButton.remove();
                 }
             }
-        
-            function filterByTag(tag) {
-                const posts = document.querySelectorAll('.blog-post');
-                posts.forEach(post => {
-                    const tags = post.getAttribute('data-tags').split(',');
-                    post.style.display = tags.includes(tag) ? '' : 'none'; // Show/hide posts based on the tag
-                });
-            }
+            console.log('Hidden tags:', hiddenTags);
+
         </script>
 
         <!-- Filter by tag -->
