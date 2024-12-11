@@ -94,9 +94,29 @@ function updateBlogPage() {
     // Generate tag HTML
     const tagData = getTagData(blogPosts);
     let tagHtml = '';
-    for (const [tag, count] of Object.entries(tagData)) {
+
+    /* for (const [tag, count] of Object.entries(tagData)) {
         tagHtml += `<span class="tag" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag} (${count})</span>`;
+    } */
+
+
+
+
+    let tagCount = 0;
+    for (const [tag, count] of Object.entries(tagData)) {
+        const hiddenClass = tagCount >= 5 ? 'hidden-tag' : ''; // Hide tags after the 5th
+        tagHtml += `<span class="tag ${hiddenClass}" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag} (${count})</span>`;
+        tagCount++;
     }
+    // Add a "Load More" button if there are more than 5 tags
+    if (tagCount > 5) {
+        tagHtml += `<button id="load-more-tags" onclick="loadMoreTags()">Load More</button>`;
+    }
+
+
+
+
+
     // Add tag HTML to the page 
     blogHtmlContent = blogHtmlContent.replace(
         /<div id="tag-container".*?<\/div>/s,

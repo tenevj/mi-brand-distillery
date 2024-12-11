@@ -13,11 +13,14 @@
         <link rel="icon" href="../favicon.ico" type="image/x-icon">
     
         <style>
-          .post-header {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-          }
+            .hidden-tag {
+                display: none;
+            }
 
+            .post-header {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
             .blog-post { /* to be added to the .css later */
                 border: 1px solid #000000;
                 height: 100%;
@@ -32,7 +35,6 @@
                 text-size-adjust: auto;
                 margin: 2rem 0 0 0;
             }
-
             .post-tag {
                 display: inline-block;
                 margin: 5px;
@@ -60,14 +62,12 @@
                 background-color: #083A81; /* Your corporate blue */
                 color: white;
             }
-
             .post-content p {/* to be added to the .css later */
                 font-size: 1rem;
                 text-align: left;
                 width: 100%;
                 padding: 0px 0px 0px 0px;
             }
-
             .blog-posts-wrapper .post-image-container img {
                 max-width: 300px;
                 height: auto;
@@ -556,6 +556,27 @@
 
         <!-- Scripts -->
 
+        
+        <!-- Handle "Load More" Tags -->
+        <script>
+            function loadMoreTags() {
+                const hiddenTags = document.querySelectorAll('.hidden-tag');
+                hiddenTags.forEach(tag => tag.classList.remove('hidden-tag')); // Reveal all hidden tags
+                const loadMoreButton = document.getElementById('load-more-tags');
+                if (loadMoreButton) {
+                    loadMoreButton.remove(); // Remove the "Load More" button after all tags are revealed
+                }
+            }
+        
+            function filterByTag(tag) {
+                const posts = document.querySelectorAll('.blog-post');
+                posts.forEach(post => {
+                    const tags = post.getAttribute('data-tags').split(',');
+                    post.style.display = tags.includes(tag) ? '' : 'none'; // Show/hide posts based on the tag
+                });
+            }
+        </script>
+
         <!-- Filter by tag -->
         <script>
             let selectedTags = [];
@@ -599,10 +620,6 @@
                 });
             }
         </script>
-        
-
-
-
         
         <!-- Toggle full text view -->
         <script>
