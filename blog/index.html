@@ -575,25 +575,24 @@
         <!-- Scripts -->
 
         
-                
-        <!-- Handle "Load More" Tags -->
         <script>
+            // Handle "Load More" Tags
             function loadMoreTags() {
-                // Select all hidden tags
-                const hiddenTags = document.querySelectorAll('#rest-tags-container .rest-tags');
+                // Select the container holding the rest of the tags
+                const restTagsContainer = document.getElementById('rest-tags-container');
                 
-                hiddenTags.forEach(tag => {
-                    tag.style.display = 'inline-block'; // Make them visible
-                    tag.classList.remove('rest-tags'); // Optional: Remove the `rest-tags` class
-                    tag.classList.add('tag'); // Ensure they match the same class as visible tags
-                });
-
+                if (restTagsContainer) {
+                    // Make the container visible
+                    restTagsContainer.style.display = 'block';
+                }
+                
                 // Remove "Load More" button
                 const loadMoreButton = document.getElementById('load-more-tags');
                 if (loadMoreButton) {
                     loadMoreButton.remove();
                 }
             }
+
         </script>
 
         <!-- Filter by tag -->
