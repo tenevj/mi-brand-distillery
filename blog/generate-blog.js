@@ -84,18 +84,18 @@ function updateBlogPage() {
     const restTagHtml = restTags
         .map(({ tag, count }) => `<span class="rest-tags" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag} (${count})</span>`)
         .join('');
-    const loadMoreHtml = restTags.length > 0
-        ? `<button id="load-more-tags" onclick="loadMoreTags()">Load More Tags</button>`
-        : '';
 
     const tagHtml = `<div id="top-tags">${topTagHtml}</div>
                      <div id="rest-tags-container" style="display: none;">${restTagHtml}</div>
-                     ${loadMoreHtml}`;
+                     <button id="load-more-tags" onclick="loadMoreTags()">More Tags</button>`;
+    
 
+    // Replace the tag container
     blogHtmlContent = blogHtmlContent.replace(
-        /<div id="tag-container" style="padding: 0px 0px 50px 0px;">.*?<\/div>/s,
+        /<div id="tag-container"[^>]*>.*?<\/div>/s,
         `<div id="tag-container" style="padding: 0px 0px 50px 0px;">${tagHtml}</div>`
     );
+    
 
     // Generate HTML for blog posts
     let postsHtml = '';
