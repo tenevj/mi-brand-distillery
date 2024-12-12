@@ -1,63 +1,49 @@
 // Importing required libraries
-const fs = require('fs'); // To work with the file system
-const path = require('path'); // To handle and transform file paths
-const yaml = require('js-yaml'); // To parse YAML front matter in markdown files
+const fs = require('fs');
+const path = require('path');
+const yaml = require('js-yaml');
 
-
-//2024-12-06 17:57:08 
 const posts = []; // Array to hold the blog posts
+
 // Function to generate the list of blog posts
 function generateBlogPosts() {
-    const blogDir = path.join(__dirname, 'posts'); // Directory where markdown files are stored
+    const blogDir = path.join(__dirname, 'posts'); // Directory for markdown files
 
-    // Check if the 'posts' directory exists
     if (fs.existsSync(blogDir)) {
-        const files = fs.readdirSync(blogDir).sort().reverse(); // Get all files in the 'posts' directory
-        
-        // Loop through each file in the directory
-        files.forEach(file => {
-            console.log('Processing file:', file);  // Debugging line
-            // Process only markdown (.md) files
-            if (file.endsWith('.md')) {
-                const filePath = path.join(blogDir, file); // Get the full path of the file
-                const content = fs.readFileSync(filePath, 'utf8'); // Read the content of the markdown file
+        const files = fs.readdirSync(blogDir).sort().reverse(); // Get files sorted by name
 
-                // Regex to extract front matter (YAML) from markdown files
+        files.forEach(file => {
+            if (file.endsWith('.md')) {
+                const filePath = path.join(blogDir, file);
+                const content = fs.readFileSync(filePath, 'utf8');
+
                 const frontMatterRegex = /^---([\s\S]*?)---/;
                 const match = content.match(frontMatterRegex);
 
-                // If front matter exists, parse it
                 if (match) {
                     try {
-                        // Use js-yaml to parse the front matter
                         const frontMatter = yaml.load(match[1]);
-                        
-                        // Handle missing or empty `image`
                         const image = frontMatter.image && frontMatter.image.trim() !== '' 
                             ? `images/${frontMatter.image}` 
                             : 'images/default.jpg';
-                        
-                        
-                        // Push the parsed data into the posts array
+
                         posts.push({
                             title: frontMatter.title,
                             date: frontMatter.date,
-                            tags: frontMatter.tags || [], // Extract tags
-                            content: content.replace(frontMatterRegex, '').replace(/\n/g, '<br>'), // Remove the front matter from the content; 2024-12-06 18:49:06 respect new lines 
+                            tags: frontMatter.tags || [],
+                            content: content.replace(frontMatterRegex, '').replace(/\n/g, '<br>'),
                             image
                         });
                     } catch (error) {
-                        console.error("Error parsing YAML front matter in file:", file);
-                        console.error(error);
+                        console.error("Error parsing YAML in file:", file, error);
                     }
                 }
             }
         });
     }
 
-    return posts; // Return the array of blog posts
+    return posts;
 }
-
 
 // Generate and count tags
 function getTagData(blogPosts) {
@@ -65,88 +51,64 @@ function getTagData(blogPosts) {
 
     blogPosts.forEach(post => {
         post.tags.forEach(tag => {
-            if (tagCounts[tag]) {
-                tagCounts[tag]++;
-            } else {
-                tagCounts[tag] = 1;
-            }
+            tagCounts[tag] = (tagCounts[tag] || 0) + 1;
         });
     });
 
-    /* return tagCounts;
-} */
     return Object.entries(tagCounts)
-        .sort((a, b) => b[1] - a[1]) // Sort by count
-        .map(([tag, count]) => ({ tag, count })); // Convert back to array of objects
+        .sort((a, b) => b[1] - a[1])
+        .map(([tag, count]) => ({ tag, count }));
 }
 
 // Function to generate a slug from the post title
 function generateSlug(title, date) {
     const formattedTitle = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
-    const timestamp = new Date(date).getTime();  // Use the post date as part of the ID
+    const timestamp = new Date(date).getTime();
     return `${formattedTitle}-${timestamp}`;
 }
 
 // Function to update the blog page with the generated blog posts
 function updateBlogPage() {
-    const blogPosts = generateBlogPosts(); // Generate the list of blog posts
-    const blogHtmlPath = path.join(__dirname, 'index.html'); // Path to the HTML file
-
-    // Read the HTML file into memory
+    const blogPosts = generateBlogPosts();
+    const blogHtmlPath = path.join(__dirname, 'index.html');
     let blogHtmlContent = fs.readFileSync(blogHtmlPath, 'utf8');
 
     // Generate tag HTML
     const tagData = getTagData(blogPosts);
-
-
-    // Split into top 5 tags and the rest
     const topTags = tagData.slice(0, 5);
     const restTags = tagData.slice(5);
 
-// Generate HTML for the tags
-const topTagHtml = topTags
-    .map(({ tag, count }) => `<span class="tag" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag} (${count})</span>`)
-    .join('');
-const restTagHtml = restTags
-    .map(({ tag, count }) => `<span class="rest-tags" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag} (${count})</span>`)
-    .join('');
+    const topTagHtml = topTags
+        .map(({ tag, count }) => `<span class="tag" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag} (${count})</span>`)
+        .join('');
+    const restTagHtml = restTags
+        .map(({ tag, count }) => `<span class="rest-tags" data-tag="${tag}" onclick="filterByTag('${tag}')">${tag} (${count})</span>`)
+        .join('');
+    const loadMoreHtml = restTags.length > 0
+        ? `<button id="load-more-tags" onclick="loadMoreTags()">Load More Tags</button>`
+        : '';
 
-// Add "Load More" button
-const loadMoreHtml = restTags.length > 0
-    ? `<button id="load-more-tags" onclick="loadMoreTags()">Load More Tags</button>`
-    : '';
+    const tagHtml = `<div id="top-tags">${topTagHtml}</div>
+                     <div id="rest-tags-container" style="display: none;">${restTagHtml}</div>
+                     ${loadMoreHtml}`;
 
-const tagHtml = `<div id="top-tags">${topTagHtml}</div>
-                 <div id="rest-tags-container" style="display: none;">${restTagHtml}</div>
-                 ${loadMoreHtml}`;
-
-
-    // Replace the tag container with the new HTML
     blogHtmlContent = blogHtmlContent.replace(
         /<div id="tag-container" style="padding: 0px 0px 50px 0px;">.*?<\/div>/s,
         `<div id="tag-container" style="padding: 0px 0px 50px 0px;">${tagHtml}</div>`
     );
 
-
-    // Create the HTML for the blog posts
+    // Generate HTML for blog posts
     let postsHtml = '';
     blogPosts.forEach(post => {
         const postId = generateSlug(post.title, post.date);
         const baseUrl = "https://tenevj.github.io/mi-brand-distillery/blog/";
         const tagsHtml = post.tags.map(tag => `<span class="post-tag">${tag}</span>`).join(' ');
+        const postContent = post.content.replace(/<br>/g, ' ');
+        const wordCount = postContent.split(/\s+/).filter(word => word).length;
+        const readingTime = Math.ceil(wordCount / 200);
 
-        // Extract content after the front matter (YAML is already stripped in the content property)
-        const postContent = post.content.replace(/<br>/g, ' '); // Replace <br> tags with spaces to count words properly
-        const wordCount = postContent.split(/\s+/).filter(word => word).length; // Count words excluding YAML
-
-        // Calculate reading time (average: 200 words per minute)
-        const averageReadingSpeed = 200;
-        const readingTime = Math.ceil(wordCount / averageReadingSpeed);
-
-
-        const postItem = `
+        postsHtml += `
             <article class="blog-post" id="${postId}" data-tags="${post.tags.join(',')}">
-    
                 <div class="post-header">
                     <h2 class="post-title">${post.title}</h2>
                     <div class="post-meta">
@@ -154,11 +116,9 @@ const tagHtml = `<div id="top-tags">${topTagHtml}</div>
                         <span class="reading-time"><i class="far fa-clock"></i> ${readingTime} min read</span>
                     </div>
                 </div>
-    
                 <div class="post-image-container">
                     <img src="${post.image}" alt="${post.title}" class="featured-image">
                 </div>
-    
                 <div class="post-content">
                     <p class="excerpt">${post.content.slice(0, 200)}...</p>
                     <p class="full-content" style="display: none;">${post.content}</p>
@@ -166,71 +126,28 @@ const tagHtml = `<div id="top-tags">${topTagHtml}</div>
                         <button class="btn btn-primary read-more" onclick="toggleContent(this)">Read More</button>
                     </div>
                 </div>
-
-            <div class="share-buttons">
-                <span class="share-text">Share:</span>
-                <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${baseUrl}${postId}`)}" 
-                class="share-button" 
-                aria-label="Share on Facebook" 
-                target="_blank" 
-                rel="noopener noreferrer">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-
-                <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(`${baseUrl}${postId}`)}&text=${encodeURIComponent(post.title)}" 
-                class="share-button" 
-                aria-label="Share on Twitter" 
-                target="_blank" 
-                rel="noopener noreferrer">
-                    <i class="fab fa-twitter"></i>
-                </a>
-
-                <a href="https://www.linkedin.com/shareArticle?url=${encodeURIComponent(`${baseUrl}${postId}`)}&title=${encodeURIComponent(post.title)}&summary=${encodeURIComponent(post.content.slice(0, 200))}" 
-                class="share-button" 
-                aria-label="Share on LinkedIn" 
-                target="_blank" 
-                rel="noopener noreferrer">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-
-                <a href="mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(post.content.slice(0, 200))}%0A%0A${encodeURIComponent(`${baseUrl}${postId}`)}" 				
-                class="share-button" 
-                aria-label="Share via Email" 
-                target="_blank" 
-                rel="noopener noreferrer">
-                    <i class="far fa-envelope"></i>
-                </a>
-                
+                <div class="share-buttons">
+                    <span class="share-text">Share:</span>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${baseUrl}${postId}`)}" class="share-button" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(`${baseUrl}${postId}`)}&text=${encodeURIComponent(post.title)}" class="share-button" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/shareArticle?url=${encodeURIComponent(`${baseUrl}${postId}`)}&title=${encodeURIComponent(post.title)}" class="share-button" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(post.content.slice(0, 200))}%0A%0A${encodeURIComponent(`${baseUrl}${postId}`)}" class="share-button" target="_blank" rel="noopener noreferrer">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
                 <div class="post-tags">Tags: ${tagsHtml}</div>
-            </div>
-
-            </article>
-        `;
-        postsHtml += postItem; // Append each post's HTML to the postsHtml string
+            </article>`;
     });
-    
 
-    // Wrap the postsHtml in a scoped container
-    //postsHtml = `<div class="blog-posts-wrapper"><ul id="blog-posts">${postsHtml}</ul></div>`;
-    postsHtml = `<ul id="blog-posts">${postsHtml}</ul>`;
+    blogHtmlContent = blogHtmlContent.replace(/<ul id="blog-posts">.*?<\/ul>/s, `<ul id="blog-posts">${postsHtml}</ul>`);
 
-    // Replace or append the new posts inside the <ul id="blog-posts">
-    const postsContainerRegex = /<ul id="blog-posts">.*?<\/ul>/s;
-    /* if (postsContainerRegex.test(blogHtmlContent)) {
-        // If the placeholder is found, append to it
-        blogHtmlContent = blogHtmlContent.replace(postsContainerRegex, postsHtml);
-    } else {
-        // If the placeholder doesn't exist, add it (shouldn't happen if the HTML structure is correct)
-        blogHtmlContent = blogHtmlContent.replace('<ul id="blog-posts"></ul>', postsHtml);
-    } */
-
-    blogHtmlContent = blogHtmlContent.replace(/<ul id="blog-posts">.*?<\/ul>/s, postsHtml);
-
-    // Write the updated content back to the index.html file
     fs.writeFileSync(blogHtmlPath, blogHtmlContent, 'utf8');
 }
 
-// Call the function to update the blog page
 updateBlogPage();
-
-
