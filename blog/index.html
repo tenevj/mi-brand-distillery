@@ -168,6 +168,7 @@
                      <div id="rest-tags-container" style="display: none;"><span class="rest-tags" data-tag="Social Media" onclick="filterByTag('Social Media')">Social Media (1)</span><span class="rest-tags" data-tag="PRovoke2024" onclick="filterByTag('PRovoke2024')">PRovoke2024 (1)</span></div>
                      <button id="load-more-tags" onclick="loadMoreTags()">More Tags</button></div>
                      <div id="rest-tags-container" style="display: none;"><span class="rest-tags" data-tag="Social Media" onclick="filterByTag('Social Media')">Social Media (1)</span><span class="rest-tags" data-tag="PRovoke2024" onclick="filterByTag('PRovoke2024')">PRovoke2024 (1)</span></div>
+                     
                      <button id="load-more-tags" onclick="loadMoreTags()">More Tags</button></div> <!-- Placeholder for tag list -->
 
             <div class="blog-posts-wrapper">
@@ -432,6 +433,10 @@
                 if (restTagsContainer) {
                     // Make the container visible
                     restTagsContainer.style.display = 'block';
+
+                    // Change class of spans within restTagsContainer to "tag"
+                    const spans = restTagsContainer.querySelectorAll('span');
+                    spans.forEach(span => span.classList.add('tag'));
                 }
                 
                 // Remove "Load More" button
@@ -440,6 +445,9 @@
                     loadMoreButton.remove();
                 }
             }
+
+
+
 
         </script>
 
