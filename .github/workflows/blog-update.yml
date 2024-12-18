@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: npm install --save-dev vite js-yaml markdown-it express multer
+        run: npm install --save-dev vite js-yaml markdown-it axios multer express fs
 
       - name: Upload Image
         run: node blog/upload/upload-image.js
