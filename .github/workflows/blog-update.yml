@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'blog/**'
+      - 'blog/images/**'  # Track changes to the images folder
 
 jobs:
   build:
@@ -17,6 +18,9 @@ jobs:
       - name: Install dependencies
         run: npm install --save-dev vite js-yaml markdown-it express multer
 
+      - name: Upload Image
+        run: node blog/upload/upload-image.js
+
       - name: Generate Blog Posts
         run: node blog/generate-blog.js
 
@@ -28,7 +32,7 @@ jobs:
         run: |
           git config --global user.email "tenevj@gmail.com"
           git config --global user.name "Jikkata"
-          git add blog/index.html
+          git add blog/index.html blog/images/*
           git commit -m "Update blog posts in index.html" || echo "No changes to commit"
           git diff --cached --exit-code || git commit -m "Update blog posts in index.html"
           git push
