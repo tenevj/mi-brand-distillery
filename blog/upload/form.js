@@ -64,7 +64,8 @@ document.getElementById('blogForm').addEventListener('submit', async function (e
 
     const response = await fetch('/upload-image', {
         method: 'POST',
-        body: formData
+        body: formData,
+        timeout: 60000 // 1 minute timeout
     });
 
     const result = await response.json();
