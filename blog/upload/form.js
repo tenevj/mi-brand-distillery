@@ -21,8 +21,7 @@ document.getElementById('blogForm').addEventListener('submit', async function (e
     }
   
     // Create the Markdown content
-    const markdownContent = `
----
+    const markdownContent = `---
 title: "${title}"
 date: "${date}"
 tags:

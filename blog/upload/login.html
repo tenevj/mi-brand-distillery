@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Submission</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #successPage {
+      display: none; /* Hidden by default */
+    }
+    #loginForm {
+      display: block; /* Displayed by default */
+    }
+    .hidden {
+      display: none;
+    }
+    .visible {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Login Form -->
+  <div id="loginForm">
+    <h1>Login</h1>
+    <form id="form">
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" required><br><br>
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" required><br><br>
+      <button type="button" id="submitBtn">Submit</button>
+    </form>
+    <p id="errorMessage" style="color: red; display: none;">Invalid username or password!</p>
+  </div>
+
+  <!-- Success Page -->
+  <div id="successPage">
+    <h1>Success</h1>
+    <p>Welcome! You have successfully logged in.</p>
+  </div>
+
+  <script>
+    // Hardcoded username and password
+    const validUsername = "admin";
+    const validPassword = "1234";
+
+    // Handle the form submission
+    document.getElementById('submitBtn').addEventListener('click', function () {
+      // Get input values
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Check if the credentials are valid
+      if (username === validUsername && password === validPassword) {
+        // Hide the login form and show the success page
+        document.getElementById('loginForm').classList.add('hidden');
+        document.getElementById('successPage').classList.remove('hidden');
+      } else {
+        // Display an error message if credentials are incorrect
+        document.getElementById('errorMessage').style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>
