@@ -8,7 +8,7 @@ const app = express();
 // Set up multer storage and destination for image uploads (temporarily save to disk)
 const upload = multer({
   dest: path.join(__dirname, 'temp/'),  // Temporarily save images
-  limits: { fileSize: 5 * 1024 * 1024 },  // Limit to 5MB
+  limits: { fileSize: 5 * 1024 * 1024 },  // Limit to 5MB 
 });
 
 // Get GitHub token and repo info from the environment
