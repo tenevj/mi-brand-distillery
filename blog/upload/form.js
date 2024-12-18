@@ -24,12 +24,10 @@ document.getElementById('blogForm').addEventListener('submit', async function (e
     const markdownContent = `
   ---
   title: "${title}"
-  
   date: "${date}"
   tags: 
-  ${tags.map(tag => `  - ${tag}`).join('\n')}
+  ${tags.map(tag => `    - ${tag}`).join('\n')}
   image: "${imagePath}"
-  
   ---
   ${content.replace(/<a href="(.*?)">(.*?)<\/a>/g, '[$2]($1)')} <!-- Converts HTML links to Markdown -->
   `;
