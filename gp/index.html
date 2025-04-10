@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Планер месечен статус</title>
+    <style>
+        table {border-collapse: collapse; font-family: Arial, sans-serif;}
+        td, th {border: 1px solid #CCC; padding: 8px; text-align: center;}
+        th {background-color: #f4f4f4; color: #333; font-weight: bold;}
+        .lock input {background-color: #ddd; cursor: not-allowed;}
+        #controls {margin: 20px 0;}
+        button {padding: 8px 16px; margin: 0 5px; cursor: pointer;}
+        .hidden {display: none;}
+    </style>
+</head>
+
+<body>
+<h3>Статус на проектите по седмици</h3>
+
+<!-- Controls -->
+<div id="controls">
+    Въведете парола за редактиране:
+    <input type="password" id="passwordField">
+    <button onclick="checkPassword()">Активирай редакция</button>
+    <button onclick="resetForm()" class="hidden">Изчистване</button>
+    <button onclick="loadFromStorage()" class="hidden">Възстанови данни</button>
+    <button onclick="saveToStorage()" class="hidden">Запази промените</button>
+</div>
+
+<!-- The main table -->
+<table id="plannerTable">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Седмица 1</th>
+            <th>Седмица 2</th>
+            <th>Седмица 3</th>
+            <th>Седмица 4</th>
+            <th>Седмица 5</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Капацитет ClientX</th>
+            <td><input type="text" class="lock" placeholder="%" autocomplete="off"></td>
+            <td><input type="text" class="lock" autocomplete="off"></td>
+            <td><input type="text" class="lock" autocomplete="off"></td>
+            <td><input type="text" class="lock" autocomplete="off"></td>
+            <td><input type="text" class="lock" autocomplete="off"></td>
+        </tr>
+        <tr>
+            <th>Проект X напредък</th>
+            <td><input type="text" class="lock" placeholder="% Done" autocomplete="off"></td>
+            <td><input type="text" class="lock" autocomplete="off"></td>
+            <td><input type="text" class="lock" autocomplete="off"></td>
+            <td><input type="text" class="lock" autocomplete="off"></td>
+            <td><input type="text" class="lock" autocomplete="off"></td>
+        </tr>
+        <tr>
+            <th>Достъпни ресурси</th>
+            <td><input type="text" class="lock" autocomplete="off"></td>
+            <td><input type="text" class="lock" autocomplete="off"></td>
+            <td><input type="text" class="lock" autocomplete="off"></td>
+            <td><input type="text" class="lock" autocomplete="off"></td>
+            <td><input type="text" class="lock" autocomplete="off"></td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+const requiredPassword = "dh1234"; // Изменете паролата тук!
+
+let isUnlocked = false;
+
+function checkPassword() {
+    const input = document.getElementById("passwordField").value;
+    if (input.toLowerCase() === requiredPassword) {
+        alert("Елементите станаха редактируеми. Не забравяйте да запазите промените!")
+        document.querySelectorAll("#plannerTable input").forEach(elt => {
+            elt.disabled = false;
+            elt.style.background = "#fff";
+        });
+        // Show all hidden buttons
+        document.querySelectorAll("#controls button.hidden").forEach(button => {
+            button.classList.remove("hidden");
+        });
+        isUnlocked = true;
+        document.body.style.cursor = "auto"
+    } else {
+        alert("Грешна парола!")
+    }
+}
+
+function lockFields() { // Защо би трябвало да се използва тази функция? 
+    document.querySelectorAll("#plannerTable input").forEach(elt => {
+        elt.disabled = true;
+        elt.style.background = "#eee";
+    });
+}
+
+function saveToStorage() {
+    const data = [];
+    document.querySelectorAll("#plannerTable input").forEach(row => {
+        data.push(row.value);
+    });
+    localStorage.setItem("planner_data", JSON.stringify(data));
+}
+
+function loadFromStorage() {
+    const data = JSON.parse(localStorage.getItem("planner_data"));
+    if (data) {
+        const elements = document.querySelectorAll("#plannerTable input");
+        data.forEach((value, index) => {
+            elements[index].value = value;
+        });
+    };
+}
+
+document.addEventListener("DOMContentLoaded", loadFromStorage);
+
+// Функционалност за контролите
+{
+    const controls = document.getElementById("controls");
+
+    const saveBtn = document.querySelector("button[value='Запази']");
+    const loadBtn = document.querySelector("button[value='Възтанови']");
+}
+</script>
+
+</body>
+</html>
